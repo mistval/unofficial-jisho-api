@@ -1,5 +1,6 @@
 'use strict'
 const request = require('request-promise');
+const htmlEntities = new (require('html-entities').XmlEntities)();
 
 const JISHO_API = 'http://jisho.org/api/v1/search/words';
 const SCRAPE_BASE_URI = 'http://jisho.org/search/';
@@ -88,36 +89,52 @@ function getOnyomi(pageHtml) {
 }
 
 function getOnyomiExamples(pageHtml) {
-  return getExamples(pageHtml, '<h2>On reading compounds</h2>');
+  return getExamples(pageHtml, ONYOMI_LOCATOR_SYMBOL);
 }
 
 function getKunyomiExamples(pageHtml) {
-  return getExamples(pageHtml, '<h2>Kun reading compounds</h2>');
+  return getExamples(pageHtml, KUNYOMI_LOCATOR_SYMBOL);
 }
 
 function getExamples(pageHtml, yomiLocatorSymbol) {
   let locatorString = `<h2>${yomiLocatorSymbol} reading compounds</h2>`;
   let exampleSectionStartIndex = pageHtml.indexOf(locatorString);
-  let exampleSectionEndIndex = pageHtml.indexOf('</li>', exampleSectionStartIndex);
+  let exampleSectionEndIndex = pageHtml.indexOf('</ul>', exampleSectionStartIndex);
   if (exampleSectionStartIndex === -1 || exampleSectionEndIndex === -1) {
     return [];
   }
+
   let exampleSection = pageHtml.substring(exampleSectionStartIndex, exampleSectionEndIndex);
   exampleSection = exampleSection.replace(locatorString, '');
   exampleSection = exampleSection.replace('<ul class=\"no-bullet\">', '');
-  exampleSection = exampleSection.replace('<li>', '');
+  let examplesLines = exampleSection.split('\n');
 
-  let examplesRaw = exampleSection.split('\n').filter(element => {
-    return element.trim() !== '';
-  }).map(element => {
-    return superTrim(element).replace(/&quot;/g, '"');
-  });
+  const lengthOfExampleInLines = 5;
+  const exampleOffset = 1;
+  const readingOffset = 2;
+  const meaningOffset = 3;
 
-  if (arr.length !== 3) {
-    return;
+  let examples = [];
+  let exampleIndex = 0;
+  examplesLines = examplesLines.map(line => superTrim(line));
+
+  while (examplesLines[0] !== '<li>') {
+    examplesLines.shift(1);
+  }
+  while (examplesLines[examplesLines.length - 1] !== '</li>') {
+    examplesLines.pop();
   }
 
-  debugger; // TODO
+  for (let i = 0; i < examplesLines.length; i += lengthOfExampleInLines) {
+    examples[exampleIndex] = {
+      example: examplesLines[i + exampleOffset],
+      reading: examplesLines[i + readingOffset].replace('【', '').replace('】', ''),
+      meaning: htmlEntities.decode(examplesLines[i + meaningOffset]),
+    };
+    ++exampleIndex;
+  }
+
+  return examples;
 }
 
 function getRadical(pageHtml) {
