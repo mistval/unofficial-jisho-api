@@ -38,6 +38,7 @@ jisho.searchForKanji('語').then(result => {
   console.log('Radical: ' + JSON.stringify(result.radical));
   console.log('Parts: ' + JSON.stringify(result.parts));
   console.log('Stroke order diagram: ' + JSON.stringify(result.strokeOrderDiagramUri));
+  console.log('Jisho Uri: ' + result.uri);
 });
 ```
 
@@ -65,6 +66,9 @@ const jishoApi = new require('./index.js');
 const jisho = new jishoApi();
 
 jisho.searchForExamples('日').then(result => {
+  console.log('Jisho Uri: ' + result.uri);
+  console.log();
+
   for (let i = 0; i < 3; ++i) {
     let example = result.results[i];
     console.log(example.kanji);
@@ -78,6 +82,8 @@ jisho.searchForExamples('日').then(result => {
 This outputs the following:
 
 ```
+Jisho Uri: http://jisho.org/search/%E6%97%A5%23sentences
+
 日本人ならそんなことはけっしてしないでしょう
 にほんじんならそんなことはけっしてしないでしょう
 A Japanese person would never do such a thing.
@@ -89,6 +95,7 @@ It is very hot today.
 日本には美しい都市が多い。例えば京都、奈良だ
 にほんにはうつくしいとしがおおい。たとえばきょうと、奈良だ
 Japan is full of beautiful cities. Kyoto and Nara, for instance.
+
 ```
 
 Permission to scrape granted by Jisho's admin Kimtaro: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
