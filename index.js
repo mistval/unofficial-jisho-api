@@ -1,29 +1,19 @@
 'use strict'
 const request = require('request-promise');
 const htmlEntities = new (require('html-entities').XmlEntities)();
+const htmlparser = require('htmlparser');
 
 const JISHO_API = 'http://jisho.org/api/v1/search/words';
 const SCRAPE_BASE_URI = 'http://jisho.org/search/';
 const STROKE_ORDER_DIAGRAM_BASE_URL = 'http://classic.jisho.org/static/images/stroke_diagrams/';
 
+/* KANJI SEARCH FUNCTIONS START */
+
 const ONYOMI_LOCATOR_SYMBOL = 'On';
 const KUNYOMI_LOCATOR_SYMBOL = 'Kun';
 
-function superTrim(str) {
-  if (!str) {
-    return;
-  }
-  str = str.replace(/(?:\r\n|\r|\n)/g, '');
-  str = str.trim();
-  return str;
-}
-
 function uriForKanjiSearch(kanji) {
   return SCRAPE_BASE_URI + encodeURIComponent(kanji) + '%23kanji';
-}
-
-function uriForExampleSearch(phrase) {
-  return SCRAPE_BASE_URI + encodeURIComponent(phrase) + '%23sentences';
 }
 
 function getUriForStrokeOrderDiagram(kanji) {
@@ -94,14 +84,14 @@ function getOnyomi(pageHtml) {
 }
 
 function getOnyomiExamples(pageHtml) {
-  return getExamples(pageHtml, ONYOMI_LOCATOR_SYMBOL);
+  return getYomiExamples(pageHtml, ONYOMI_LOCATOR_SYMBOL);
 }
 
 function getKunyomiExamples(pageHtml) {
-  return getExamples(pageHtml, KUNYOMI_LOCATOR_SYMBOL);
+  return getYomiExamples(pageHtml, KUNYOMI_LOCATOR_SYMBOL);
 }
 
-function getExamples(pageHtml, yomiLocatorSymbol) {
+function getYomiExamples(pageHtml, yomiLocatorSymbol) {
   let locatorString = `<h2>${yomiLocatorSymbol} reading compounds</h2>`;
   let exampleSectionStartIndex = pageHtml.indexOf(locatorString);
   let exampleSectionEndIndex = pageHtml.indexOf('</ul>', exampleSectionStartIndex);
@@ -188,6 +178,127 @@ function parseKanjiPageData(pageHtml, kanji) {
   return result;
 }
 
+/* KANJI SEARCH FUNCTIONS END */
+
+/* EXAMPLE SEARCH FUNCTIONS START */
+
+const kanjiRegex = /[\u4e00-\u9faf\u3400-\u4dbf]/g;
+
+function superTrim(str) {
+  if (!str) {
+    return;
+  }
+  str = str.replace(/(?:\r\n|\r|\n)/g, '');
+  str = str.trim();
+  return str;
+}
+
+function uriForExampleSearch(phrase) {
+  return SCRAPE_BASE_URI + encodeURIComponent(phrase) + '%23sentences';
+}
+
+function parseKanjiLine(japaneseSectionDom) {
+  let result = [];
+  for (let i = 0; i < japaneseSectionDom.length - 1; ++i) {
+    let kanjiFuriganaPair = japaneseSectionDom[i].children;
+    if (kanjiFuriganaPair) {
+      result.push(kanjiFuriganaPair[kanjiFuriganaPair.length - 1].children[0].raw);
+    } else {
+      let kanji = japaneseSectionDom[i].raw.replace(/\\n/g, '').trim();
+      if (!kanji || kanji.length === 0) {
+        result.push(undefined);
+      } else {
+        result.push(kanji);
+      }
+    }
+  }
+
+  return result;
+}
+
+function parseKanaLine(japaneseSectionDom, parsedKanjiLine) {
+  let result = [];
+  for (let i = 0; i < japaneseSectionDom.length - 1; ++i) {
+    let kanjiFuriganaPair = japaneseSectionDom[i].children;
+    if (kanjiFuriganaPair && kanjiFuriganaPair[0].children) {
+      let kana = kanjiFuriganaPair[0].children[0].raw;
+      let kanji = parsedKanjiLine[i];
+      let matches = kanji.match(kanjiRegex);
+
+      if (kanji.startsWith(kana)) {
+        result.push(kanji);
+      } else if (matches) {
+        let lastMatch = matches[matches.length - 1];
+        let lastMatchIndex = kanji.lastIndexOf(lastMatch);
+        let nonFuriPart = kanji.substring(lastMatchIndex + 1);
+        result.push(kana + nonFuriPart);
+      } else {
+        result.push(kanji);
+      }
+    } else if (parsedKanjiLine[i]) {
+      result.push(parsedKanjiLine[i]);
+    }
+  }
+
+  return result;
+}
+
+function getExampleEnglish(exampleSectionHtml) {
+  const englishSectionStartString = '<span class=\"english\">';
+  const englishSectionEndString = '</span';
+  let englishSectionStartIndex = exampleSectionHtml.indexOf(englishSectionStartString);
+  let englishSectionEndIndex = exampleSectionHtml.indexOf(englishSectionEndString, englishSectionStartIndex);
+  return exampleSectionHtml.substring(englishSectionStartIndex + englishSectionStartString.length, englishSectionEndIndex);
+}
+
+function addKanjiAndKana(exampleSectionHtml, intermediaryResult) {
+  const japaneseSectionStartString = '<ul class=\"japanese_sentence japanese japanese_gothic clearfix\" lang=\"ja\">';
+  const japaneseSectionEndString = '</ul>';
+  let japaneseSectionStartIndex = exampleSectionHtml.indexOf(japaneseSectionStartString) + japaneseSectionStartString.length;
+  let japaneseSectionEndIndex = exampleSectionHtml.indexOf(japaneseSectionEndString);
+  let japaneseSectionText = exampleSectionHtml.substring(japaneseSectionStartIndex, japaneseSectionEndIndex);
+  let parseHandler = new htmlparser.DefaultHandler(function(error, dom) {});
+  let parser = new htmlparser.Parser(parseHandler);
+  parser.parseComplete(japaneseSectionText);
+  let japaneseDom = parseHandler.dom;
+
+  let parsedKanjiLine = parseKanjiLine(japaneseDom);
+  intermediaryResult.kanji = parsedKanjiLine.join('');
+  intermediaryResult.kana = parseKanaLine(japaneseDom, parsedKanjiLine).join('');
+  return intermediaryResult;
+}
+
+function parseExampleSection(exampleSectionHtml) {
+  let result = {};
+  result.english = getExampleEnglish(exampleSectionHtml);
+  return addKanjiAndKana(exampleSectionHtml, result);
+}
+
+function parseExamplePageData(pageHtml, kanji) {
+  let results = [];
+  const exampleSectionStartString = '<ul class=\"japanese_sentence japanese japanese_gothic clearfix\" lang=\"ja\">';
+  const exampleSectionEndString = '<span class=\"inline_copyright\">';
+  let exampleSectionStartIndex = 0;
+  while (true) {
+    // +1 to move to the next instance of sectionStartString. Otherwise we'd infinite loop finding the same one over and over.
+    exampleSectionStartIndex = pageHtml.indexOf(exampleSectionStartString, exampleSectionStartIndex) + 1;
+    let exampleSectionEndIndex = pageHtml.indexOf(exampleSectionEndString, exampleSectionStartIndex);
+    if (exampleSectionStartIndex !== 0 && exampleSectionEndIndex !== -1) {
+      let exampleSection = pageHtml.substring(exampleSectionStartIndex, exampleSectionEndIndex + exampleSectionEndString.length);
+      results.push(parseExampleSection(exampleSection));
+    } else {
+      break;
+    }
+  }
+
+  return {
+    found: results.length > 0,
+    results: results,
+  }
+}
+
+/* EXAMPLE SEARCH FUNCTIONS END */
+
 class API {
   searchForPhrase(phrase, timeout) {
     timeout = timeout || 10000;
@@ -210,6 +321,18 @@ class API {
       timeout: timeout
     }).then(pageHtml => {
       return parseKanjiPageData(pageHtml, kanji);
+    });
+  }
+
+  searchForExamples(phrase, timeout) {
+    timeout = timeout || 10000;
+    let uri = uriForExampleSearch(phrase);
+    return request({
+      uri: uri,
+      json: false,
+      timeout: timeout
+    }).then(pageHtml => {
+      return parseExamplePageData(pageHtml, phrase);
     });
   }
 }
