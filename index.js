@@ -184,7 +184,7 @@ function parseKanjiPageData(pageHtml, kanji) {
   result.kunyomiExamples = getKunyomiExamples(pageHtml);
   result.radical = getRadical(pageHtml);
   result.parts = getParts(pageHtml);
-  result.strokeOrderDiagramUri = getUriForStrokeOrderDiagram(kanji);;
+  result.strokeOrderDiagramUri = getUriForStrokeOrderDiagram(kanji);
   return result;
 }
 
