@@ -8,7 +8,7 @@ This module encapsulates the official Jisho.org API and also provides kanji and 
 This returns the same results as the official Jisho API. See the discussion of that here: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
 
 ```js
-const jishoApi = new require('./index.js');
+const jishoApi = new require('unofficial-jisho-api');
 const jisho = new jishoApi();
 
 jisho.searchForPhrase('日').then(result => {
