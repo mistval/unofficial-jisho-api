@@ -22,7 +22,7 @@ jisho.searchForPhrase('日').then(result => {
 ### Kanji search
 
 ```js
-const jishoApi = new require('./index.js');
+const jishoApi = new require('unofficial-jisho-api');
 const jisho = new jishoApi();
 
 jisho.searchForKanji('語').then(result => {
@@ -62,7 +62,7 @@ Stroke order diagram: "http://classic.jisho.org/static/images/stroke_diagrams/35
 ### Example search
 
 ```js
-const jishoApi = new require('./index.js');
+const jishoApi = new require('unofficial-jisho-api');
 const jisho = new jishoApi();
 
 jisho.searchForExamples('日').then(result => {

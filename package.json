@@ -1,0 +1,35 @@
+{
+  "name": "unofficial-jisho-api",
+  "version": "1.0.1",
+  "description": "Encapsulates the official Jisho.org API and also provides kanji, example, and stroke diagram search.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistval/unofficial-jisho-api.git"
+  },
+  "keywords": [
+    "jisho",
+    "kanji",
+    "japanese",
+    "word",
+    "search",
+    "stroke",
+    "order",
+    "diagrams"
+  ],
+  "author": "Randall Schmidt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mistval/unofficial-jisho-api/issues"
+  },
+  "homepage": "https://github.com/mistval/unofficial-jisho-api#readme",
+  "dependencies": {
+    "html-entities": "^1.2.1",
+    "htmlparser": "^1.7.7",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
