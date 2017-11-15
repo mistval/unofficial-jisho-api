@@ -5,19 +5,28 @@ const htmlparser = require('htmlparser');
 
 const JISHO_API = 'http://jisho.org/api/v1/search/words';
 const SCRAPE_BASE_URI = 'http://jisho.org/search/';
-const STROKE_ORDER_DIAGRAM_BASE_URL = 'http://classic.jisho.org/static/images/stroke_diagrams/';
+const STROKE_ORDER_DIAGRAM_BASE_URI = 'http://classic.jisho.org/static/images/stroke_diagrams/';
 
 /* KANJI SEARCH FUNCTIONS START */
 
 const ONYOMI_LOCATOR_SYMBOL = 'On';
 const KUNYOMI_LOCATOR_SYMBOL = 'Kun';
 
+function superTrim(str) {
+  if (!str) {
+    return;
+  }
+  str = str.replace(/(?:\r\n|\r|\n)/g, '');
+  str = str.trim();
+  return str;
+}
+
 function uriForKanjiSearch(kanji) {
   return SCRAPE_BASE_URI + encodeURIComponent(kanji) + '%23kanji';
 }
 
 function getUriForStrokeOrderDiagram(kanji) {
-  return STROKE_ORDER_DIAGRAM_BASE_URL + kanji.charCodeAt(0).toString() + '_frames.png';
+  return STROKE_ORDER_DIAGRAM_BASE_URI + kanji.charCodeAt(0).toString() + '_frames.png';
 }
 
 function containsKanjiGlyph(pageHtml, kanji) {
@@ -25,7 +34,7 @@ function containsKanjiGlyph(pageHtml, kanji) {
   return pageHtml.indexOf(kanjiGlyphToken) !== -1;
 }
 
-function getDataBetweenIndicies(data, startIndex, endIndex) {
+function getStringBetweenIndicies(data, startIndex, endIndex) {
   let result = data.substring(startIndex, endIndex);
   return superTrim(result);
 }
@@ -38,7 +47,7 @@ function getStringBetweenStrings(data, startString, endString) {
   let startIndex = startStringLocation + startString.length;
   let endIndex = data.indexOf(endString, startIndex);
   if (endIndex >= 0) {
-    return getDataBetweenIndicies(data, startIndex, endIndex);
+    return getStringBetweenIndicies(data, startIndex, endIndex);
   }
 }
 
@@ -102,24 +111,22 @@ function getYomiExamples(pageHtml, yomiLocatorSymbol) {
   let exampleSection = pageHtml.substring(exampleSectionStartIndex, exampleSectionEndIndex);
   exampleSection = exampleSection.replace(locatorString, '');
   exampleSection = exampleSection.replace('<ul class=\"no-bullet\">', '');
+
   let examplesLines = exampleSection.split('\n');
-
-  const lengthOfExampleInLines = 5;
-  const exampleOffset = 1;
-  const readingOffset = 2;
-  const meaningOffset = 3;
-
-  let examples = [];
-  let exampleIndex = 0;
   examplesLines = examplesLines.map(line => superTrim(line));
-
   while (examplesLines[0] !== '<li>') {
-    examplesLines.shift(1);
+    examplesLines.shift();
   }
   while (examplesLines[examplesLines.length - 1] !== '</li>') {
     examplesLines.pop();
   }
 
+  let examples = [];
+  let exampleIndex = 0;
+  const lengthOfExampleInLines = 5;
+  const exampleOffset = 1;
+  const readingOffset = 2;
+  const meaningOffset = 3;
   for (let i = 0; i < examplesLines.length; i += lengthOfExampleInLines) {
     examples[exampleIndex] = {
       example: examplesLines[i + exampleOffset],
@@ -143,7 +150,7 @@ function getRadical(pageHtml) {
     let radicalSymbolStartIndex = radicalMeaningEndIndex + radicalMeaningEndString.length;
     const radicalSymbolEndString = '</span>';
     let radicalSymbolEndIndex = pageHtml.indexOf(radicalSymbolEndString, radicalSymbolStartIndex);
-    let radicalSymbol = getDataBetweenIndicies(pageHtml, radicalSymbolStartIndex, radicalSymbolEndIndex);
+    let radicalSymbol = getStringBetweenIndicies(pageHtml, radicalSymbolStartIndex, radicalSymbolEndIndex);
     let radicalForms;
     if (radicalSymbol.length > 1) {
       radicalForms = radicalSymbol.substring(1).replace('(', '').replace(')', '').trim().split(', ');
@@ -157,7 +164,7 @@ function getParts(pageHtml) {
   const partsSectionStartString = '<dt>Parts:</dt>';
   const partsSectionEndString = '</dl>';
   let partsSection = getStringBetweenStrings(pageHtml, partsSectionStartString, partsSectionEndString);
-  partsSection = partsSection.replace('<dd>', '').replace('</dd>');
+  partsSection = partsSection.replace('<dd>', '').replace('</dd>', '');
   return parseAnchorsToArray(partsSection);
 }
 
@@ -190,15 +197,6 @@ function parseKanjiPageData(pageHtml, kanji) {
 
 const kanjiRegex = /[\u4e00-\u9faf\u3400-\u4dbf]/g;
 
-function superTrim(str) {
-  if (!str) {
-    return;
-  }
-  str = str.replace(/(?:\r\n|\r|\n)/g, '');
-  str = str.trim();
-  return str;
-}
-
 function uriForExampleSearch(phrase) {
   return SCRAPE_BASE_URI + encodeURIComponent(phrase) + '%23sentences';
 }
@@ -211,7 +209,7 @@ function parseKanjiLine(japaneseSectionDom) {
       result.push(kanjiFuriganaPair[kanjiFuriganaPair.length - 1].children[0].raw);
     } else {
       let kanji = japaneseSectionDom[i].raw.replace(/\\n/g, '').trim();
-      if (!kanji || kanji.length === 0) {
+      if (!kanji) {
         result.push(undefined);
       } else {
         result.push(kanji);
@@ -229,12 +227,11 @@ function parseKanaLine(japaneseSectionDom, parsedKanjiLine) {
     if (kanjiFuriganaPair && kanjiFuriganaPair[0].children) {
       let kana = kanjiFuriganaPair[0].children[0].raw;
       let kanji = parsedKanjiLine[i];
-      let matches = kanji.match(kanjiRegex);
-
+      let kanjiRegexMatches = kanji.match(kanjiRegex);
       if (kanji.startsWith(kana)) {
         result.push(kanji);
-      } else if (matches) {
-        let lastMatch = matches[matches.length - 1];
+      } else if (kanjiRegexMatches) {
+        let lastMatch = kanjiRegexMatches[kanjiRegexMatches.length - 1];
         let lastMatchIndex = kanji.lastIndexOf(lastMatch);
         let nonFuriPart = kanji.substring(lastMatchIndex + 1);
         result.push(kana + nonFuriPart);
