@@ -1,5 +1,5 @@
 # unofficial-jisho-api
-This module encapsulates the official Jisho.org API and also provides kanji and example search features that that scrape Jisho.org.
+This module encapsulates the official Jisho.org API and also provides kanji and example search features that scrape Jisho.org.
 
 ## Usage
 
