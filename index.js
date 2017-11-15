@@ -4,6 +4,7 @@ const htmlEntities = new (require('html-entities').XmlEntities)();
 
 const JISHO_API = 'http://jisho.org/api/v1/search/words';
 const SCRAPE_BASE_URI = 'http://jisho.org/search/';
+const STROKE_ORDER_DIAGRAM_BASE_URL = 'http://classic.jisho.org/static/images/stroke_diagrams/';
 
 const ONYOMI_LOCATOR_SYMBOL = 'On';
 const KUNYOMI_LOCATOR_SYMBOL = 'Kun';
@@ -23,6 +24,10 @@ function uriForKanjiSearch(kanji) {
 
 function uriForExampleSearch(phrase) {
   return SCRAPE_BASE_URI + encodeURIComponent(phrase) + '%23sentences';
+}
+
+function getUriForStrokeOrderDiagram(kanji) {
+  return STROKE_ORDER_DIAGRAM_BASE_URL + kanji.charCodeAt(0).toString() + '_frames.png';
 }
 
 function containsKanjiGlyph(pageHtml, kanji) {
@@ -179,6 +184,7 @@ function parseKanjiPageData(pageHtml, kanji) {
   result.kunyomiExamples = getKunyomiExamples(pageHtml);
   result.radical = getRadical(pageHtml);
   result.parts = getParts(pageHtml);
+  result.strokeOrderDiagramUri = getUriForStrokeOrderDiagram(kanji);;
   return result;
 }
 
