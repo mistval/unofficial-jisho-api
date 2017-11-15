@@ -164,6 +164,7 @@ function parseKanjiPageData(pageHtml, kanji) {
     return result;
   }
 
+  result.kanji = kanji;
   result.gradeNumber = getIntBetweenStrings(pageHtml, 'taught in <strong>grade ', '</strong>');
   result.level = getStringBetweenStrings(pageHtml, 'taught in <strong>', '</strong>');
   result.strokeCount = getIntBetweenStrings(pageHtml, '<strong>', '</strong> strokes');
@@ -175,6 +176,7 @@ function parseKanjiPageData(pageHtml, kanji) {
   result.radical = getRadical(pageHtml);
   result.parts = getParts(pageHtml);
   result.strokeOrderDiagramUri = getUriForStrokeOrderDiagram(kanji);
+  result.uri = uriForKanjiSearch(kanji);
   return result;
 }
 
@@ -274,7 +276,7 @@ function parseExampleSection(exampleSectionHtml) {
   return addKanjiAndKana(exampleSectionHtml, result);
 }
 
-function parseExamplePageData(pageHtml, kanji) {
+function parseExamplePageData(pageHtml, phrase) {
   let results = [];
   const exampleSectionStartString = '<ul class=\"japanese_sentence japanese japanese_gothic clearfix\" lang=\"ja\">';
   const exampleSectionEndString = '<span class=\"inline_copyright\">';
@@ -294,6 +296,8 @@ function parseExamplePageData(pageHtml, kanji) {
   return {
     found: results.length > 0,
     results: results,
+    uri: uriForExampleSearch(phrase),
+    phrase: phrase,
   }
 }
 
