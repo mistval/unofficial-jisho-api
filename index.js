@@ -53,7 +53,7 @@ function getIntBetweenStrings(pageHtml, startString, endString) {
   }
 }
 
-function parseAnchorsToArray(string) {
+function parseAnchorsToArray(str) {
   const closeAnchor = '</a>';
   let rest = str;
   let results = [];
@@ -71,7 +71,7 @@ function getYomi(pageHtml, yomiLocatorSymbol) {
   let yomiSection = getStringBetweenStrings(pageHtml, `<dt>${yomiLocatorSymbol}:</dt>`, '</dl>');
   if (yomiSection) {
     let yomiString = getStringBetweenStrings(yomiSection, '<dd class=\"kanji-details__main-readings-list\" lang=\"ja\">', '</dd>');
-    if (kunyomiString) {
+    if (yomiString) {
       let readings = parseAnchorsToArray(yomiString);
       return readings;
     }
@@ -88,18 +88,18 @@ function getOnyomi(pageHtml) {
 }
 
 function getOnyomiExamples(pageHtml) {
-  return getExample(pageHtml, '<h2>On reading compounds</h2>');
+  return getExamples(pageHtml, '<h2>On reading compounds</h2>');
 }
 
 function getKunyomiExamples(pageHtml) {
-  return getExample(pageHtml, '<h2>Kun reading compounds</h2>');
+  return getExamples(pageHtml, '<h2>Kun reading compounds</h2>');
 }
 
 function getExamples(pageHtml, yomiLocatorSymbol) {
   let locatorString = `<h2>${yomiLocatorSymbol} reading compounds</h2>`;
   let exampleSectionStartIndex = pageHtml.indexOf(locatorString);
   let exampleSectionEndIndex = pageHtml.indexOf('</li>', exampleSectionStartIndex);
-  if (onStartIndex === -1 || onEndIndex === -1) {
+  if (exampleSectionStartIndex === -1 || exampleSectionEndIndex === -1) {
     return [];
   }
   let exampleSection = pageHtml.substring(exampleSectionStartIndex, exampleSectionEndIndex);
@@ -185,11 +185,9 @@ class API {
       uri: uri,
       json: false,
       timeout: timeout
-    }).then(data => {
-      if (containsKanjiGlyph(data, kanji)) {
-        return parseKanjiData(data, kanji);
-      }
-    }).catch(throwTimeoutError);
+    }).then(pageHtml => {
+      return parseKanjiPageData(pageHtml, kanji);
+    });
   }
 }
 
