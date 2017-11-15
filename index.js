@@ -164,7 +164,6 @@ function parseKanjiPageData(pageHtml, kanji) {
     return result;
   }
 
-  result.kanji = kanji;
   result.gradeNumber = getIntBetweenStrings(pageHtml, 'taught in <strong>grade ', '</strong>');
   result.level = getStringBetweenStrings(pageHtml, 'taught in <strong>', '</strong>');
   result.strokeCount = getIntBetweenStrings(pageHtml, '<strong>', '</strong> strokes');
@@ -294,6 +293,7 @@ function parseExamplePageData(pageHtml, phrase) {
   }
 
   return {
+    query: phrase,
     found: results.length > 0,
     results: results,
     uri: uriForExampleSearch(phrase),
