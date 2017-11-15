@@ -25,7 +25,7 @@ jisho.searchForPhrase('日').then(result => {
 const jishoApi = new require('./index.js');
 const jisho = new jishoApi();
 
-jisho.searchForKanji('日').then(result => {
+jisho.searchForKanji('語').then(result => {
   console.log('Found: ' + result.found);
   console.log('Grade number: ' + result.gradeNumber);
   console.log('Level: ' + result.level);
@@ -45,17 +45,17 @@ This outputs the following:
 
 ```
 Found: true
-Grade number: 1
-Level: grade 1
-Stroke count: 4
-Meaning: day, sun, Japan, counter for days
-Kunyomi: ["ひ","-び","-か"]
-Kunyomi example: {"example":"日","reading":"ひ","meaning":"day, days, sun, sunshine, sunlight, case (esp. unfortunate), event"}
-Onyomi: ["ニチ","ジツ"]
-Onyomi example: {"example":"日","reading":"ニチ","meaning":"Sunday, day (of the month), counter for days, Japan"}
-Radical: {"symbol":"日","meaning":"sun, day"}
-Parts: ["日"]
-Stroke order diagram: "http://classic.jisho.org/static/images/stroke_diagrams/26085_frames.png"
+Grade number: 2
+Level: grade 2
+Stroke count: 14
+Meaning: word, speech, language
+Kunyomi: ["かた.る","かた.らう"]
+Kunyomi example: {"example":"語る","reading":"かたる","meaning":"to talk about, to speak of, to tell, to narrate, to recite, to chant, to indicate, to show"}
+Onyomi: ["ゴ"]
+Onyomi example: {"example":"語","reading":"ゴ","meaning":"language, word"}
+Radical: {"symbol":"言","forms":["訁"],"meaning":"speech"}
+Parts: ["五","言","口"]
+Stroke order diagram: "http://classic.jisho.org/static/images/stroke_diagrams/35486_frames.png"
 ```
 
 ### Example search
