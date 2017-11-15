@@ -171,7 +171,7 @@ class API {
     return request({
       uri: JISHO_API,
       qs: {
-        keyword: suffix
+        keyword: phrase,
       },
       json: true,
       timeout: timeout
@@ -193,4 +193,4 @@ class API {
   }
 }
 
-module.exports.API = API;
+module.exports = API;
