@@ -144,7 +144,12 @@ function getRadical(pageHtml) {
     const radicalSymbolEndString = '</span>';
     let radicalSymbolEndIndex = pageHtml.indexOf(radicalSymbolEndString, radicalSymbolStartIndex);
     let radicalSymbol = getDataBetweenIndicies(pageHtml, radicalSymbolStartIndex, radicalSymbolEndIndex);
-    return {symbol: radicalSymbol, meaning: radicalMeaning};
+    let radicalForms;
+    if (radicalSymbol.length > 1) {
+      radicalForms = radicalSymbol.substring(1).replace('(', '').replace(')', '').trim().split(', ');
+      radicalSymbol = radicalSymbol[0];
+    }
+    return {symbol: radicalSymbol, forms: radicalForms, meaning: radicalMeaning};
   }
 }
 
