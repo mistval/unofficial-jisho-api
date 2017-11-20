@@ -179,7 +179,7 @@ function parseKanjiPageData(pageHtml, kanji) {
   result.gradeNumber = getIntBetweenStrings(pageHtml, 'taught in <strong>grade ', '</strong>');
   result.level = getStringBetweenStrings(pageHtml, 'taught in <strong>', '</strong>');
   result.strokeCount = getIntBetweenStrings(pageHtml, '<strong>', '</strong> strokes');
-  result.meaning = superTrim(getStringBetweenStrings(pageHtml, '<div class=\"kanji-details__main-meanings\">', '</div>'));
+  result.meaning = htmlEntities.decode(superTrim(getStringBetweenStrings(pageHtml, '<div class=\"kanji-details__main-meanings\">', '</div>')));
   result.kunyomi = getKunyomi(pageHtml);
   result.onyomi = getOnyomi(pageHtml);
   result.onyomiExamples = getOnyomiExamples(pageHtml);
