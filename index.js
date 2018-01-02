@@ -51,6 +51,26 @@ function getStringBetweenStrings(data, startString, endString) {
   }
 }
 
+function getStringBetweenStringsReverse(data, startString, endString) {
+  let endStringLocation = data.indexOf(endString);
+  let startStringLocation = data.indexOf(startString);
+
+  if (startStringLocation === -1 || endStringLocation === -1) {
+    return;
+  }
+
+  let nextStartSearchIndex = startStringLocation + 1;
+  let previousStartStringLocation = startStringLocation;
+  while (startStringLocation < endStringLocation && nextStartSearchIndex !== 0) {
+    previousStartStringLocation = startStringLocation;
+    startStringLocation = data.indexOf(startString, nextStartSearchIndex);
+    nextStartSearchIndex = startStringLocation + 1;
+  }
+  startStringLocation = previousStartStringLocation;
+
+  return data.substring(startStringLocation + startString.length, endStringLocation);
+}
+
 function getIntBetweenStrings(pageHtml, startString, endString) {
   let stringBetweenStrings = getStringBetweenStrings(pageHtml, startString, endString);
   if (stringBetweenStrings) {
@@ -176,8 +196,9 @@ function parseKanjiPageData(pageHtml, kanji) {
     return result;
   }
 
-  result.gradeNumber = getIntBetweenStrings(pageHtml, 'taught in <strong>grade ', '</strong>');
-  result.level = getStringBetweenStrings(pageHtml, 'taught in <strong>', '</strong>');
+  result.taughtIn = getStringBetweenStrings(pageHtml, 'taught in <strong>', '</strong>');
+  result.jlptLevel = getStringBetweenStrings(pageHtml, 'JLPT level <strong>', '</strong>');
+  result.newspaperFrequencyRank = getStringBetweenStringsReverse(pageHtml, '<strong>', '</strong> of 2500 most used kanji in newspapers');
   result.strokeCount = getIntBetweenStrings(pageHtml, '<strong>', '</strong> strokes');
   result.meaning = htmlEntities.decode(superTrim(getStringBetweenStrings(pageHtml, '<div class=\"kanji-details__main-meanings\">', '</div>')));
   result.kunyomi = getKunyomi(pageHtml);

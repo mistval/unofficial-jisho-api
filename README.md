@@ -27,8 +27,9 @@ const jisho = new jishoApi();
 
 jisho.searchForKanji('語').then(result => {
   console.log('Found: ' + result.found);
-  console.log('Grade number: ' + result.gradeNumber);
-  console.log('Level: ' + result.level);
+  console.log('Taught in: ' + result.taughtIn);
+  console.log('JLPT level: ' + result.jlptLevel);
+  console.log('Newspaper frequency rank: ' + result.newspaperFrequencyRank);
   console.log('Stroke count: ' + result.strokeCount);
   console.log('Meaning: ' + result.meaning);
   console.log('Kunyomi: ' + JSON.stringify(result.kunyomi));
