@@ -47,8 +47,9 @@ This outputs the following:
 
 ```
 Found: true
-Grade number: 2
-Level: grade 2
+Taught in: grade 2
+JLPT level: N5
+Newspaper frequency rank: 301
 Stroke count: 14
 Meaning: word, speech, language
 Kunyomi: ["かた.る","かた.らう"]
@@ -58,6 +59,7 @@ Onyomi example: {"example":"語","reading":"ゴ","meaning":"language, word"}
 Radical: {"symbol":"言","forms":["訁"],"meaning":"speech"}
 Parts: ["五","言","口"]
 Stroke order diagram: "http://classic.jisho.org/static/images/stroke_diagrams/35486_frames.png"
+Jisho Uri: http://jisho.org/search/%E8%AA%9E%23kanji
 ```
 
 ### Example search
