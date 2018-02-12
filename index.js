@@ -345,9 +345,18 @@ class API {
     return request({
       uri: uri,
       json: false,
-      timeout: timeout
+      timeout: timeout,
     }).then(pageHtml => {
       return parseKanjiPageData(pageHtml, kanji);
+    }).catch((err) => {
+      // Seems to be a bug in Jisho that if you enter a URI encoded URI into the search,
+      // it gives you a 404 instead of a regular search page with empty results.
+      // So handle 404 the same way as empty results.
+      if (err.message.indexOf('The page you were looking for doesn\'t exist') !== -1) {
+        return parseKanjiPageData(err.message, kanji);
+      } else {
+        throw err;
+      }
     });
   }
 
