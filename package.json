@@ -1,6 +1,6 @@
 {
   "name": "unofficial-jisho-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Encapsulates the official Jisho.org API and also provides kanji, example, and stroke diagram search.",
   "main": "index.js",
   "scripts": {
