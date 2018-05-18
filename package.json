@@ -29,7 +29,7 @@
   "dependencies": {
     "html-entities": "^1.2.1",
     "htmlparser": "^1.7.7",
-    "request": "^2.83.0",
+    "request": "^2.86.0",
     "request-promise": "^4.2.2"
   }
 }
