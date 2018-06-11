@@ -188,6 +188,14 @@ function getParts(pageHtml) {
   return parseAnchorsToArray(partsSection);
 }
 
+function getSvgUri(pageHtml) {
+  const svgRegex = /\/\/.*?.cloudfront.net\/.*?.svg/;
+  const regexResult = svgRegex.exec(pageHtml);
+  if (regexResult) {
+    return 'http:' + regexResult[0];
+  }
+}
+
 function parseKanjiPageData(pageHtml, kanji) {
   let result = {};
   result.query = kanji;
@@ -208,6 +216,7 @@ function parseKanjiPageData(pageHtml, kanji) {
   result.radical = getRadical(pageHtml);
   result.parts = getParts(pageHtml);
   result.strokeOrderDiagramUri = getUriForStrokeOrderDiagram(kanji);
+  result.strokeOrderSvgUri = getSvgUri(pageHtml);
   result.uri = uriForKanjiSearch(kanji);
   return result;
 }
