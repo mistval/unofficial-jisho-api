@@ -8,7 +8,7 @@ This module encapsulates the official Jisho.org API and also provides kanji and 
 This returns the same results as the official Jisho API. See the discussion of that here: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
 
 ```js
-const jishoApi = new require('unofficial-jisho-api');
+const jishoApi = require('unofficial-jisho-api');
 const jisho = new jishoApi();
 
 jisho.searchForPhrase('日').then(result => {
@@ -22,7 +22,7 @@ jisho.searchForPhrase('日').then(result => {
 ### Kanji search
 
 ```js
-const jishoApi = new require('unofficial-jisho-api');
+const jishoApi = require('unofficial-jisho-api');
 const jisho = new jishoApi();
 
 jisho.searchForKanji('語').then(result => {
@@ -38,7 +38,9 @@ jisho.searchForKanji('語').then(result => {
   console.log('Onyomi example: ' + JSON.stringify(result.onyomiExamples[0]));
   console.log('Radical: ' + JSON.stringify(result.radical));
   console.log('Parts: ' + JSON.stringify(result.parts));
-  console.log('Stroke order diagram: ' + JSON.stringify(result.strokeOrderDiagramUri));
+  console.log('Stroke order diagram: ' + result.strokeOrderDiagramUri);
+  console.log('Stroke order SVG: ' + result.strokeOrderSvgUri);
+  console.log('Stroke order GIF: ' + result.strokeOrderGifUri);
   console.log('Jisho Uri: ' + result.uri);
 });
 ```
@@ -57,15 +59,17 @@ Kunyomi example: {"example":"語る","reading":"かたる","meaning":"to talk ab
 Onyomi: ["ゴ"]
 Onyomi example: {"example":"語","reading":"ゴ","meaning":"language, word"}
 Radical: {"symbol":"言","forms":["訁"],"meaning":"speech"}
-Parts: ["五","言","口"]
-Stroke order diagram: "http://classic.jisho.org/static/images/stroke_diagrams/35486_frames.png"
+Parts: ["口","五","言"]
+Stroke order diagram: http://classic.jisho.org/static/images/stroke_diagrams/35486_frames.png
+Stroke order SVG: http://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/08a9e.svg
+Stroke order GIF: https://raw.githubusercontent.com/mistval/kotoba/master/resources/images/kanjianimations/08a9e_anim.gif
 Jisho Uri: http://jisho.org/search/%E8%AA%9E%23kanji
 ```
 
 ### Example search
 
 ```js
-const jishoApi = new require('unofficial-jisho-api');
+const jishoApi = require('unofficial-jisho-api');
 const jisho = new jishoApi();
 
 jisho.searchForExamples('日').then(result => {
