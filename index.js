@@ -196,6 +196,17 @@ function getSvgUri(pageHtml) {
   }
 }
 
+function getGifUri(kanji) {
+  const fileCodeStringLength = 5;
+  let unicodeString = kanji.codePointAt(0).toString(16);
+  let fillZeroes = fileCodeStringLength - unicodeString.length;
+  let fileCode = new Array(fillZeroes + 1).join('0') + unicodeString;
+  let fileName = fileCode + '_anim.gif';
+  let animationUri = 'https://raw.githubusercontent.com/mistval/kotoba/master/resources/images/kanjianimations/' + fileName;
+
+  return animationUri;
+}
+
 function parseKanjiPageData(pageHtml, kanji) {
   let result = {};
   result.query = kanji;
@@ -217,6 +228,7 @@ function parseKanjiPageData(pageHtml, kanji) {
   result.parts = getParts(pageHtml);
   result.strokeOrderDiagramUri = getUriForStrokeOrderDiagram(kanji);
   result.strokeOrderSvgUri = getSvgUri(pageHtml);
+  result.strokeOrderGifUri = getGifUri(kanji);
   result.uri = uriForKanjiSearch(kanji);
   return result;
 }
