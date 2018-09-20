@@ -1,17 +1,24 @@
 /*
- * This module encapsulates the official Jisho.org API and also provides kanji and example search features that scrape Jisho.org.
- * Permission to scrape granted by Jisho's admin Kimtaro: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
- * Use of regular expressions was mostly avoided in early commits. I was curious to see how far I could get without using them.
- * Later commits do use regular expressions because I got tired of that experiment.
+ * This module encapsulates the official Jisho.org API
+ * and also provides kanji and example search features that scrape Jisho.org.
+ * Permission to scrape granted by Jisho's admin Kimtaro:
+ *     http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
+ *
+ * Use of regular expressions was mostly avoided in early commits.
+ * I was curious to see how far I could get without using them.
+ * Later commits do use regular expressions because I got tired of that experiment,
+ * and was afraid it makes me look bad ;)
  */
 
 const request = require('request-promise');
-const htmlEntities = new (require('html-entities').XmlEntities)();
+const { XmlEntities } = require('html-entities');
 const htmlparser = require('htmlparser');
 
 const JISHO_API = 'http://jisho.org/api/v1/search/words';
 const SCRAPE_BASE_URI = 'http://jisho.org/search/';
 const STROKE_ORDER_DIAGRAM_BASE_URI = 'http://classic.jisho.org/static/images/stroke_diagrams/';
+
+const htmlEntities = new XmlEntities();
 
 /* KANJI SEARCH FUNCTIONS START */
 
@@ -20,11 +27,9 @@ const KUNYOMI_LOCATOR_SYMBOL = 'Kun';
 
 function superTrim(str) {
   if (!str) {
-    return;
+    return undefined;
   }
-  str = str.replace(/(?:\r\n|\r|\n)/g, '');
-  str = str.trim();
-  return str;
+  return str.replace(/(?:\r\n|\r|\n)/g, '').trim();
 }
 
 function uriForKanjiSearch(kanji) {
@@ -36,7 +41,7 @@ function getUriForStrokeOrderDiagram(kanji) {
 }
 
 function containsKanjiGlyph(pageHtml, kanji) {
-  const kanjiGlyphToken = `<h1 class=\"character\" data-area-name=\"print\" lang=\"ja\">${kanji}</h1>`;
+  const kanjiGlyphToken = `<h1 class="character" data-area-name="print" lang="ja">${kanji}</h1>`;
   return pageHtml.indexOf(kanjiGlyphToken) !== -1;
 }
 
@@ -48,13 +53,15 @@ function getStringBetweenIndicies(data, startIndex, endIndex) {
 function getStringBetweenStrings(data, startString, endString) {
   const startStringLocation = data.indexOf(startString);
   if (startStringLocation === -1) {
-    return;
+    return undefined;
   }
   const startIndex = startStringLocation + startString.length;
   const endIndex = data.indexOf(endString, startIndex);
   if (endIndex >= 0) {
     return getStringBetweenIndicies(data, startIndex, endIndex);
   }
+
+  return undefined;
 }
 
 function getStringBetweenStringsReverse(data, startString, endString) {
@@ -62,7 +69,7 @@ function getStringBetweenStringsReverse(data, startString, endString) {
   let startStringLocation = data.indexOf(startString);
 
   if (startStringLocation === -1 || endStringLocation === -1) {
-    return;
+    return undefined;
   }
 
   let nextStartSearchIndex = startStringLocation + 1;
@@ -80,8 +87,10 @@ function getStringBetweenStringsReverse(data, startString, endString) {
 function getIntBetweenStrings(pageHtml, startString, endString) {
   const stringBetweenStrings = getStringBetweenStrings(pageHtml, startString, endString);
   if (stringBetweenStrings) {
-    return parseInt(stringBetweenStrings);
+    return parseInt(stringBetweenStrings, 10);
   }
+
+  return undefined;
 }
 
 function parseAnchorsToArray(str) {
@@ -101,7 +110,7 @@ function parseAnchorsToArray(str) {
 function getYomi(pageHtml, yomiLocatorSymbol) {
   const yomiSection = getStringBetweenStrings(pageHtml, `<dt>${yomiLocatorSymbol}:</dt>`, '</dl>');
   if (yomiSection) {
-    const yomiString = getStringBetweenStrings(yomiSection, '<dd class=\"kanji-details__main-readings-list\" lang=\"ja\">', '</dd>');
+    const yomiString = getStringBetweenStrings(yomiSection, '<dd class="kanji-details__main-readings-list" lang="ja">', '</dd>');
     if (yomiString) {
       const readings = parseAnchorsToArray(yomiString);
       return readings;
@@ -118,14 +127,6 @@ function getOnyomi(pageHtml) {
   return getYomi(pageHtml, ONYOMI_LOCATOR_SYMBOL);
 }
 
-function getOnyomiExamples(pageHtml) {
-  return getYomiExamples(pageHtml, ONYOMI_LOCATOR_SYMBOL);
-}
-
-function getKunyomiExamples(pageHtml) {
-  return getYomiExamples(pageHtml, KUNYOMI_LOCATOR_SYMBOL);
-}
-
 function getYomiExamples(pageHtml, yomiLocatorSymbol) {
   const locatorString = `<h2>${yomiLocatorSymbol} reading compounds</h2>`;
   const exampleSectionStartIndex = pageHtml.indexOf(locatorString);
@@ -136,7 +137,7 @@ function getYomiExamples(pageHtml, yomiLocatorSymbol) {
 
   let exampleSection = pageHtml.substring(exampleSectionStartIndex, exampleSectionEndIndex);
   exampleSection = exampleSection.replace(locatorString, '');
-  exampleSection = exampleSection.replace('<ul class=\"no-bullet\">', '');
+  exampleSection = exampleSection.replace('<ul class="no-bullet">', '');
 
   let examplesLines = exampleSection.split('\n');
   examplesLines = examplesLines.map(line => superTrim(line));
@@ -159,43 +160,75 @@ function getYomiExamples(pageHtml, yomiLocatorSymbol) {
       reading: examplesLines[i + readingOffset].replace('【', '').replace('】', ''),
       meaning: htmlEntities.decode(examplesLines[i + meaningOffset]),
     };
-    ++exampleIndex;
+    exampleIndex += 1;
   }
 
   return examples;
 }
 
+function getOnyomiExamples(pageHtml) {
+  return getYomiExamples(pageHtml, ONYOMI_LOCATOR_SYMBOL);
+}
+
+function getKunyomiExamples(pageHtml) {
+  return getYomiExamples(pageHtml, KUNYOMI_LOCATOR_SYMBOL);
+}
+
 function getRadical(pageHtml) {
   const radicalMeaningStartString = '<span class="radical_meaning">';
   const radicalMeaningEndString = '</span>';
-  const radicalMeaning = getStringBetweenStrings(pageHtml, radicalMeaningStartString, radicalMeaningEndString);
+
+  const radicalMeaning = getStringBetweenStrings(
+    pageHtml,
+    radicalMeaningStartString,
+    radicalMeaningEndString,
+  );
 
   if (radicalMeaning) {
     const radicalMeaningStartIndex = pageHtml.indexOf(radicalMeaningStartString);
-    const radicalMeaningEndIndex = pageHtml.indexOf(radicalMeaningEndString, radicalMeaningStartIndex);
+
+    const radicalMeaningEndIndex = pageHtml.indexOf(
+      radicalMeaningEndString,
+      radicalMeaningStartIndex,
+    );
+
     const radicalSymbolStartIndex = radicalMeaningEndIndex + radicalMeaningEndString.length;
     const radicalSymbolEndString = '</span>';
     const radicalSymbolEndIndex = pageHtml.indexOf(radicalSymbolEndString, radicalSymbolStartIndex);
-    let radicalSymbol = getStringBetweenIndicies(pageHtml, radicalSymbolStartIndex, radicalSymbolEndIndex);
-    let radicalForms;
-    if (radicalSymbol.length > 1) {
-      radicalForms = radicalSymbol
+
+    const radicalSymbolsString = getStringBetweenIndicies(
+      pageHtml,
+      radicalSymbolStartIndex,
+      radicalSymbolEndIndex,
+    );
+
+    if (radicalSymbolsString.length > 1) {
+      const radicalForms = radicalSymbolsString
         .substring(1)
         .replace('(', '')
         .replace(')', '')
         .trim()
         .split(', ');
 
-      radicalSymbol = radicalSymbol[0];
+      return { symbol: radicalSymbolsString[0], forms: radicalForms, meaning: radicalMeaning };
     }
-    return { symbol: radicalSymbol, forms: radicalForms, meaning: radicalMeaning };
+
+    return { symbol: radicalSymbolsString, meaning: radicalMeaning };
   }
+
+  return undefined;
 }
 
 function getParts(pageHtml) {
   const partsSectionStartString = '<dt>Parts:</dt>';
   const partsSectionEndString = '</dl>';
-  let partsSection = getStringBetweenStrings(pageHtml, partsSectionStartString, partsSectionEndString);
+
+  let partsSection = getStringBetweenStrings(
+    pageHtml,
+    partsSectionStartString,
+    partsSectionEndString,
+  );
+
   partsSection = partsSection.replace('<dd>', '').replace('</dd>', '');
   return parseAnchorsToArray(partsSection);
 }
@@ -206,6 +239,8 @@ function getSvgUri(pageHtml) {
   if (regexResult) {
     return `http:${regexResult[0]}`;
   }
+
+  return undefined;
 }
 
 function getGifUri(kanji) {
@@ -231,7 +266,7 @@ function parseKanjiPageData(pageHtml, kanji) {
   result.jlptLevel = getStringBetweenStrings(pageHtml, 'JLPT level <strong>', '</strong>');
   result.newspaperFrequencyRank = getStringBetweenStringsReverse(pageHtml, '<strong>', '</strong> of 2500 most used kanji in newspapers');
   result.strokeCount = getIntBetweenStrings(pageHtml, '<strong>', '</strong> strokes');
-  result.meaning = htmlEntities.decode(superTrim(getStringBetweenStrings(pageHtml, '<div class=\"kanji-details__main-meanings\">', '</div>')));
+  result.meaning = htmlEntities.decode(superTrim(getStringBetweenStrings(pageHtml, '<div class="kanji-details__main-meanings">', '</div>')));
   result.kunyomi = getKunyomi(pageHtml);
   result.onyomi = getOnyomi(pageHtml);
   result.onyomiExamples = getOnyomiExamples(pageHtml);
@@ -257,7 +292,7 @@ function uriForExampleSearch(phrase) {
 
 function parseKanjiLine(japaneseSectionDom) {
   const result = [];
-  for (let i = 0; i < japaneseSectionDom.length - 1; ++i) {
+  for (let i = 0; i < japaneseSectionDom.length - 1; i += 1) {
     const kanjiFuriganaPair = japaneseSectionDom[i].children;
     if (kanjiFuriganaPair) {
       result.push(kanjiFuriganaPair[kanjiFuriganaPair.length - 1].children[0].raw);
@@ -276,7 +311,7 @@ function parseKanjiLine(japaneseSectionDom) {
 
 function parseKanaLine(japaneseSectionDom, parsedKanjiLine) {
   const result = [];
-  for (let i = 0; i < japaneseSectionDom.length - 1; ++i) {
+  for (let i = 0; i < japaneseSectionDom.length - 1; i += 1) {
     const kanjiFuriganaPair = japaneseSectionDom[i].children;
     if (kanjiFuriganaPair && kanjiFuriganaPair[0].children) {
       const kana = kanjiFuriganaPair[0].children[0].raw;
@@ -301,47 +336,82 @@ function parseKanaLine(japaneseSectionDom, parsedKanjiLine) {
 }
 
 function getExampleEnglish(exampleSectionHtml) {
-  const englishSectionStartString = '<span class=\"english\">';
+  const englishSectionStartString = '<span class="english">';
   const englishSectionEndString = '</span';
-  const englishSectionStartIndex = exampleSectionHtml.indexOf(englishSectionStartString);
-  const englishSectionEndIndex = exampleSectionHtml.indexOf(englishSectionEndString, englishSectionStartIndex);
-  return exampleSectionHtml.substring(englishSectionStartIndex + englishSectionStartString.length, englishSectionEndIndex);
+
+  const englishSectionStartIndex = exampleSectionHtml.indexOf(englishSectionStartString)
+    + englishSectionStartString.length;
+
+  const englishSectionEndIndex = exampleSectionHtml.indexOf(
+    englishSectionEndString,
+    englishSectionStartIndex,
+  );
+
+  return exampleSectionHtml.substring(englishSectionStartIndex, englishSectionEndIndex);
 }
 
-function addKanjiAndKana(exampleSectionHtml, intermediaryResult) {
-  const japaneseSectionStartString = '<ul class=\"japanese_sentence japanese japanese_gothic clearfix\" lang=\"ja\">';
+function getKanjiAndKana(exampleSectionHtml) {
+  const japaneseSectionStartString = '<ul class="japanese_sentence japanese japanese_gothic clearfix" lang="ja">';
   const japaneseSectionEndString = '</ul>';
-  const japaneseSectionStartIndex = exampleSectionHtml.indexOf(japaneseSectionStartString) + japaneseSectionStartString.length;
+
+  const japaneseSectionStartIndex = exampleSectionHtml.indexOf(japaneseSectionStartString)
+    + japaneseSectionStartString.length;
+
   const japaneseSectionEndIndex = exampleSectionHtml.indexOf(japaneseSectionEndString);
-  const japaneseSectionText = exampleSectionHtml.substring(japaneseSectionStartIndex, japaneseSectionEndIndex);
-  const parseHandler = new htmlparser.DefaultHandler(((error, dom) => {}));
+
+  const japaneseSectionText = exampleSectionHtml.substring(
+    japaneseSectionStartIndex,
+    japaneseSectionEndIndex,
+  );
+
+  const parseHandler = new htmlparser.DefaultHandler((() => {}));
   const parser = new htmlparser.Parser(parseHandler);
   parser.parseComplete(japaneseSectionText);
   const japaneseDom = parseHandler.dom;
 
   const parsedKanjiLine = parseKanjiLine(japaneseDom);
-  intermediaryResult.kanji = parsedKanjiLine.join('');
-  intermediaryResult.kana = parseKanaLine(japaneseDom, parsedKanjiLine).join('');
-  return intermediaryResult;
+
+  const kanji = parsedKanjiLine.join('');
+  const kana = parseKanaLine(japaneseDom, parsedKanjiLine).join('');
+
+  return { kanji, kana };
 }
 
 function parseExampleSection(exampleSectionHtml) {
-  const result = {};
-  result.english = getExampleEnglish(exampleSectionHtml);
-  return addKanjiAndKana(exampleSectionHtml, result);
+  const english = getExampleEnglish(exampleSectionHtml);
+  const { kanji, kana } = getKanjiAndKana(exampleSectionHtml);
+
+  return {
+    english,
+    kanji,
+    kana,
+  };
 }
 
 function parseExamplePageData(pageHtml, phrase) {
   const results = [];
-  const exampleSectionStartString = '<ul class=\"japanese_sentence japanese japanese_gothic clearfix\" lang=\"ja\">';
-  const exampleSectionEndString = '<span class=\"inline_copyright\">';
+  const exampleSectionStartString = '<ul class="japanese_sentence japanese japanese_gothic clearfix" lang="ja">';
+  const exampleSectionEndString = '<span class="inline_copyright">';
   let exampleSectionStartIndex = 0;
   while (true) {
-    // +1 to move to the next instance of sectionStartString. Otherwise we'd infinite loop finding the same one over and over.
-    exampleSectionStartIndex = pageHtml.indexOf(exampleSectionStartString, exampleSectionStartIndex) + 1;
-    const exampleSectionEndIndex = pageHtml.indexOf(exampleSectionEndString, exampleSectionStartIndex);
+    // +1 to move to the next instance of sectionStartString.
+    // Otherwise we'd infinite loop finding the same one over and over.
+    exampleSectionStartIndex = pageHtml.indexOf(
+      exampleSectionStartString,
+      exampleSectionStartIndex,
+    ) + 1;
+
+    const exampleSectionEndIndex = pageHtml.indexOf(
+      exampleSectionEndString,
+      exampleSectionStartIndex,
+    );
+
     if (exampleSectionStartIndex !== 0 && exampleSectionEndIndex !== -1) {
-      const exampleSection = pageHtml.substring(exampleSectionStartIndex, exampleSectionEndIndex + exampleSectionEndString.length);
+      const exampleSection = pageHtml.substring(
+        exampleSectionStartIndex,
+        exampleSectionEndIndex + exampleSectionEndString.length,
+      );
+
       results.push(parseExampleSection(exampleSection));
     } else {
       break;
@@ -359,26 +429,36 @@ function parseExamplePageData(pageHtml, phrase) {
 
 /* EXAMPLE SEARCH FUNCTIONS END */
 
+/*
+ * This is a class because Jisho's admin indicated he would like to add
+ * API tokens and rate limits someday. Since this is a class, clients will be
+ * able to instantiate it with their API token, and won't need to make any
+ * other changes, when/if API tokens are introduced.
+ */
 class API {
+  // See comment above class definition for justification.
+  // eslint-disable-next-line class-methods-use-this
   searchForPhrase(phrase, timeout) {
-    timeout = timeout || 10000;
+    const timeoutCoerced = timeout || 10000;
     return request({
       uri: JISHO_API,
       qs: {
         keyword: phrase,
       },
       json: true,
-      timeout,
+      timeout: timeoutCoerced,
     });
   }
 
+  // See comment above class definition for justification.
+  // eslint-disable-next-line class-methods-use-this
   searchForKanji(kanji, timeout) {
-    timeout = timeout || 10000;
+    const timeoutCoerced = timeout || 10000;
     const uri = uriForKanjiSearch(kanji);
     return request({
       uri,
       json: false,
-      timeout,
+      timeout: timeoutCoerced,
     }).then(pageHtml => parseKanjiPageData(pageHtml, kanji)).catch((err) => {
       // Seems to be a bug in Jisho that if you enter a URI encoded URI into the search,
       // it gives you a 404 instead of a regular search page with empty results.
@@ -390,13 +470,15 @@ class API {
     });
   }
 
+  // See comment above class definition for justification.
+  // eslint-disable-next-line class-methods-use-this
   searchForExamples(phrase, timeout) {
-    timeout = timeout || 10000;
+    const timeoutCoerced = timeout || 10000;
     const uri = uriForExampleSearch(phrase);
     return request({
       uri,
       json: false,
-      timeout,
+      timeout: timeoutCoerced,
     }).then(pageHtml => parseExamplePageData(pageHtml, phrase));
   }
 }
