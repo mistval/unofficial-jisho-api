@@ -1,6 +1,6 @@
 {
   "name": "unofficial-jisho-api",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Encapsulates the official Jisho.org API and also provides kanji, example, and stroke diagram search.",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "order",
     "diagrams"
   ],
-  "author": "Randall Schmidt",
+  "author": "mistval",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mistval/unofficial-jisho-api/issues"
