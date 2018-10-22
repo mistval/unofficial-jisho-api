@@ -1,7 +1,7 @@
 # unofficial-jisho-api
 This module encapsulates the official Jisho.org API and also provides kanji and example search features that scrape Jisho.org.
 
-## Usage
+## Basic usage
 
 ### Word/phrase search (provided by official Jisho API)
 
@@ -16,7 +16,6 @@ jisho.searchForPhrase('日').then(result => {
   ...
   ...
 });
-
 ```
 
 ### Kanji search
@@ -102,9 +101,36 @@ It is very hot today.
 日本には美しい都市が多い。例えば京都、奈良だ
 にほんにはうつくしいとしがおおい。たとえばきょうと、奈良だ
 Japan is full of beautiful cities. Kyoto and Nara, for instance.
-
 ```
 
 Permission to scrape granted by Jisho's admin Kimtaro: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
 
 For bugs or requested additional data, feel free to open an issue on the Github repo.
+
+## Request options
+
+Optionally, you can provide options, such as timeout and proxy, to use for requests. The options are passed directly to the [request module](https://www.npmjs.com/package/request). See its [documentation](https://www.npmjs.com/package/request) for a full list of options.
+
+If you provide an options object to the jishoApi constructor, those options will be used for all requests. Alternatively, you can provide the options as the second argument to the searchForPhrase, searchForKanji, or searchForExamples functions, and the options will only be used for that specific request. If you provide options in both manners, the options will be merged, with the options passed to the function taking precedence if the two are in conflict.
+
+### Use a proxy for all requests
+
+```js
+const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi({ proxy: 'http://99.99.99.99:9999' });
+
+// Your code
+```
+
+### Use a proxy and custom timeout for a single request
+
+```js
+const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+jisho.searchForPhrase('日', { proxy: 'http://99.99.99.99:9999', timeout: 15000 }).then(result => {
+  ...
+  ...
+  ...
+});
+```

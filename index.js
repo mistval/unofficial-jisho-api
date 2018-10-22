@@ -436,29 +436,33 @@ function parseExamplePageData(pageHtml, phrase) {
  * other changes, when/if API tokens are introduced.
  */
 class API {
+  constructor(requestOptions) {
+    this.requestOptions = requestOptions;
+  }
+
   // See comment above class definition for justification.
   // eslint-disable-next-line class-methods-use-this
-  searchForPhrase(phrase, timeout) {
-    const timeoutCoerced = timeout || 10000;
+  searchForPhrase(phrase, requestOptions) {
     return request({
       uri: JISHO_API,
       qs: {
         keyword: phrase,
       },
       json: true,
-      timeout: timeoutCoerced,
+      ...this.requestOptions,
+      ...requestOptions,
     });
   }
 
   // See comment above class definition for justification.
   // eslint-disable-next-line class-methods-use-this
-  searchForKanji(kanji, timeout) {
-    const timeoutCoerced = timeout || 10000;
+  searchForKanji(kanji, requestOptions) {
     const uri = uriForKanjiSearch(kanji);
     return request({
       uri,
       json: false,
-      timeout: timeoutCoerced,
+      ...this.requestOptions,
+      ...requestOptions,
     }).then(pageHtml => parseKanjiPageData(pageHtml, kanji)).catch((err) => {
       // Seems to be a bug in Jisho that if you enter a URI encoded URI into the search,
       // it gives you a 404 instead of a regular search page with empty results.
@@ -472,13 +476,13 @@ class API {
 
   // See comment above class definition for justification.
   // eslint-disable-next-line class-methods-use-this
-  searchForExamples(phrase, timeout) {
-    const timeoutCoerced = timeout || 10000;
+  searchForExamples(phrase, requestOptions) {
     const uri = uriForExampleSearch(phrase);
     return request({
       uri,
       json: false,
-      timeout: timeoutCoerced,
+      ...this.requestOptions,
+      ...requestOptions,
     }).then(pageHtml => parseExamplePageData(pageHtml, phrase));
   }
 }
