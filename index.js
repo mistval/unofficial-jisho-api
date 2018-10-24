@@ -40,6 +40,10 @@ function getUriForStrokeOrderDiagram(kanji) {
   return `${STROKE_ORDER_DIAGRAM_BASE_URI}${kanji.charCodeAt(0).toString()}_frames.png`;
 }
 
+function uriForPhraseSearch(phrase) {
+  return `${JISHO_API}?keyword=${phrase}`;
+}
+
 function containsKanjiGlyph(pageHtml, kanji) {
   const kanjiGlyphToken = `<h1 class="character" data-area-name="print" lang="ja">${kanji}</h1>`;
   return pageHtml.indexOf(kanjiGlyphToken) !== -1;
@@ -486,5 +490,11 @@ class API {
     }).then(pageHtml => parseExamplePageData(pageHtml, phrase));
   }
 }
+
+API.prototype.getUriForKanjiSearch = uriForKanjiSearch;
+API.prototype.getUriForExampleSearch = uriForExampleSearch;
+API.prototype.getUriForPhraseSearch = uriForPhraseSearch;
+API.prototype.parseExamplePageHtml = parseExamplePageData;
+API.prototype.parseKanjiPageHtml = parseKanjiPageData;
 
 module.exports = API;

@@ -103,10 +103,6 @@ It is very hot today.
 Japan is full of beautiful cities. Kyoto and Nara, for instance.
 ```
 
-Permission to scrape granted by Jisho's admin Kimtaro: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
-
-For bugs or requested additional data, feel free to open an issue on the Github repo.
-
 ## Request options
 
 Optionally, you can provide options, such as timeout and proxy, to use for requests. The options are passed directly to the [request module](https://www.npmjs.com/package/request). See its [documentation](https://www.npmjs.com/package/request) for a full list of options.
@@ -134,3 +130,49 @@ jisho.searchForPhrase('日', { proxy: 'http://99.99.99.99:9999', timeout: 15000 
   ...
 });
 ```
+
+## Parsing HTML strings
+
+If the internal requests are having trouble reaching Jisho.org (due to CORS blocking or something), you can get the HTML bodies from Jisho yourself and pass them into this module's parsing functions as demonstrated in the examples below.
+
+### Parse kanji page HTML
+
+```js
+const request = require('request');
+const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+const SEARCH_KANJI = '車';
+const SEARCH_URI = jisho.getUriForKanjiSearch(SEARCH_KANJI);
+
+request(SEARCH_URI, (error, response, body) => {
+  const json = jisho.parseKanjiPageHtml(body, SEARCH_KANJI);
+  console.log(`JLPT level: ${json.jlptLevel}`);
+  console.log(`Stroke count: ${json.strokeCount}`);
+  console.log(`Meaning: ${json.meaning}`);
+});
+```
+
+### Parse example page HTML
+
+```js
+const request = require('request');
+const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+const SEARCH_EXAMPLE = '保護者';
+const SEARCH_URI = jisho.getUriForExampleSearch(SEARCH_EXAMPLE);
+
+request(SEARCH_URI, (error, response, body) => {
+  const json = jisho.parseExamplePageHtml(body, SEARCH_EXAMPLE);
+  console.log(`English: ${json.results[0].english}`);
+  console.log(`Kanji ${json.results[0].kanji}`);
+  console.log(`Kana: ${json.results[0].kana}`);
+});
+```
+
+## About
+
+Permission to scrape granted by Jisho's admin Kimtaro: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
+
+For bugs or requested additional data, feel free to open an issue on the Github repo.
