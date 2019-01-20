@@ -3,16 +3,12 @@
  * and also provides kanji and example search features that scrape Jisho.org.
  * Permission to scrape granted by Jisho's admin Kimtaro:
  *     http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
- *
- * Use of regular expressions was mostly avoided in early commits.
- * I was curious to see how far I could get without using them.
- * Later commits do use regular expressions because I got tired of that experiment,
- * and was afraid it makes me look bad ;)
  */
 
 const request = require('request-promise');
+const cheerio = require('cheerio');
+const escapeStringRegexp = require('escape-string-regexp');
 const { XmlEntities } = require('html-entities');
-const htmlparser = require('htmlparser');
 
 const JISHO_API = 'http://jisho.org/api/v1/search/words';
 const SCRAPE_BASE_URI = 'http://jisho.org/search/';
@@ -25,11 +21,8 @@ const htmlEntities = new XmlEntities();
 const ONYOMI_LOCATOR_SYMBOL = 'On';
 const KUNYOMI_LOCATOR_SYMBOL = 'Kun';
 
-function superTrim(str) {
-  if (!str) {
-    return undefined;
-  }
-  return str.replace(/(?:\r\n|\r|\n)/g, '').trim();
+function removeNewlines(str) {
+  return str.replace(/(?:\r|\n)/g, '').trim();
 }
 
 function uriForKanjiSearch(kanji) {
@@ -51,41 +44,14 @@ function containsKanjiGlyph(pageHtml, kanji) {
 
 function getStringBetweenIndicies(data, startIndex, endIndex) {
   const result = data.substring(startIndex, endIndex);
-  return superTrim(result);
+  return removeNewlines(result).trim();
 }
 
 function getStringBetweenStrings(data, startString, endString) {
-  const startStringLocation = data.indexOf(startString);
-  if (startStringLocation === -1) {
-    return undefined;
-  }
-  const startIndex = startStringLocation + startString.length;
-  const endIndex = data.indexOf(endString, startIndex);
-  if (endIndex >= 0) {
-    return getStringBetweenIndicies(data, startIndex, endIndex);
-  }
+  const regex = new RegExp(`${escapeStringRegexp(startString)}(.*?)${escapeStringRegexp(endString)}`, 's');
+  const match = data.match(regex);
 
-  return undefined;
-}
-
-function getStringBetweenStringsReverse(data, startString, endString) {
-  const endStringLocation = data.indexOf(endString);
-  let startStringLocation = data.indexOf(startString);
-
-  if (startStringLocation === -1 || endStringLocation === -1) {
-    return undefined;
-  }
-
-  let nextStartSearchIndex = startStringLocation + 1;
-  let previousStartStringLocation = startStringLocation;
-  while (startStringLocation < endStringLocation && nextStartSearchIndex !== 0) {
-    previousStartStringLocation = startStringLocation;
-    startStringLocation = data.indexOf(startString, nextStartSearchIndex);
-    nextStartSearchIndex = startStringLocation + 1;
-  }
-  startStringLocation = previousStartStringLocation;
-
-  return data.substring(startStringLocation + startString.length, endStringLocation);
+  return match ? match[1] : undefined;
 }
 
 function getIntBetweenStrings(pageHtml, startString, endString) {
@@ -97,30 +63,25 @@ function getIntBetweenStrings(pageHtml, startString, endString) {
   return undefined;
 }
 
-function parseAnchorsToArray(str) {
-  const closeAnchor = '</a>';
-  let rest = str;
+function getAllGlobalGroupMatches(str, regex) {
+  let regexResult = regex.exec(str);
   const results = [];
-
-  while (rest.indexOf('<') !== -1) {
-    const result = getStringBetweenStrings(rest, '>', '<');
-    results.push(result);
-    rest = rest.substring(rest.indexOf(closeAnchor) + closeAnchor.length);
+  while (regexResult) {
+    results.push(regexResult[1]);
+    regexResult = regex.exec(str);
   }
 
   return results;
 }
 
+function parseAnchorsToArray(str) {
+  const regex = /<a href=".*?">(.*?)<\/a>/g;
+  return getAllGlobalGroupMatches(str, regex);
+}
+
 function getYomi(pageHtml, yomiLocatorSymbol) {
   const yomiSection = getStringBetweenStrings(pageHtml, `<dt>${yomiLocatorSymbol}:</dt>`, '</dl>');
-  if (yomiSection) {
-    const yomiString = getStringBetweenStrings(yomiSection, '<dd class="kanji-details__main-readings-list" lang="ja">', '</dd>');
-    if (yomiString) {
-      const readings = parseAnchorsToArray(yomiString);
-      return readings;
-    }
-  }
-  return [];
+  return parseAnchorsToArray(yomiSection || '');
 }
 
 function getKunyomi(pageHtml) {
@@ -133,39 +94,22 @@ function getOnyomi(pageHtml) {
 
 function getYomiExamples(pageHtml, yomiLocatorSymbol) {
   const locatorString = `<h2>${yomiLocatorSymbol} reading compounds</h2>`;
-  const exampleSectionStartIndex = pageHtml.indexOf(locatorString);
-  const exampleSectionEndIndex = pageHtml.indexOf('</ul>', exampleSectionStartIndex);
-  if (exampleSectionStartIndex === -1 || exampleSectionEndIndex === -1) {
+  const exampleSection = getStringBetweenStrings(pageHtml, locatorString, '</ul>');
+  if (!exampleSection) {
     return [];
   }
 
-  let exampleSection = pageHtml.substring(exampleSectionStartIndex, exampleSectionEndIndex);
-  exampleSection = exampleSection.replace(locatorString, '');
-  exampleSection = exampleSection.replace('<ul class="no-bullet">', '');
+  const regex = /<li>(.*?)<\/li>/gs;
+  const regexResults = getAllGlobalGroupMatches(exampleSection, regex).map(s => s.trim());
 
-  let examplesLines = exampleSection.split('\n');
-  examplesLines = examplesLines.map(line => superTrim(line));
-  while (examplesLines[0] !== '<li>') {
-    examplesLines.shift();
-  }
-  while (examplesLines[examplesLines.length - 1] !== '</li>') {
-    examplesLines.pop();
-  }
-
-  const examples = [];
-  let exampleIndex = 0;
-  const lengthOfExampleInLines = 5;
-  const exampleOffset = 1;
-  const readingOffset = 2;
-  const meaningOffset = 3;
-  for (let i = 0; i < examplesLines.length; i += lengthOfExampleInLines) {
-    examples[exampleIndex] = {
-      example: examplesLines[i + exampleOffset],
-      reading: examplesLines[i + readingOffset].replace('【', '').replace('】', ''),
-      meaning: htmlEntities.decode(examplesLines[i + meaningOffset]),
+  const examples = regexResults.map((regexResult) => {
+    const examplesLines = regexResult.split('\n').map(s => s.trim());
+    return {
+      examples: examplesLines[0],
+      reading: examplesLines[1].replace('【', '').replace('】', ''),
+      meaning: htmlEntities.decode(examplesLines[2]),
     };
-    exampleIndex += 1;
-  }
+  });
 
   return examples;
 }
@@ -186,7 +130,7 @@ function getRadical(pageHtml) {
     pageHtml,
     radicalMeaningStartString,
     radicalMeaningEndString,
-  );
+  ).trim();
 
   if (radicalMeaning) {
     const radicalMeaningStartIndex = pageHtml.indexOf(radicalMeaningStartString);
@@ -227,24 +171,19 @@ function getParts(pageHtml) {
   const partsSectionStartString = '<dt>Parts:</dt>';
   const partsSectionEndString = '</dl>';
 
-  let partsSection = getStringBetweenStrings(
+  const partsSection = getStringBetweenStrings(
     pageHtml,
     partsSectionStartString,
     partsSectionEndString,
   );
 
-  partsSection = partsSection.replace('<dd>', '').replace('</dd>', '');
   return parseAnchorsToArray(partsSection);
 }
 
 function getSvgUri(pageHtml) {
   const svgRegex = /\/\/.*?.cloudfront.net\/.*?.svg/;
   const regexResult = svgRegex.exec(pageHtml);
-  if (regexResult) {
-    return `http:${regexResult[0]}`;
-  }
-
-  return undefined;
+  return regexResult ? `http:${regexResult[0]}` : undefined;
 }
 
 function getGifUri(kanji) {
@@ -258,6 +197,11 @@ function getGifUri(kanji) {
   return animationUri;
 }
 
+function getNewspaperFrequencyRank(pageHtml) {
+  const frequencySection = getStringBetweenStrings(pageHtml, '<div class="frequency">', '</div>');
+  return frequencySection ? getStringBetweenStrings(frequencySection, '<strong>', '</strong>') : undefined;
+}
+
 function parseKanjiPageData(pageHtml, kanji) {
   const result = {};
   result.query = kanji;
@@ -268,9 +212,9 @@ function parseKanjiPageData(pageHtml, kanji) {
 
   result.taughtIn = getStringBetweenStrings(pageHtml, 'taught in <strong>', '</strong>');
   result.jlptLevel = getStringBetweenStrings(pageHtml, 'JLPT level <strong>', '</strong>');
-  result.newspaperFrequencyRank = getStringBetweenStringsReverse(pageHtml, '<strong>', '</strong> of 2500 most used kanji in newspapers');
+  result.newspaperFrequencyRank = getNewspaperFrequencyRank(pageHtml);
   result.strokeCount = getIntBetweenStrings(pageHtml, '<strong>', '</strong> strokes');
-  result.meaning = htmlEntities.decode(superTrim(getStringBetweenStrings(pageHtml, '<div class="kanji-details__main-meanings">', '</div>')));
+  result.meaning = htmlEntities.decode(removeNewlines(getStringBetweenStrings(pageHtml, '<div class="kanji-details__main-meanings">', '</div>')).trim());
   result.kunyomi = getKunyomi(pageHtml);
   result.onyomi = getOnyomi(pageHtml);
   result.onyomiExamples = getOnyomiExamples(pageHtml);
@@ -294,96 +238,47 @@ function uriForExampleSearch(phrase) {
   return `${SCRAPE_BASE_URI}${encodeURIComponent(phrase)}%23sentences`;
 }
 
-function parseKanjiLine(japaneseSectionDom) {
-  const result = [];
-  for (let i = 0; i < japaneseSectionDom.length - 1; i += 1) {
-    const kanjiFuriganaPair = japaneseSectionDom[i].children;
-    if (kanjiFuriganaPair) {
-      result.push(kanjiFuriganaPair[kanjiFuriganaPair.length - 1].children[0].raw);
+function getKanjiAndKana(div) {
+  const ul = div.find('ul').eq(0);
+  const contents = ul.contents();
+
+  let kanji = '';
+  let kana = '';
+  for (let i = 0; i < contents.length; i += 1) {
+    const content = contents.eq(i);
+    if (content[0].name === 'li') {
+      const li = content;
+      const furigana = li.find('.furigana').text();
+      const unlifted = li.find('.unlinked').text();
+
+      if (furigana) {
+        kanji += unlifted;
+        kana += furigana;
+
+        for (let j = 0; j < unlifted.length; j += 1) {
+          if (!unlifted[j].match(kanjiRegex)) {
+            kana += unlifted[j];
+          }
+        }
+      } else {
+        kanji += unlifted;
+        kana += unlifted;
+      }
     } else {
-      const kanji = japaneseSectionDom[i].raw.replace(/\\n/g, '').trim();
-      if (!kanji) {
-        result.push(undefined);
-      } else {
-        result.push(kanji);
+      const text = content.text().trim();
+      if (text) {
+        kanji += text;
+        kana += text;
       }
     }
   }
-
-  return result;
-}
-
-function parseKanaLine(japaneseSectionDom, parsedKanjiLine) {
-  const result = [];
-  for (let i = 0; i < japaneseSectionDom.length - 1; i += 1) {
-    const kanjiFuriganaPair = japaneseSectionDom[i].children;
-    if (kanjiFuriganaPair && kanjiFuriganaPair[0].children) {
-      const kana = kanjiFuriganaPair[0].children[0].raw;
-      const kanji = parsedKanjiLine[i];
-      const kanjiRegexMatches = kanji.match(kanjiRegex);
-      if (kanji.startsWith(kana)) {
-        result.push(kanji);
-      } else if (kanjiRegexMatches) {
-        const lastMatch = kanjiRegexMatches[kanjiRegexMatches.length - 1];
-        const lastMatchIndex = kanji.lastIndexOf(lastMatch);
-        const nonFuriPart = kanji.substring(lastMatchIndex + 1);
-        result.push(kana + nonFuriPart);
-      } else {
-        result.push(kanji);
-      }
-    } else if (parsedKanjiLine[i]) {
-      result.push(parsedKanjiLine[i]);
-    }
-  }
-
-  return result;
-}
-
-function getExampleEnglish(exampleSectionHtml) {
-  const englishSectionStartString = '<span class="english">';
-  const englishSectionEndString = '</span';
-
-  const englishSectionStartIndex = exampleSectionHtml.indexOf(englishSectionStartString)
-    + englishSectionStartString.length;
-
-  const englishSectionEndIndex = exampleSectionHtml.indexOf(
-    englishSectionEndString,
-    englishSectionStartIndex,
-  );
-
-  return exampleSectionHtml.substring(englishSectionStartIndex, englishSectionEndIndex);
-}
-
-function getKanjiAndKana(exampleSectionHtml) {
-  const japaneseSectionStartString = '<ul class="japanese_sentence japanese japanese_gothic clearfix" lang="ja">';
-  const japaneseSectionEndString = '</ul>';
-
-  const japaneseSectionStartIndex = exampleSectionHtml.indexOf(japaneseSectionStartString)
-    + japaneseSectionStartString.length;
-
-  const japaneseSectionEndIndex = exampleSectionHtml.indexOf(japaneseSectionEndString);
-
-  const japaneseSectionText = exampleSectionHtml.substring(
-    japaneseSectionStartIndex,
-    japaneseSectionEndIndex,
-  );
-
-  const parseHandler = new htmlparser.DefaultHandler((() => {}));
-  const parser = new htmlparser.Parser(parseHandler);
-  parser.parseComplete(japaneseSectionText);
-  const japaneseDom = parseHandler.dom;
-
-  const parsedKanjiLine = parseKanjiLine(japaneseDom);
-
-  const kanji = parsedKanjiLine.join('');
-  const kana = parseKanaLine(japaneseDom, parsedKanjiLine).join('');
 
   return { kanji, kana };
 }
 
-function parseExampleSection(exampleSectionHtml) {
-  const english = getExampleEnglish(exampleSectionHtml);
-  const { kanji, kana } = getKanjiAndKana(exampleSectionHtml);
+function parseExampleDiv(div) {
+  const english = div.find('.english').text();
+  const { kanji, kana } = getKanjiAndKana(div);
 
   return {
     english,
@@ -393,33 +288,13 @@ function parseExampleSection(exampleSectionHtml) {
 }
 
 function parseExamplePageData(pageHtml, phrase) {
+  const $ = cheerio.load(pageHtml);
+  const divs = $('.sentence_content');
+
   const results = [];
-  const exampleSectionStartString = '<ul class="japanese_sentence japanese japanese_gothic clearfix" lang="ja">';
-  const exampleSectionEndString = '<span class="inline_copyright">';
-  let exampleSectionStartIndex = 0;
-  while (true) {
-    // +1 to move to the next instance of sectionStartString.
-    // Otherwise we'd infinite loop finding the same one over and over.
-    exampleSectionStartIndex = pageHtml.indexOf(
-      exampleSectionStartString,
-      exampleSectionStartIndex,
-    ) + 1;
-
-    const exampleSectionEndIndex = pageHtml.indexOf(
-      exampleSectionEndString,
-      exampleSectionStartIndex,
-    );
-
-    if (exampleSectionStartIndex !== 0 && exampleSectionEndIndex !== -1) {
-      const exampleSection = pageHtml.substring(
-        exampleSectionStartIndex,
-        exampleSectionEndIndex + exampleSectionEndString.length,
-      );
-
-      results.push(parseExampleSection(exampleSection));
-    } else {
-      break;
-    }
+  for (let i = 0; i < divs.length; i += 1) {
+    const div = divs.eq(i);
+    results.push(parseExampleDiv(div));
   }
 
   return {
