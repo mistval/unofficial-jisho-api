@@ -1,3 +1,5 @@
+![alt text](https://raw.githubusercontent.com/mistval/unofficial-jisho-api/master/logo.png "Logo")
+
 # unofficial-jisho-api
 
 This module encapsulates the official Jisho.org API and also provides kanji and example search features that scrape Jisho.org.
