@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Home - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="API.html">API</a><ul class='methods'><li data-type='method'><a href="API.html#searchForExamples">searchForExamples</a></li><li data-type='method'><a href="API.html#searchForKanji">searchForKanji</a></li><li data-type='method'><a href="API.html#searchForPhrase">searchForPhrase</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+    <section class="readme">
+        <article><h1>unofficial-jisho-api</h1><p>This module encapsulates the official Jisho.org API and also provides kanji and example search features that scrape Jisho.org.</p>
+<h2>Basic usage</h2><h3>Word/phrase search (provided by official Jisho API)</h3><p>This returns the same results as the official Jisho API. See the discussion of that here: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api</p>
+<pre class="prettyprint source lang-js"><code>const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+jisho.searchForPhrase('日').then(result => {
+  ...
+  ...
+  ...
+});</code></pre><h3>Kanji search</h3><pre class="prettyprint source lang-js"><code>const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+jisho.searchForKanji('語').then(result => {
+  console.log('Found: ' + result.found);
+  console.log('Taught in: ' + result.taughtIn);
+  console.log('JLPT level: ' + result.jlptLevel);
+  console.log('Newspaper frequency rank: ' + result.newspaperFrequencyRank);
+  console.log('Stroke count: ' + result.strokeCount);
+  console.log('Meaning: ' + result.meaning);
+  console.log('Kunyomi: ' + JSON.stringify(result.kunyomi));
+  console.log('Kunyomi example: ' + JSON.stringify(result.kunyomiExamples[0]));
+  console.log('Onyomi: ' + JSON.stringify(result.onyomi));
+  console.log('Onyomi example: ' + JSON.stringify(result.onyomiExamples[0]));
+  console.log('Radical: ' + JSON.stringify(result.radical));
+  console.log('Parts: ' + JSON.stringify(result.parts));
+  console.log('Stroke order diagram: ' + result.strokeOrderDiagramUri);
+  console.log('Stroke order SVG: ' + result.strokeOrderSvgUri);
+  console.log('Stroke order GIF: ' + result.strokeOrderGifUri);
+  console.log('Jisho Uri: ' + result.uri);
+});</code></pre><p>This outputs the following:</p>
+<pre class="prettyprint source"><code>Found: true
+Taught in: grade 2
+JLPT level: N5
+Newspaper frequency rank: 301
+Stroke count: 14
+Meaning: word, speech, language
+Kunyomi: [&quot;かた.る&quot;,&quot;かた.らう&quot;]
+Kunyomi example: {&quot;example&quot;:&quot;語る&quot;,&quot;reading&quot;:&quot;かたる&quot;,&quot;meaning&quot;:&quot;to talk about, to speak of, to tell, to narrate, to recite, to chant, to indicate, to show&quot;}
+Onyomi: [&quot;ゴ&quot;]
+Onyomi example: {&quot;example&quot;:&quot;語&quot;,&quot;reading&quot;:&quot;ゴ&quot;,&quot;meaning&quot;:&quot;language, word&quot;}
+Radical: {&quot;symbol&quot;:&quot;言&quot;,&quot;forms&quot;:[&quot;訁&quot;],&quot;meaning&quot;:&quot;speech&quot;}
+Parts: [&quot;口&quot;,&quot;五&quot;,&quot;言&quot;]
+Stroke order diagram: http://classic.jisho.org/static/images/stroke_diagrams/35486_frames.png
+Stroke order SVG: http://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/08a9e.svg
+Stroke order GIF: https://raw.githubusercontent.com/mistval/kotoba/master/resources/images/kanjianimations/08a9e_anim.gif
+Jisho Uri: http://jisho.org/search/%E8%AA%9E%23kanji</code></pre><h3>Example search</h3><pre class="prettyprint source lang-js"><code>const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+jisho.searchForExamples('日').then(result => {
+  console.log('Jisho Uri: ' + result.uri);
+  console.log();
+
+  for (let i = 0; i &lt; 3; ++i) {
+    let example = result.results[i];
+    console.log(example.kanji);
+    console.log(example.kana);
+    console.log(example.english);
+    console.log();
+  }
+});</code></pre><p>This outputs the following:</p>
+<pre class="prettyprint source"><code>Jisho Uri: http://jisho.org/search/%E6%97%A5%23sentences
+
+日本人ならそんなことはけっしてしないでしょう
+にほんじんならそんなことはけっしてしないでしょう
+A Japanese person would never do such a thing.
+
+今日はとても暑い
+きょうはとてもあつい
+It is very hot today.
+
+日本には美しい都市が多い。例えば京都、奈良だ
+にほんにはうつくしいとしがおおい。たとえばきょうと、奈良だ
+Japan is full of beautiful cities. Kyoto and Nara, for instance.</code></pre><h2>Request options</h2><p>Optionally, you can provide options, such as timeout and proxy, to use for requests. The options are passed directly to the <a href="https://www.npmjs.com/package/request">request module</a>. See its <a href="https://www.npmjs.com/package/request">documentation</a> for a full list of options.</p>
+<p>If you provide an options object to the jishoApi constructor, those options will be used for all requests. Alternatively, you can provide the options as the second argument to the searchForPhrase, searchForKanji, or searchForExamples functions, and the options will only be used for that specific request. If you provide options in both manners, the options will be merged, with the options passed to the function taking precedence if the two are in conflict.</p>
+<h3>Use a proxy for all requests</h3><pre class="prettyprint source lang-js"><code>const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi({ proxy: 'http://99.99.99.99:9999' });
+
+// Your code</code></pre><h3>Use a proxy and custom timeout for a single request</h3><pre class="prettyprint source lang-js"><code>const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+jisho.searchForPhrase('日', { proxy: 'http://99.99.99.99:9999', timeout: 15000 }).then(result => {
+  ...
+  ...
+  ...
+});</code></pre><h2>Parsing HTML strings</h2><p>If the internal requests are having trouble reaching Jisho.org (due to CORS blocking or something), you can get the HTML bodies from Jisho yourself and pass them into this module's parsing functions as demonstrated in the examples below.</p>
+<h3>Parse kanji page HTML</h3><pre class="prettyprint source lang-js"><code>const request = require('request');
+const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+const SEARCH_KANJI = '車';
+const SEARCH_URI = jisho.getUriForKanjiSearch(SEARCH_KANJI);
+
+request(SEARCH_URI, (error, response, body) => {
+  const json = jisho.parseKanjiPageHtml(body, SEARCH_KANJI);
+  console.log(`JLPT level: ${json.jlptLevel}`);
+  console.log(`Stroke count: ${json.strokeCount}`);
+  console.log(`Meaning: ${json.meaning}`);
+});</code></pre><h3>Parse example page HTML</h3><pre class="prettyprint source lang-js"><code>const request = require('request');
+const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+const SEARCH_EXAMPLE = '保護者';
+const SEARCH_URI = jisho.getUriForExampleSearch(SEARCH_EXAMPLE);
+
+request(SEARCH_URI, (error, response, body) => {
+  const json = jisho.parseExamplePageHtml(body, SEARCH_EXAMPLE);
+  console.log(`English: ${json.results[0].english}`);
+  console.log(`Kanji ${json.results[0].kanji}`);
+  console.log(`Kana: ${json.results[0].kana}`);
+});</code></pre><h2>About</h2><p>Permission to scrape granted by Jisho's admin Kimtaro: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api</p>
+<p>For bugs or requested additional data, feel free to open an issue on the Github repo.</p></article>
+    </section>
+
+
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Feb 08 2019 15:02:42 GMT+0700 (GMT+07:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+
+</body>
+</html>
