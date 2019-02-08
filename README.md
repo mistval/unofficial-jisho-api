@@ -1,7 +1,10 @@
 # unofficial-jisho-api
+
 This module encapsulates the official Jisho.org API and also provides kanji and example search features that scrape Jisho.org.
 
 ## Basic usage
+
+There's somewhat more detailed documentation [here](https://mistval.github.io/monochrome/), but the below examples should be sufficient.
 
 ### Word/phrase search (provided by official Jisho API)
 
