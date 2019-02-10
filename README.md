@@ -2,7 +2,7 @@
 
 # unofficial-jisho-api
 
-This module encapsulates the official Jisho.org API and also provides kanji and example search features that scrape Jisho.org.
+This module encapsulates the official [Jisho.org](https://jisho.org/) API and also provides kanji and example search features that scrape [Jisho.org](https://jisho.org/).
 
 ## Basic usage
 
@@ -10,7 +10,7 @@ There's somewhat more detailed documentation [here](https://mistval.github.io/un
 
 ### Word/phrase search (provided by official Jisho API)
 
-This returns the same results as the official Jisho API. See the discussion of that here: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
+This returns the same results as the official [Jisho.org](https://jisho.org/) API. See the discussion of that [here](http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api).
 
 ```js
 const jishoApi = require('unofficial-jisho-api');

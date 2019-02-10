@@ -355,7 +355,7 @@ function parseExamplePageData(pageHtml, phrase) {
  * @property {string} english An English translation of the example.
  */
 
- /**
+/**
   * @typedef {Object} ExampleResults
   * @property {string} query The term that you searched for.
   * @property {boolean} found True if results were found.
@@ -428,12 +428,12 @@ class API {
   }
 
   /**
-   * 
+   *
    * @param {string} phrase The word or phrase to search for.
    * @param {Object} requestOptions Options to pass to
    *   [request]{@link https://www.npmjs.com/package/request} to customize request behavior.
    *   See [request]{@link https://www.npmjs.com/package/request} for available options.
-   * @returns {ExampleResults} 
+   * @returns {ExampleResults}
    * @async
    */
   searchForExamples(phrase, requestOptions) {
