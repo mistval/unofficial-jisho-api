@@ -308,6 +308,111 @@ function parseExamplePageData(pageHtml, phrase) {
 
 /* EXAMPLE SEARCH FUNCTIONS END */
 
+/* PHRASE SCRAPE FUNCTIONS START */
+
+function getTags($) {
+  const tags = [];
+
+  const tagElements = $('.concept_light-tag');
+  for (let i = 0; i < tagElements.length; i += 1) {
+    const tagText = tagElements.eq(i).text();
+    tags.push(tagText);
+  }
+
+  return tags;
+}
+
+function getMeaningsAndOtherForms($) {
+  const returnValues = {};
+
+  const meaningsWrapper = $('#page_container > div > div > article > div > div.concept_light-meanings.medium-9.columns > div');
+  const meaningsChildren = meaningsWrapper.children();
+  const meanings = [];
+
+  let mostRecentWordTypes = [];
+  for (let meaningIndex = 0; meaningIndex < meaningsChildren.length; meaningIndex += 1) {
+    const child = meaningsChildren.eq(meaningIndex);
+    if (child.hasClass('meaning-tags')) {
+      mostRecentWordTypes = child.text().split(',').map(s => s.trim().toLowerCase());
+    } else if (mostRecentWordTypes[0] === 'other forms') {
+      returnValues.otherForms = child.text().split('、')
+        .map(s => s.replace('【', '').replace('】', '').split(' '))
+        .map(a => ({ kanji: a[0], kana: a[1] }));
+    } else {
+      const meaning = child.find('.meaning-meaning').text();
+      const meaningAbstract = child.find('.meaning-abstract')
+        .find('a')
+        .remove()
+        .end()
+        .text();
+
+      const supplemental = child.find('.supplemental_info').text().split(',')
+        .map(s => s.trim())
+        .filter(s => s);
+
+      const seeAlsoTerms = [];
+      for (let i = supplemental.length - 1; i >= 0; i -= 1) {
+        const supplementalEntry = supplemental[i];
+        if (supplementalEntry.startsWith('See also')) {
+          seeAlsoTerms.push(supplementalEntry.replace('See also ', ''));
+          supplemental.splice(i, 1);
+        }
+      }
+
+      const sentences = [];
+      const sentenceElements = child.find('.sentences').children('.sentence');
+
+      for (let sentenceIndex = 0; sentenceIndex < sentenceElements.length; sentenceIndex += 1) {
+        const sentenceElement = sentenceElements.eq(sentenceIndex);
+        const english = sentenceElement.find('.english').text();
+        const japanese = sentenceElement
+          .find('.english').remove().end()
+          .find('.furigana')
+          .remove()
+          .end()
+          .text();
+
+        sentences.push({ english, japanese });
+      }
+
+      meanings.push({
+        seeAlsoTerms,
+        sentences,
+        meaning,
+        supplemental,
+        meaningAbstract,
+        meaningTags: mostRecentWordTypes,
+      });
+    }
+  }
+
+  returnValues.meanings = meanings;
+
+  return returnValues;
+}
+
+function uriForPhraseScrape(searchTerm) {
+  return `https://jisho.org/word/${encodeURIComponent(searchTerm)}`;
+}
+
+function parsePhrasePageData(pageHtml, query) {
+  const $ = cheerio.load(pageHtml);
+  const { meanings, otherForms } = getMeaningsAndOtherForms($);
+
+  const result = {
+    found: true,
+    tags: getTags($),
+    meanings,
+    otherForms,
+    query,
+    uri: uriForPhraseScrape(query),
+  };
+
+  return result;
+}
+
+/* PHRASE SCRAPE FUNCTIONS END */
+
 /**
  * @typedef {Object} YomiExample
  * @property {string} example The original text of the example.
@@ -397,6 +502,39 @@ class API {
       json: true,
       ...this.requestOptions,
       ...requestOptions,
+    });
+  }
+
+  /**
+   * Scrape the word page for a word/phrase. This allows you to
+   * get some information that isn't provided by the official API, such as
+   * verb forms and JLPT level. However, the official API should be preferred
+   * if it has the information you need. This function scrapes https://jisho.org/word/XXX.
+   * In general, you'll want to include kanji in your search term, for example 掛かる
+   * instead of かかる (no results).
+   * @param {string} phrase The search term to search for.
+   * @param {Object} requestOptions Options to pass to
+   *   [request]{@link https://www.npmjs.com/package/request} to customize request behavior.
+   *   See [request]{@link https://www.npmjs.com/package/request} for available options.
+   * @async
+   */
+  scrapeForPhrase(phrase, requestOptions) {
+    const uri = uriForPhraseScrape(phrase);
+    return request({
+      uri,
+      json: false,
+      ...this.requestOptions,
+      ...requestOptions,
+    }).then(pageHtml => parsePhrasePageData(pageHtml, phrase)).catch((err) => {
+      if (err.statusCode === 404) {
+        return {
+          uri,
+          query: phrase,
+          found: false,
+        };
+      }
+
+      throw err;
     });
   }
 
