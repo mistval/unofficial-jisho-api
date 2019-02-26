@@ -323,7 +323,7 @@ function getTags($) {
 }
 
 function getMeaningsAndOtherForms($) {
-  const returnValues = {};
+  const returnValues = { otherForms: [] };
 
   const meaningsWrapper = $('#page_container > div > div > article > div > div.concept_light-meanings.medium-9.columns > div');
   const meaningsChildren = meaningsWrapper.children();
@@ -378,10 +378,10 @@ function getMeaningsAndOtherForms($) {
       meanings.push({
         seeAlsoTerms,
         sentences,
-        meaning,
+        definition: meaning,
         supplemental,
-        meaningAbstract,
-        meaningTags: mostRecentWordTypes,
+        definitionAbstract: meaningAbstract,
+        tags: mostRecentWordTypes,
       });
     }
   }
@@ -412,6 +412,35 @@ function parsePhrasePageData(pageHtml, query) {
 }
 
 /* PHRASE SCRAPE FUNCTIONS END */
+
+/**
+ * @typedef {Object} PhraseScrapeSentence
+ * @property {string} english The English meaning of the sentence.
+ * @property {string} japanese The Japanese text of the sentence.
+ */
+
+/**
+ * @typedef {Object} PhraseScrapeMeaning
+ * @property {Array.<string>} seeAlsoTerms The words that Jisho lists as "see also".
+ * @property {Array.<PhraseScrapeSentence>} sentences Example sentences for this meaning.
+ * @property {string} definition The definition.
+ * @property {Array.<string>} supplemental Supplemental information.
+ *   For example "usually written using kana alone".
+ * @property {string} definitionAbstract An "abstract" definition.
+ *   Often this is a Wikipedia definition.
+ * @property {Array.<string>} tags Tags associated with this meaning.
+ */
+
+/**
+ * @typedef {Object} PhrasePageScrapeResult
+ * @property {boolean} found True if a result was found.
+ * @property {string} query The term that you searched for.
+ * @property {string} [uri] The URI that these results were scraped from, if a result was found.
+ * @property {Array.<string>} [otherForms] Other forms of the search term, if a result was found.
+ * @property {Array.<PhraseScrapeMeaning>} [meanings] Information about the meanings associated
+ *   with result.
+ * @property {Array.<string>} [tags] Tags associated with this search result.
+ */
 
 /**
  * @typedef {Object} YomiExample
@@ -508,7 +537,7 @@ class API {
   /**
    * Scrape the word page for a word/phrase. This allows you to
    * get some information that isn't provided by the official API, such as
-   * verb forms and JLPT level. However, the official API should be preferred
+   * part-of-speech and JLPT level. However, the official API should be preferred
    * if it has the information you need. This function scrapes https://jisho.org/word/XXX.
    * In general, you'll want to include kanji in your search term, for example 掛かる
    * instead of かかる (no results).
@@ -516,6 +545,7 @@ class API {
    * @param {Object} requestOptions Options to pass to
    *   [request]{@link https://www.npmjs.com/package/request} to customize request behavior.
    *   See [request]{@link https://www.npmjs.com/package/request} for available options.
+   * @returns {PhrasePageScrapeResult} Information about the searched query.
    * @async
    */
   scrapeForPhrase(phrase, requestOptions) {
@@ -528,7 +558,6 @@ class API {
     }).then(pageHtml => parsePhrasePageData(pageHtml, phrase)).catch((err) => {
       if (err.statusCode === 404) {
         return {
-          uri,
           query: phrase,
           found: false,
         };

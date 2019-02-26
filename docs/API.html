@@ -26,7 +26,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="API.html">API</a><ul class='methods'><li data-type='method'><a href="API.html#searchForExamples">searchForExamples</a></li><li data-type='method'><a href="API.html#searchForKanji">searchForKanji</a></li><li data-type='method'><a href="API.html#searchForPhrase">searchForPhrase</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="API.html">API</a><ul class='methods'><li data-type='method'><a href="API.html#scrapeForPhrase">scrapeForPhrase</a></li><li data-type='method'><a href="API.html#searchForExamples">searchForExamples</a></li><li data-type='method'><a href="API.html#searchForKanji">searchForKanji</a></li><li data-type='method'><a href="API.html#searchForPhrase">searchForPhrase</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <div id="main">
@@ -70,7 +70,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line375">line 375</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line509">line 509</a>
     </li></ul></dd>
     
 
@@ -214,6 +214,191 @@
 
     
 
+    <h4 class="name" id="scrapeForPhrase"><span class="type-signature">(async) </span>scrapeForPhrase<span class="signature">(phrase, requestOptions)</span><span class="type-signature"> &rarr; {<a href="global.html#PhrasePageScrapeResult">PhrasePageScrapeResult</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line551">line 551</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Scrape the word page for a word/phrase. This allows you to
+get some information that isn't provided by the official API, such as
+part-of-speech and JLPT level. However, the official API should be preferred
+if it has the information you need. This function scrapes https://jisho.org/word/XXX.
+In general, you'll want to include kanji in your search term, for example 掛かる
+instead of かかる (no results).
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>phrase</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The search term to search for.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>requestOptions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Options to pass to
+  <a href="https://www.npmjs.com/package/request">request</a> to customize request behavior.
+  See <a href="https://www.npmjs.com/package/request">request</a> for available options.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Information about the searched query.
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#PhrasePageScrapeResult">PhrasePageScrapeResult</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
     <h4 class="name" id="searchForExamples"><span class="type-signature">(async) </span>searchForExamples<span class="signature">(phrase, requestOptions)</span><span class="type-signature"> &rarr; {<a href="global.html#ExampleResults">ExampleResults</a>}</span></h4>
 
     
@@ -226,7 +411,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line439">line 439</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line606">line 606</a>
     </li></ul></dd>
     
 
@@ -398,7 +583,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line412">line 412</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line579">line 579</a>
     </li></ul></dd>
     
 
@@ -578,7 +763,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line391">line 391</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line525">line 525</a>
     </li></ul></dd>
     
 
@@ -764,7 +949,7 @@ for discussion about the official API.
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Feb 10 2019 07:38:57 GMT+0700 (GMT+07:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Feb 26 2019 13:55:21 GMT+0700 (GMT+07:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

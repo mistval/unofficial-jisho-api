@@ -26,7 +26,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="API.html">API</a><ul class='methods'><li data-type='method'><a href="API.html#searchForExamples">searchForExamples</a></li><li data-type='method'><a href="API.html#searchForKanji">searchForKanji</a></li><li data-type='method'><a href="API.html#searchForPhrase">searchForPhrase</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="API.html">API</a><ul class='methods'><li data-type='method'><a href="API.html#scrapeForPhrase">scrapeForPhrase</a></li><li data-type='method'><a href="API.html#searchForExamples">searchForExamples</a></li><li data-type='method'><a href="API.html#searchForKanji">searchForKanji</a></li><li data-type='method'><a href="API.html#searchForPhrase">searchForPhrase</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <div id="main">
@@ -351,6 +351,140 @@ function parseExamplePageData(pageHtml, phrase) {
 
 /* EXAMPLE SEARCH FUNCTIONS END */
 
+/* PHRASE SCRAPE FUNCTIONS START */
+
+function getTags($) {
+  const tags = [];
+
+  const tagElements = $('.concept_light-tag');
+  for (let i = 0; i &lt; tagElements.length; i += 1) {
+    const tagText = tagElements.eq(i).text();
+    tags.push(tagText);
+  }
+
+  return tags;
+}
+
+function getMeaningsAndOtherForms($) {
+  const returnValues = { otherForms: [] };
+
+  const meaningsWrapper = $('#page_container > div > div > article > div > div.concept_light-meanings.medium-9.columns > div');
+  const meaningsChildren = meaningsWrapper.children();
+  const meanings = [];
+
+  let mostRecentWordTypes = [];
+  for (let meaningIndex = 0; meaningIndex &lt; meaningsChildren.length; meaningIndex += 1) {
+    const child = meaningsChildren.eq(meaningIndex);
+    if (child.hasClass('meaning-tags')) {
+      mostRecentWordTypes = child.text().split(',').map(s => s.trim().toLowerCase());
+    } else if (mostRecentWordTypes[0] === 'other forms') {
+      returnValues.otherForms = child.text().split('、')
+        .map(s => s.replace('【', '').replace('】', '').split(' '))
+        .map(a => ({ kanji: a[0], kana: a[1] }));
+    } else {
+      const meaning = child.find('.meaning-meaning').text();
+      const meaningAbstract = child.find('.meaning-abstract')
+        .find('a')
+        .remove()
+        .end()
+        .text();
+
+      const supplemental = child.find('.supplemental_info').text().split(',')
+        .map(s => s.trim())
+        .filter(s => s);
+
+      const seeAlsoTerms = [];
+      for (let i = supplemental.length - 1; i >= 0; i -= 1) {
+        const supplementalEntry = supplemental[i];
+        if (supplementalEntry.startsWith('See also')) {
+          seeAlsoTerms.push(supplementalEntry.replace('See also ', ''));
+          supplemental.splice(i, 1);
+        }
+      }
+
+      const sentences = [];
+      const sentenceElements = child.find('.sentences').children('.sentence');
+
+      for (let sentenceIndex = 0; sentenceIndex &lt; sentenceElements.length; sentenceIndex += 1) {
+        const sentenceElement = sentenceElements.eq(sentenceIndex);
+        const english = sentenceElement.find('.english').text();
+        const japanese = sentenceElement
+          .find('.english').remove().end()
+          .find('.furigana')
+          .remove()
+          .end()
+          .text();
+
+        sentences.push({ english, japanese });
+      }
+
+      meanings.push({
+        seeAlsoTerms,
+        sentences,
+        definition: meaning,
+        supplemental,
+        definitionAbstract: meaningAbstract,
+        tags: mostRecentWordTypes,
+      });
+    }
+  }
+
+  returnValues.meanings = meanings;
+
+  return returnValues;
+}
+
+function uriForPhraseScrape(searchTerm) {
+  return `https://jisho.org/word/${encodeURIComponent(searchTerm)}`;
+}
+
+function parsePhrasePageData(pageHtml, query) {
+  const $ = cheerio.load(pageHtml);
+  const { meanings, otherForms } = getMeaningsAndOtherForms($);
+
+  const result = {
+    found: true,
+    tags: getTags($),
+    meanings,
+    otherForms,
+    query,
+    uri: uriForPhraseScrape(query),
+  };
+
+  return result;
+}
+
+/* PHRASE SCRAPE FUNCTIONS END */
+
+/**
+ * @typedef {Object} PhraseScrapeSentence
+ * @property {string} english The English meaning of the sentence.
+ * @property {string} japanese The Japanese text of the sentence.
+ */
+
+/**
+ * @typedef {Object} PhraseScrapeMeaning
+ * @property {Array.&lt;string>} seeAlsoTerms The words that Jisho lists as "see also".
+ * @property {Array.&lt;PhraseScrapeSentence>} sentences Example sentences for this meaning.
+ * @property {string} definition The definition.
+ * @property {Array.&lt;string>} supplemental Supplemental information.
+ *   For example "usually written using kana alone".
+ * @property {string} definitionAbstract An "abstract" definition.
+ *   Often this is a Wikipedia definition.
+ * @property {Array.&lt;string>} tags Tags associated with this meaning.
+ */
+
+/**
+ * @typedef {Object} PhrasePageScrapeResult
+ * @property {boolean} found True if a result was found.
+ * @property {string} query The term that you searched for.
+ * @property {string} [uri] The URI that these results were scraped from, if a result was found.
+ * @property {Array.&lt;string>} [otherForms] Other forms of the search term, if a result was found.
+ * @property {Array.&lt;PhraseScrapeMeaning>} [meanings] Information about the meanings associated
+ *   with result.
+ * @property {Array.&lt;string>} [tags] Tags associated with this search result.
+ */
+
 /**
  * @typedef {Object} YomiExample
  * @property {string} example The original text of the example.
@@ -444,6 +578,39 @@ class API {
   }
 
   /**
+   * Scrape the word page for a word/phrase. This allows you to
+   * get some information that isn't provided by the official API, such as
+   * part-of-speech and JLPT level. However, the official API should be preferred
+   * if it has the information you need. This function scrapes https://jisho.org/word/XXX.
+   * In general, you'll want to include kanji in your search term, for example 掛かる
+   * instead of かかる (no results).
+   * @param {string} phrase The search term to search for.
+   * @param {Object} requestOptions Options to pass to
+   *   [request]{@link https://www.npmjs.com/package/request} to customize request behavior.
+   *   See [request]{@link https://www.npmjs.com/package/request} for available options.
+   * @returns {PhrasePageScrapeResult} Information about the searched query.
+   * @async
+   */
+  scrapeForPhrase(phrase, requestOptions) {
+    const uri = uriForPhraseScrape(phrase);
+    return request({
+      uri,
+      json: false,
+      ...this.requestOptions,
+      ...requestOptions,
+    }).then(pageHtml => parsePhrasePageData(pageHtml, phrase)).catch((err) => {
+      if (err.statusCode === 404) {
+        return {
+          query: phrase,
+          found: false,
+        };
+      }
+
+      throw err;
+    });
+  }
+
+  /**
    * Scrape Jisho.org for information about a kanji character.
    * @param {string} kanji The kanji to search for.
    * @param {Object} requestOptions Options to pass to
@@ -511,7 +678,7 @@ module.exports = API;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Feb 10 2019 07:38:57 GMT+0700 (GMT+07:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Feb 26 2019 13:55:21 GMT+0700 (GMT+07:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
