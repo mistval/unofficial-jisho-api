@@ -108,6 +108,66 @@ It is very hot today.
 Japan is full of beautiful cities. Kyoto and Nara, for instance.
 ```
 
+### Word/phrase scraping
+
+This scrapes the word/phrase page on Jisho.org. This can get you some data that the official API doesn't have, such as JLPT level and part-of-speech. The official API (`searchForPhrase`) should be preferred if it has the data you need.
+
+```js
+const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+jisho.scrapeForPhrase('谷').then((data) => {
+  console.log(JSON.stringify(data, null, 2));
+});
+```
+
+This outputs the following:
+
+```
+{
+  "found": true,
+  "tags": [
+    "Common word",
+    "JLPT N3",
+    "Wanikani level 5"
+  ],
+  "meanings": [
+    {
+      "seeAlsoTerms": [],
+      "sentences": [],
+      "definition": "valley",
+      "supplemental": [],
+      "definitionAbstract": "",
+      "tags": [
+        "noun"
+      ]
+    },
+    {
+      "seeAlsoTerms": [],
+      "sentences": [],
+      "definition": "Valley",
+      "supplemental": [],
+      "definitionAbstract": "In geology, a valley or dale is a depression with predominant extent in one direction. A very deep river valley may be called a canyon or gorge. The terms U-shaped and V-shaped are descriptive terms of geography to characterize the form of valleys. Most valleys belong to one of these two main types or a mixture of them, (at least) with respect of the cross section of the slopes or hillsides.",
+      "tags": [
+        "wikipedia definition"
+      ]
+    }
+  ],
+  "otherForms": [
+    {
+      "kanji": "渓",
+      "kana": "たに"
+    },
+    {
+      "kanji": "谿",
+      "kana": "たに"
+    }
+  ],
+  "query": "谷",
+  "uri": "https://jisho.org/word/%E8%B0%B7"
+}
+```
+
 ## Request options
 
 Optionally, you can provide options, such as timeout and proxy, to use for requests. The options are passed directly to the [request module](https://www.npmjs.com/package/request). See its [documentation](https://www.npmjs.com/package/request) for a full list of options.
@@ -173,6 +233,22 @@ request(SEARCH_URI, (error, response, body) => {
   console.log(`English: ${json.results[0].english}`);
   console.log(`Kanji ${json.results[0].kanji}`);
   console.log(`Kana: ${json.results[0].kana}`);
+});
+```
+
+### Parse phrase page HTML
+
+```js
+const request = require('request');
+const jishoApi = require('unofficial-jisho-api');
+const jisho = new jishoApi();
+
+const SEARCH_EXAMPLE = '保護者';
+const SEARCH_URI = jisho.getUriForPhraseScrape(SEARCH_EXAMPLE);
+
+request(SEARCH_URI, (error, response, body) => {
+  const json = jisho.parsePhraseScrapeHtml(body, SEARCH_EXAMPLE);
+  console.log(JSON.stringify(json, null, 2));
 });
 ```
 
