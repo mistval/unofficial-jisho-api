@@ -622,7 +622,9 @@ class API {
 API.prototype.getUriForKanjiSearch = uriForKanjiSearch;
 API.prototype.getUriForExampleSearch = uriForExampleSearch;
 API.prototype.getUriForPhraseSearch = uriForPhraseSearch;
+API.prototype.getUriForPhraseScrape = uriForPhraseScrape;
 API.prototype.parseExamplePageHtml = parseExamplePageData;
 API.prototype.parseKanjiPageHtml = parseKanjiPageData;
+API.prototype.parsePhraseScrapeHtml = parsePhrasePageData;
 
 module.exports = API;
