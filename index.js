@@ -255,11 +255,16 @@ function getKanjiAndKana(div) {
         kanji += unlifted;
         kana += furigana;
 
-        for (let j = 0; j < unlifted.length; j += 1) {
+        const kanaEnding = [];
+        for (let j = unlifted.length - 1; j > 0; j -= 1) {
           if (!unlifted[j].match(kanjiRegex)) {
-            kana += unlifted[j];
+            kanaEnding.push(unlifted[j]);
+          } else {
+            break;
           }
         }
+
+        kana += kanaEnding.reverse().join('');
       } else {
         kanji += unlifted;
         kana += unlifted;
