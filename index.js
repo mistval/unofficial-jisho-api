@@ -105,7 +105,7 @@ function getYomiExamples(pageHtml, yomiLocatorSymbol) {
   const examples = regexResults.map((regexResult) => {
     const examplesLines = regexResult.split('\n').map(s => s.trim());
     return {
-      examples: examplesLines[0],
+      example: examplesLines[0],
       reading: examplesLines[1].replace('【', '').replace('】', ''),
       meaning: htmlEntities.decode(examplesLines[2]),
     };
