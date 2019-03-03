@@ -85,6 +85,7 @@ jisho.searchForExamples('日').then(result => {
     console.log(example.kanji);
     console.log(example.kana);
     console.log(example.english);
+    console.log(JSON.stringify(example.pieces));
     console.log();
   }
 });
@@ -95,17 +96,22 @@ This outputs the following:
 ```
 Jisho Uri: http://jisho.org/search/%E6%97%A5%23sentences
 
-日本人ならそんなことはけっしてしないでしょう
-にほんじんならそんなことはけっしてしないでしょう
+日本人ならそんなことはけっしてしないでしょう。
+にほんじんならそんなことはけっしてしないでしょう。
 A Japanese person would never do such a thing.
+[{"lifted":"にほんじん","unlifted":"日本人"},{"lifted":"","unlifted":"なら"},{"lifted":"","unlifted":"そんな"},{"lifted":"","unlifted":"こと"},{"lifted":"","unlifted":"は"},{"lifted":"","unlifted":"けっして"},{"lifted":"","unlifted":"しない"},{"lifted":"","
+unlifted":"でしょう"}]
 
-今日はとても暑い
-きょうはとてもあつい
+今日はとても暑い。
+きょうはとてもあつい。
 It is very hot today.
+[{"lifted":"きょう","unlifted":"今日"},{"lifted":"","unlifted":"は"},{"lifted":"","unlifted":"とても"},{"lifted":"あつ","unlifted":"暑い"}]
 
-日本には美しい都市が多い。例えば京都、奈良だ
-にほんにはうつくしいとしがおおい。たとえばきょうと、奈良だ
+日本には美しい都市が多い。例えば京都、奈良だ。
+にほんにはうつくしいとしがおおい。たとえばきょうと、奈良だ。
 Japan is full of beautiful cities. Kyoto and Nara, for instance.
+[{"lifted":"にほん","unlifted":"日本"},{"lifted":"","unlifted":"には"},{"lifted":"うつく","unlifted":"美しい"},{"lifted":"とし","unlifted":"都市"},{"lifted":"","unlifted":"が"},{"lifted":"おお","unlifted":"多い"},{"lifted":"たと","unlifted":"例えば"},{"lift
+ed":"きょうと","unlifted":"京都"},{"lifted":"","unlifted":"だ"}]
 ```
 
 ### Word/phrase scraping
