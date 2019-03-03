@@ -440,6 +440,8 @@ function parsePhrasePageData(pageHtml, query) {
  * @typedef {Object} PhraseScrapeSentence
  * @property {string} english The English meaning of the sentence.
  * @property {string} japanese The Japanese text of the sentence.
+ * @property {Array.<ExampleSentencePiece>} pieces The lifted/unlifted pairs that make up the sentence.
+ *   Lifted text is furigana, unlifted is the text below the furigana.
  */
 
 /**
@@ -505,11 +507,19 @@ function parsePhrasePageData(pageHtml, query) {
  */
 
 /**
+ * @typedef {Object} ExampleSentencePiece
+ * @property {string} unlifted Baseline text shown on Jisho.org (below the lifted text / furigana)
+ * @property {string} lifted Furigana text shown on Jisho.org (above the unlifted text)
+ */
+
+/**
  * @typedef {Object} ExampleResultData
  * @property {string} kanji The example sentence including kanji.
  * @property {string} kana The example sentence without kanji (only kana). Sometimes this may
  *   include some Kanji, as furigana is not always available from Jisho.org.
  * @property {string} english An English translation of the example.
+ * @property {Array.<ExampleSentencePiece>} pieces The lifted/unlifted pairs that make up the sentence.
+ *   Lifted text is furigana, unlifted is the text below the furigana.
  */
 
 /**
