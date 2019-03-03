@@ -281,6 +281,20 @@ function getKanjiAndKana(div) {
   return { kanji, kana };
 }
 
+function getPieces(sentenceElement) {
+  const pieceElements = sentenceElement.find('li.clearfix');
+  const pieces = [];
+  for (let pieceIndex = 0; pieceIndex < pieceElements.length; pieceIndex += 1) {
+    const pieceElement = pieceElements.eq(pieceIndex);
+    pieces.push({
+      lifted: pieceElement.children('.furigana').text(),
+      unlifted: pieceElement.children('.unlinked').text(),
+    });
+  }
+
+  return pieces;
+}
+
 function parseExampleDiv(div) {
   const english = div.find('.english').text();
   const { kanji, kana } = getKanjiAndKana(div);
@@ -289,6 +303,7 @@ function parseExampleDiv(div) {
     english,
     kanji,
     kana,
+    pieces: getPieces(div),
   };
 }
 
@@ -371,16 +386,7 @@ function getMeaningsAndOtherForms($) {
         const sentenceElement = sentenceElements.eq(sentenceIndex);
 
         const english = sentenceElement.find('.english').text();
-        const pieceElements = sentenceElement.find('li.clearfix');
-
-        const pieces = [];
-        for (let pieceIndex = 0; pieceIndex < pieceElements.length; pieceIndex += 1) {
-          const pieceElement = pieceElements.eq(pieceIndex);
-          pieces.push({
-            lifted: pieceElement.children('.furigana').text(),
-            unlifted: pieceElement.children('.unlinked').text(),
-          });
-        }
+        const pieces = getPieces(sentenceElement);
 
         const japanese = sentenceElement
           .find('.english').remove().end()
