@@ -369,7 +369,19 @@ function getMeaningsAndOtherForms($) {
 
       for (let sentenceIndex = 0; sentenceIndex < sentenceElements.length; sentenceIndex += 1) {
         const sentenceElement = sentenceElements.eq(sentenceIndex);
+
         const english = sentenceElement.find('.english').text();
+        const pieceElements = sentenceElement.find('li.clearfix');
+
+        const pieces = [];
+        for (let pieceIndex = 0; pieceIndex < pieceElements.length; pieceIndex += 1) {
+          const pieceElement = pieceElements.eq(pieceIndex);
+          pieces.push({
+            lifted: pieceElement.children('.furigana').text(),
+            unlifted: pieceElement.children('.unlinked').text(),
+          });
+        }
+
         const japanese = sentenceElement
           .find('.english').remove().end()
           .find('.furigana')
@@ -377,7 +389,7 @@ function getMeaningsAndOtherForms($) {
           .end()
           .text();
 
-        sentences.push({ english, japanese });
+        sentences.push({ english, japanese, pieces });
       }
 
       meanings.push({
