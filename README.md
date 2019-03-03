@@ -129,7 +129,7 @@ jisho.scrapeForPhrase('谷').then((data) => {
 
 This outputs the following:
 
-```
+```json
 {
   "found": true,
   "tags": [
