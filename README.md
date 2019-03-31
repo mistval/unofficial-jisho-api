@@ -4,6 +4,12 @@
 
 This module encapsulates the official [Jisho.org](https://jisho.org/) API and also provides kanji and example search features that scrape [Jisho.org](https://jisho.org/).
 
+## Installation
+
+In a Node.js project:
+
+`npm install unofficial-jisho-api`
+
 ## Basic usage
 
 There's somewhat more detailed documentation [here](https://mistval.github.io/unofficial-jisho-api/), but the below examples should be sufficient.
