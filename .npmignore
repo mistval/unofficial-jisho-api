@@ -2,3 +2,6 @@ test.js
 .vscode
 docs
 logo.png
+.eslintignore
+.eslintrc.js
+.jsdoc.json
