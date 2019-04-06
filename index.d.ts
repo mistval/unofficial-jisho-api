@@ -66,21 +66,21 @@ export interface JishoJapaneseWord {
   reading: string;
 }
 
+export interface JishoSenseLink {
+  text: string;
+  url: string;
+}
+
 export interface JishoWordSense {
-  english_definition: string;
-  
+  english_definitions: string[];
   parts_of_speech: string[];
-  
-  links: {
-    text: string;
-    url: string;
-  };
-  
-  tags: any[];
+  links: JishoSenseLink[];
+  tags: string[];
   see_also: string[];
-  antonyms: any[];
+  antonyms: string[];
   source: any[];
   info: string[];
+  restrictions: any[];
 }
 
 export interface JishoAttribution {
@@ -91,17 +91,11 @@ export interface JishoAttribution {
 
 export interface JishoResult {
   slug: string;
-
   is_common: boolean;
-
   tags: string[];
-
   jlpt: string[];
-
   japanese: JishoJapaneseWord[];
-
   senses: JishoWordSense[];
-
   attribution: JishoAttribution;
 }
 
