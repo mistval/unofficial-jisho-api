@@ -12,7 +12,7 @@ In a Node.js project:
 
 ## Basic usage
 
-There's somewhat more detailed documentation [here](https://mistval.github.io/unofficial-jisho-api/), but the below examples should be sufficient.
+Below are some basic examples. There's more detailed documentation [here](https://mistval.github.io/unofficial-jisho-api/).
 
 ### Word/phrase search (provided by official Jisho API)
 
