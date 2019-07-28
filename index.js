@@ -530,6 +530,9 @@ function parsePhrasePageData(pageHtml, query) {
   * @property {Array.<ExampleResultData>} results The examples that were found, if any.
   */
 
+/**
+ * A wrapper around the Jisho search functions.
+ */
 class API {
   /**
    * Query the official Jisho API for a word or phrase. See
@@ -573,7 +576,7 @@ class API {
   }
 
   /**
-   *
+   * Scrape Jisho.org for examples.
    * @param {string} phrase The word or phrase to search for.
    * @returns {ExampleResults}
    * @async

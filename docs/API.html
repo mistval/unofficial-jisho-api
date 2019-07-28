@@ -47,6 +47,8 @@
         API
         </h2>
         
+            <div class="class-description">A wrapper around the Jisho search functions.</div>
+        
     
 </header>
 
@@ -57,8 +59,10 @@
             
 
     
+    <h2>Constructor</h2>
+    
 
-    <h4 class="name" id="API"><span class="type-signature"></span>new API<span class="signature">(requestOptions)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="API"><span class="type-signature"></span>new API<span class="signature">()</span><span class="type-signature"></span></h4>
 
     
 
@@ -70,7 +74,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line542">line 542</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line536">line 536</a>
     </li></ul></dd>
     
 
@@ -109,9 +113,6 @@
 
 
 
-<div class="description">
-    A wrapper around the Jisho.org API and this library's scraping functionality.
-</div>
 
 
 
@@ -120,60 +121,6 @@
 
 
 
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>requestOptions</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Options to pass to
-  <a href="https://www.npmjs.com/package/request">request</a> to customize request behavior.
-  See <a href="https://www.npmjs.com/package/request">request</a> for available options.
-  requestOptions passed into this constructor can be overriden by passing requestOptions
-  to the search methods.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -214,7 +161,7 @@
 
     
 
-    <h4 class="name" id="scrapeForPhrase"><span class="type-signature">(async) </span>scrapeForPhrase<span class="signature">(phrase, requestOptions)</span><span class="type-signature"> &rarr; {<a href="global.html#PhrasePageScrapeResult">PhrasePageScrapeResult</a>}</span></h4>
+    <h4 class="name" id="scrapeForPhrase"><span class="type-signature">(async) </span>scrapeForPhrase<span class="signature">(phrase)</span><span class="type-signature"> &rarr; {<a href="global.html#PhrasePageScrapeResult">PhrasePageScrapeResult</a>}</span></h4>
 
     
 
@@ -226,7 +173,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line584">line 584</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line562">line 562</a>
     </li></ul></dd>
     
 
@@ -329,31 +276,6 @@ instead of かかる (no results).
         </tr>
 
     
-
-        <tr>
-            
-                <td class="name"><code>requestOptions</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Options to pass to
-  <a href="https://www.npmjs.com/package/request">request</a> to customize request behavior.
-  See <a href="https://www.npmjs.com/package/request">request</a> for available options.</td>
-        </tr>
-
-    
     </tbody>
 </table>
 
@@ -399,7 +321,7 @@ instead of かかる (no results).
 
     
 
-    <h4 class="name" id="searchForExamples"><span class="type-signature">(async) </span>searchForExamples<span class="signature">(phrase, requestOptions)</span><span class="type-signature"> &rarr; {<a href="global.html#ExampleResults">ExampleResults</a>}</span></h4>
+    <h4 class="name" id="searchForExamples"><span class="type-signature">(async) </span>searchForExamples<span class="signature">(phrase)</span><span class="type-signature"> &rarr; {<a href="global.html#ExampleResults">ExampleResults</a>}</span></h4>
 
     
 
@@ -411,7 +333,7 @@ instead of かかる (no results).
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line639">line 639</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line584">line 584</a>
     </li></ul></dd>
     
 
@@ -449,6 +371,10 @@ instead of かかる (no results).
 
 
 
+
+<div class="description">
+    Scrape Jisho.org for examples.
+</div>
 
 
 
@@ -505,31 +431,6 @@ instead of かかる (no results).
         </tr>
 
     
-
-        <tr>
-            
-                <td class="name"><code>requestOptions</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Options to pass to
-  <a href="https://www.npmjs.com/package/request">request</a> to customize request behavior.
-  See <a href="https://www.npmjs.com/package/request">request</a> for available options.</td>
-        </tr>
-
-    
     </tbody>
 </table>
 
@@ -571,7 +472,7 @@ instead of かかる (no results).
 
     
 
-    <h4 class="name" id="searchForKanji"><span class="type-signature">(async) </span>searchForKanji<span class="signature">(kanji, requestOptions)</span><span class="type-signature"> &rarr; {<a href="global.html#KanjiResult">KanjiResult</a>}</span></h4>
+    <h4 class="name" id="searchForKanji"><span class="type-signature">(async) </span>searchForKanji<span class="signature">(kanji)</span><span class="type-signature"> &rarr; {<a href="global.html#KanjiResult">KanjiResult</a>}</span></h4>
 
     
 
@@ -583,7 +484,7 @@ instead of かかる (no results).
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line612">line 612</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line573">line 573</a>
     </li></ul></dd>
     
 
@@ -681,31 +582,6 @@ instead of かかる (no results).
         </tr>
 
     
-
-        <tr>
-            
-                <td class="name"><code>requestOptions</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Options to pass to
-  <a href="https://www.npmjs.com/package/request">request</a> to customize request behavior.
-  See <a href="https://www.npmjs.com/package/request">request</a> for available options.</td>
-        </tr>
-
-    
     </tbody>
 </table>
 
@@ -751,7 +627,7 @@ instead of かかる (no results).
 
     
 
-    <h4 class="name" id="searchForPhrase"><span class="type-signature">(async) </span>searchForPhrase<span class="signature">(phrase, requestOptions)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="searchForPhrase"><span class="type-signature">(async) </span>searchForPhrase<span class="signature">(phrase)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
 
@@ -763,7 +639,7 @@ instead of かかる (no results).
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line558">line 558</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line546">line 546</a>
     </li></ul></dd>
     
 
@@ -863,31 +739,6 @@ for discussion about the official API.
         </tr>
 
     
-
-        <tr>
-            
-                <td class="name"><code>requestOptions</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Options to pass to
-  <a href="https://www.npmjs.com/package/request">request</a> to customize request behavior.
-  See <a href="https://www.npmjs.com/package/request">request</a> for available options.</td>
-        </tr>
-
-    
     </tbody>
 </table>
 
@@ -949,7 +800,7 @@ for discussion about the official API.
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sun Mar 03 2019 09:00:45 GMT+0700 (GMT+07:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Mon Jul 29 2019 01:15:51 GMT+0700 (GMT+07:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
