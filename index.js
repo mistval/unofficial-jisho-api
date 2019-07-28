@@ -5,7 +5,7 @@
  *     http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
  */
 
-const axios = require('axios');
+const axios = require('axios').create({ timeout: 10000 });
 const cheerio = require('cheerio');
 const escapeStringRegexp = require('escape-string-regexp');
 const { XmlEntities } = require('html-entities');
