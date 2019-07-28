@@ -1,6 +1,6 @@
 {
   "name": "unofficial-jisho-api",
-  "version": "1.4.2",
+  "version": "2.0.0",
   "description": "Encapsulates the official Jisho.org API and also provides kanji, example, and stroke diagram search.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -31,11 +31,10 @@
   },
   "homepage": "https://github.com/mistval/unofficial-jisho-api#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "cheerio": "^1.0.0-rc.2",
     "escape-string-regexp": "^1.0.5",
-    "html-entities": "^1.2.1",
-    "request": "^2.86.0",
-    "request-promise": "^4.2.2"
+    "html-entities": "^1.2.1"
   },
   "devDependencies": {
     "docdash": "^1.0.2",

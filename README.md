@@ -180,37 +180,9 @@ This outputs the following:
 }
 ```
 
-## Request options
-
-Optionally, you can provide options, such as timeout and proxy, to use for requests. The options are passed directly to the [request module](https://www.npmjs.com/package/request). See its [documentation](https://www.npmjs.com/package/request) for a full list of options.
-
-If you provide an options object to the jishoApi constructor, those options will be used for all requests. Alternatively, you can provide the options as the second argument to the searchForPhrase, searchForKanji, or searchForExamples functions, and the options will only be used for that specific request. If you provide options in both manners, the options will be merged, with the options passed to the function taking precedence if the two are in conflict.
-
-### Use a proxy for all requests
-
-```js
-const jishoApi = require('unofficial-jisho-api');
-const jisho = new jishoApi({ proxy: 'http://99.99.99.99:9999' });
-
-// Your code
-```
-
-### Use a proxy and custom timeout for a single request
-
-```js
-const jishoApi = require('unofficial-jisho-api');
-const jisho = new jishoApi();
-
-jisho.searchForPhrase('日', { proxy: 'http://99.99.99.99:9999', timeout: 15000 }).then(result => {
-  ...
-  ...
-  ...
-});
-```
-
 ## Parsing HTML strings
 
-If the internal requests are having trouble reaching Jisho.org (due to CORS blocking or something), you can get the HTML bodies from Jisho yourself and pass them into this module's parsing functions as demonstrated in the examples below.
+You can provide the HTML responses from Jisho yourself. This can be useful if you need to use a CORS proxy or something. You can do whatever you need to do to get the HTML and then provide it to this module's parsing functions. For example:
 
 ### Parse kanji page HTML
 
@@ -263,6 +235,10 @@ request(SEARCH_URI, (error, response, body) => {
   console.log(JSON.stringify(json, null, 2));
 });
 ```
+
+## Version history
+
+**v2.0.0** replaces [request](https://www.npmjs.com/package/request) with [axios](https://www.npmjs.com/package/axios), as request is now [in maintenance](https://github.com/request/request/issues/3142) (and was bloated anyway). This significantly reduces install size. The `requestOptions` parameters that most of this APIs functions used to take has been deprecated and removed.
 
 ## About
 

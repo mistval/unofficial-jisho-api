@@ -5,7 +5,7 @@
  *     http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
  */
 
-const request = require('request-promise');
+const axios = require('axios');
 const cheerio = require('cheerio');
 const escapeStringRegexp = require('escape-string-regexp');
 const { XmlEntities } = require('html-entities');
@@ -532,39 +532,17 @@ function parsePhrasePageData(pageHtml, query) {
 
 class API {
   /**
-   * A wrapper around the Jisho.org API and this library's scraping functionality.
-   * @param {Object} requestOptions Options to pass to
-   *   [request]{@link https://www.npmjs.com/package/request} to customize request behavior.
-   *   See [request]{@link https://www.npmjs.com/package/request} for available options.
-   *   requestOptions passed into this constructor can be overriden by passing requestOptions
-   *   to the search methods.
-   */
-  constructor(requestOptions) {
-    this.requestOptions = requestOptions;
-  }
-
-  /**
    * Query the official Jisho API for a word or phrase. See
    * [here]{@link https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api}
    * for discussion about the official API.
    * @param {string} phrase The search term to search for.
-   * @param {Object} requestOptions Options to pass to
-   *   [request]{@link https://www.npmjs.com/package/request} to customize request behavior.
-   *   See [request]{@link https://www.npmjs.com/package/request} for available options.
    * @returns {Object} The response data from the official Jisho.org API. Its format is somewhat
    *   complex and is not documented, so put on your trial-and-error hat.
    * @async
    */
-  searchForPhrase(phrase, requestOptions) {
-    return request({
-      uri: JISHO_API,
-      qs: {
-        keyword: phrase,
-      },
-      json: true,
-      ...this.requestOptions,
-      ...requestOptions,
-    });
+  searchForPhrase(phrase) {
+    const uri = `${JISHO_API}?keyword=${encodeURIComponent(phrase)}`;
+    return axios.get(uri).then(response => response.data);
   }
 
   /**
@@ -575,75 +553,34 @@ class API {
    * In general, you'll want to include kanji in your search term, for example 掛かる
    * instead of かかる (no results).
    * @param {string} phrase The search term to search for.
-   * @param {Object} requestOptions Options to pass to
-   *   [request]{@link https://www.npmjs.com/package/request} to customize request behavior.
-   *   See [request]{@link https://www.npmjs.com/package/request} for available options.
    * @returns {PhrasePageScrapeResult} Information about the searched query.
    * @async
    */
-  scrapeForPhrase(phrase, requestOptions) {
+  scrapeForPhrase(phrase) {
     const uri = uriForPhraseScrape(phrase);
-    return request({
-      uri,
-      json: false,
-      ...this.requestOptions,
-      ...requestOptions,
-    }).then(pageHtml => parsePhrasePageData(pageHtml, phrase)).catch((err) => {
-      if (err.statusCode === 404) {
-        return {
-          query: phrase,
-          found: false,
-        };
-      }
-
-      throw err;
-    });
+    return axios.get(uri).then(response => parsePhrasePageData(response.data, phrase));
   }
 
   /**
    * Scrape Jisho.org for information about a kanji character.
    * @param {string} kanji The kanji to search for.
-   * @param {Object} requestOptions Options to pass to
-   *   [request]{@link https://www.npmjs.com/package/request} to customize request behavior.
-   *   See [request]{@link https://www.npmjs.com/package/request} for available options.
    * @returns {KanjiResult} Information about the searched kanji.
    * @async
    */
-  searchForKanji(kanji, requestOptions) {
+  searchForKanji(kanji) {
     const uri = uriForKanjiSearch(kanji);
-    return request({
-      uri,
-      json: false,
-      ...this.requestOptions,
-      ...requestOptions,
-    }).then(pageHtml => parseKanjiPageData(pageHtml, kanji)).catch((err) => {
-      // Seems to be a bug in Jisho that if you enter a URI encoded URI into the search,
-      // it gives you a 404 instead of a regular search page with empty results.
-      // So handle 404 the same way as empty results.
-      if (err.message.indexOf('The page you were looking for doesn\'t exist') !== -1) {
-        return parseKanjiPageData(err.message, kanji);
-      }
-      throw err;
-    });
+    return axios.get(uri).then(response => parseKanjiPageData(response.data, kanji));
   }
 
   /**
    *
    * @param {string} phrase The word or phrase to search for.
-   * @param {Object} requestOptions Options to pass to
-   *   [request]{@link https://www.npmjs.com/package/request} to customize request behavior.
-   *   See [request]{@link https://www.npmjs.com/package/request} for available options.
    * @returns {ExampleResults}
    * @async
    */
-  searchForExamples(phrase, requestOptions) {
+  searchForExamples(phrase) {
     const uri = uriForExampleSearch(phrase);
-    return request({
-      uri,
-      json: false,
-      ...this.requestOptions,
-      ...requestOptions,
-    }).then(pageHtml => parseExamplePageData(pageHtml, phrase));
+    return axios.get(uri).then(response => parseExamplePageData(response.data, phrase));
   }
 }
 

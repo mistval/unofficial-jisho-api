@@ -116,15 +116,14 @@ declare class jishoAPI {
   getUriForPhraseScrape(searchTerm: string): string;
   getUriForPhraseSearch(phrase: string): string;
 
-  parseExamplePageHtml(pageHtml: HTMLElement, phrase:string): ExampleParseResult;
-  parseKanjiPageData(pageHtml: HTMLElement, kanji: string): KanjiParseResult;
-  parseKanjiPageHtml(pageHtml: HTMLElement, kanji: string): KanjiParseResult;
-  parsePhraseScrapeHtml(pageHtml: HTMLElement, query: string): ScrapeParseResult;
+  parseExamplePageHtml(pageHtml: string, phrase: string): ExampleParseResult;
+  parseKanjiPageHtml(pageHtml: string, kanji: string): KanjiParseResult;
+  parsePhraseScrapeHtml(pageHtml: string, query: string): ScrapeParseResult;
 
-  scrapeForPhrase(phrase: string, requestOptions?: Options): Promise<ScrapeParseResult>
-  searchForExamples(phrase: string, requestOptions?: Options): Promise<ExampleParseResult>
-  searchForKanji(phrase: string, requestOptions?: Options): Promise<KanjiParseResult>; 
-  searchForPhrase(phrase: string, requestOptions?: Options): Promise<JishoAPIResult>
+  scrapeForPhrase(phrase: string): Promise<ScrapeParseResult>
+  searchForExamples(phrase: string): Promise<ExampleParseResult>
+  searchForKanji(kanji: string): Promise<KanjiParseResult>; 
+  searchForPhrase(phrase: string): Promise<JishoAPIResult>
 }
 
 export default jishoAPI;
