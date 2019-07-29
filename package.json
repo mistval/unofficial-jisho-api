@@ -8,7 +8,9 @@
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lintfix": "./node_modules/eslint/bin/eslint.js . --fix",
     "create_test_cases": "node ./test/create_test_cases.js",
-    "test": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --exit",
+    "test": "./node_modules/.bin/mocha --exit",
+    "coverage": "./node_modules/.bin/nyc npm run test",
+    "test_travis": "npm run coverage && ./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov",
     "document": "./node_modules/.bin/jsdoc --configure .jsdoc.json ./index.js -d ./docs -R README.md"
   },
   "repository": {
@@ -39,6 +41,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "codecov": "^3.5.0",
     "docdash": "^1.0.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",

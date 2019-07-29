@@ -7,3 +7,4 @@ logo.png
 test
 .gitignore
 .nyc_output
+.travis.yml
