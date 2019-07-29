@@ -559,9 +559,21 @@ class API {
    * @returns {PhrasePageScrapeResult} Information about the searched query.
    * @async
    */
-  scrapeForPhrase(phrase) {
+  async scrapeForPhrase(phrase) {
     const uri = uriForPhraseScrape(phrase);
-    return axios.get(uri).then(response => parsePhrasePageData(response.data, phrase));
+    try {
+      const response = await axios.get(uri);
+      return parsePhrasePageData(response.data, phrase);
+    } catch (err) {
+      if (err.response.status === 404) {
+        return {
+          query: phrase,
+          found: false,
+        };
+      }
+
+      throw err;
+    }
   }
 
   /**
