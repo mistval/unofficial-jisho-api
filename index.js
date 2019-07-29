@@ -177,7 +177,7 @@ function getParts(pageHtml) {
     partsSectionEndString,
   );
 
-  return parseAnchorsToArray(partsSection);
+  return parseAnchorsToArray(partsSection).sort();
 }
 
 function getSvgUri(pageHtml) {
