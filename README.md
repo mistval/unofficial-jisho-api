@@ -2,6 +2,8 @@
 
 # unofficial-jisho-api
 
+[![npm version](https://badge.fury.io/js/unofficial-jisho-api.svg)](https://badge.fury.io/js/unofficial-jisho-api) [![Build Status](https://travis-ci.com/mistval/unofficial-jisho-api.svg?branch=master)](https://travis-ci.com/mistval/unofficial-jisho-api) [![codecov](https://codecov.io/gh/mistval/unofficial-jisho-api/branch/master/graph/badge.svg)](https://codecov.io/gh/mistval/unofficial-jisho-api) [![install size](https://packagephobia.now.sh/badge?p=unofficial-jisho-api@2.0.3)](https://packagephobia.now.sh/result?p=unofficial-jisho-api@2.0.3)
+
 This module encapsulates the official [Jisho.org](https://jisho.org/) API and also provides kanji and example search features that scrape [Jisho.org](https://jisho.org/).
 
 ## Installation
