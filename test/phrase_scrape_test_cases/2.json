@@ -1,0 +1,142 @@
+{
+  "query": "皆",
+  "expectedResult": {
+    "found": true,
+    "tags": [
+      "Common word",
+      "JLPT N5"
+    ],
+    "meanings": [
+      {
+        "seeAlsoTerms": [],
+        "sentences": [
+          {
+            "english": "The people which were here have all gone.",
+            "japanese": "ここにいた人々はみんな行ってしまった。",
+            "pieces": [
+              {
+                "lifted": "",
+                "unlifted": "ここ"
+              },
+              {
+                "lifted": "",
+                "unlifted": "に"
+              },
+              {
+                "lifted": "",
+                "unlifted": "いた"
+              },
+              {
+                "lifted": "ひとびと",
+                "unlifted": "人々"
+              },
+              {
+                "lifted": "",
+                "unlifted": "は"
+              },
+              {
+                "lifted": "",
+                "unlifted": "みんな"
+              },
+              {
+                "lifted": "い",
+                "unlifted": "行って"
+              },
+              {
+                "lifted": "",
+                "unlifted": "しまった"
+              }
+            ]
+          }
+        ],
+        "definition": "all; everyone; everybody",
+        "supplemental": [
+          "Usually written using kana alone"
+        ],
+        "definitionAbstract": "",
+        "tags": [
+          "adverb",
+          "noun"
+        ]
+      },
+      {
+        "seeAlsoTerms": [],
+        "sentences": [
+          {
+            "english": "All the dinner had been eaten before he came.",
+            "japanese": "ごちそうはみんな彼が来ないうちに食べられてしまった。",
+            "pieces": [
+              {
+                "lifted": "",
+                "unlifted": "ごちそう"
+              },
+              {
+                "lifted": "",
+                "unlifted": "は"
+              },
+              {
+                "lifted": "",
+                "unlifted": "みんな"
+              },
+              {
+                "lifted": "かれ",
+                "unlifted": "彼"
+              },
+              {
+                "lifted": "",
+                "unlifted": "が"
+              },
+              {
+                "lifted": "らい",
+                "unlifted": "来"
+              },
+              {
+                "lifted": "",
+                "unlifted": "ないうちに"
+              },
+              {
+                "lifted": "た",
+                "unlifted": "食べられて"
+              },
+              {
+                "lifted": "",
+                "unlifted": "しまった"
+              }
+            ]
+          }
+        ],
+        "definition": "everything",
+        "supplemental": [
+          "Usually written using kana alone"
+        ],
+        "definitionAbstract": "",
+        "tags": [
+          "adverb",
+          "noun"
+        ]
+      },
+      {
+        "seeAlsoTerms": [],
+        "sentences": [],
+        "definition": "",
+        "supplemental": [],
+        "definitionAbstract": "",
+        "tags": [
+          "notes"
+        ]
+      }
+    ],
+    "otherForms": [
+      {
+        "kanji": "皆んな",
+        "kana": "みんな"
+      },
+      {
+        "kanji": "皆",
+        "kana": "みな"
+      }
+    ],
+    "query": "皆",
+    "uri": "https://jisho.org/word/%E7%9A%86"
+  }
+}

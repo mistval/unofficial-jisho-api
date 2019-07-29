@@ -1,0 +1,99 @@
+{
+  "query": "車",
+  "expectedResult": {
+    "found": true,
+    "tags": [
+      "Common word",
+      "JLPT N5",
+      "Wanikani level 4"
+    ],
+    "meanings": [
+      {
+        "seeAlsoTerms": [],
+        "sentences": [
+          {
+            "english": "You cannot be too careful when you drive a car.",
+            "japanese": "車を運転する時はいくら注意してもしすぎることはない。",
+            "pieces": [
+              {
+                "lifted": "くるま",
+                "unlifted": "車"
+              },
+              {
+                "lifted": "",
+                "unlifted": "を"
+              },
+              {
+                "lifted": "うんてん",
+                "unlifted": "運転"
+              },
+              {
+                "lifted": "",
+                "unlifted": "する"
+              },
+              {
+                "lifted": "とき",
+                "unlifted": "時"
+              },
+              {
+                "lifted": "",
+                "unlifted": "は"
+              },
+              {
+                "lifted": "",
+                "unlifted": "いくら"
+              },
+              {
+                "lifted": "ちゅうい",
+                "unlifted": "注意"
+              },
+              {
+                "lifted": "",
+                "unlifted": "して"
+              },
+              {
+                "lifted": "",
+                "unlifted": "も"
+              },
+              {
+                "lifted": "",
+                "unlifted": "しすぎる"
+              },
+              {
+                "lifted": "",
+                "unlifted": "こと"
+              },
+              {
+                "lifted": "",
+                "unlifted": "は"
+              },
+              {
+                "lifted": "",
+                "unlifted": "ない"
+              }
+            ]
+          }
+        ],
+        "definition": "car; automobile; vehicle",
+        "supplemental": [],
+        "definitionAbstract": "",
+        "tags": [
+          "noun"
+        ]
+      },
+      {
+        "seeAlsoTerms": [],
+        "sentences": [],
+        "definition": "wheel",
+        "supplemental": [],
+        "definitionAbstract": "",
+        "tags": [
+          "noun"
+        ]
+      }
+    ],
+    "otherForms": [],
+    "query": "車",
+    "uri": "https://jisho.org/word/%E8%BB%8A"
+  }
+}

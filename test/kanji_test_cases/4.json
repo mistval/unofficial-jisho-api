@@ -1,0 +1,52 @@
+{
+  "query": "贄",
+  "expectedResult": {
+    "query": "贄",
+    "found": true,
+    "strokeCount": 18,
+    "meaning": "offering, sacrifice",
+    "kunyomi": [
+      "にえ"
+    ],
+    "onyomi": [
+      "シ"
+    ],
+    "onyomiExamples": [],
+    "kunyomiExamples": [
+      {
+        "example": "贄",
+        "reading": "にえ",
+        "meaning": "offering (to the gods, emperor, etc.), gift, sacrifice"
+      },
+      {
+        "example": "早贄",
+        "reading": "はやにえ",
+        "meaning": "butcher-bird prey impaled on twigs, thorns, etc. for later consumption, first offering of the season"
+      },
+      {
+        "example": "百舌の早贄",
+        "reading": "もずのはやにえ",
+        "meaning": "butcher-bird prey impaled on twigs, thorns, etc. for later consumption"
+      }
+    ],
+    "radical": {
+      "symbol": "貝",
+      "meaning": "shell"
+    },
+    "parts": [
+      "ハ",
+      "丶",
+      "九",
+      "亠",
+      "十",
+      "目",
+      "立",
+      "貝",
+      "辛"
+    ],
+    "strokeOrderDiagramUri": "http://classic.jisho.org/static/images/stroke_diagrams/36100_frames.png",
+    "strokeOrderSvgUri": "http://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/08d04.svg",
+    "strokeOrderGifUri": "https://raw.githubusercontent.com/mistval/kotoba/master/bot/resources/images/kanjianimations/08d04_anim.gif",
+    "uri": "http://jisho.org/search/%E8%B4%84%23kanji"
+  }
+}

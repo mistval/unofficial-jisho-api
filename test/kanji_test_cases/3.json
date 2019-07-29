@@ -1,0 +1,7 @@
+{
+  "query": "極上",
+  "expectedResult": {
+    "query": "極上",
+    "found": false
+  }
+}

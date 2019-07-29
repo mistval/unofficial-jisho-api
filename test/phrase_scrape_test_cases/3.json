@@ -1,0 +1,68 @@
+{
+  "query": "ネガティブ",
+  "expectedResult": {
+    "found": true,
+    "tags": [
+      "Common word"
+    ],
+    "meanings": [
+      {
+        "seeAlsoTerms": [],
+        "sentences": [],
+        "definition": "negative (e.g. thinking)",
+        "supplemental": [
+          "Antonym: ポジティブ"
+        ],
+        "definitionAbstract": "",
+        "tags": [
+          "na-adjective"
+        ]
+      },
+      {
+        "seeAlsoTerms": [],
+        "sentences": [],
+        "definition": "negative (photography)",
+        "supplemental": [],
+        "definitionAbstract": "",
+        "tags": [
+          "noun"
+        ]
+      },
+      {
+        "seeAlsoTerms": [
+          "陰極"
+        ],
+        "sentences": [],
+        "definition": "negative (electrical polarity)",
+        "supplemental": [],
+        "definitionAbstract": "",
+        "tags": [
+          "noun"
+        ]
+      },
+      {
+        "seeAlsoTerms": [],
+        "sentences": [],
+        "definition": "Negative (Finnish band)",
+        "supplemental": [],
+        "definitionAbstract": "Negative is a Finnish glam rock band founded at the end of 1997. Members of Negative cite musical influence such as Guns N' Roses, Queen, and Hanoi Rocks. The band itself labels the music as ”emotional rock’n roll”.",
+        "tags": [
+          "wikipedia definition"
+        ]
+      }
+    ],
+    "otherForms": [
+      {
+        "kanji": "ネガティヴ"
+      },
+      {
+        "kanji": "ネガチブ"
+      },
+      {
+        "kanji": "ネガチィブ"
+      }
+    ],
+    "query": "ネガティブ",
+    "uri": "https://jisho.org/word/%E3%83%8D%E3%82%AC%E3%83%86%E3%82%A3%E3%83%96"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "query": "楽",
+  "expectedResult": {
+    "query": "楽",
+    "found": true,
+    "taughtIn": "grade 2",
+    "jlptLevel": "N4",
+    "newspaperFrequencyRank": "373",
+    "strokeCount": 13,
+    "meaning": "music, comfort, ease",
+    "kunyomi": [
+      "たの.しい",
+      "たの.しむ",
+      "この.む"
+    ],
+    "onyomi": [
+      "ガク",
+      "ラク",
+      "ゴウ"
+    ],
+    "onyomiExamples": [
+      {
+        "example": "楽団",
+        "reading": "ガクダン",
+        "meaning": "orchestra, band"
+      },
+      {
+        "example": "楽章",
+        "reading": "ガクショウ",
+        "meaning": "(musical) movement"
+      },
+      {
+        "example": "邦楽",
+        "reading": "ホウガク",
+        "meaning": "Japanese music (esp. traditional Japanese music)"
+      },
+      {
+        "example": "室内楽",
+        "reading": "シツナイガク",
+        "meaning": "chamber music"
+      },
+      {
+        "example": "楽",
+        "reading": "ラク",
+        "meaning": "comfort, ease, relief, (at) peace, relaxation, easy, simple, without trouble, without hardships, (economically) comfortable, raku pottery"
+      },
+      {
+        "example": "楽園",
+        "reading": "ラクエン",
+        "meaning": "pleasure garden, paradise"
+      },
+      {
+        "example": "千秋楽",
+        "reading": "センシュウラク",
+        "meaning": "concluding festivities, concluding program, concluding programme, final day of a tournament"
+      },
+      {
+        "example": "行楽",
+        "reading": "コウラク",
+        "meaning": "outing, excursion, pleasure trip, going on a picnic"
+      },
+      {
+        "example": "猿楽",
+        "reading": "サルガク",
+        "meaning": "sarugaku (form of theatre popular in Japan during the 11th to 14th centuries), noh, fooling around"
+      }
+    ],
+    "kunyomiExamples": [
+      {
+        "example": "楽しい",
+        "reading": "たのしい",
+        "meaning": "enjoyable, fun, pleasant, happy, delightful"
+      },
+      {
+        "example": "楽しい思い出",
+        "reading": "たのしいおもいで",
+        "meaning": "happy memory, sweet memory"
+      },
+      {
+        "example": "楽しむ",
+        "reading": "たのしむ",
+        "meaning": "to enjoy (oneself)"
+      }
+    ],
+    "radical": {
+      "symbol": "木",
+      "meaning": "tree"
+    },
+    "parts": [
+      "冫",
+      "木",
+      "白"
+    ],
+    "strokeOrderDiagramUri": "http://classic.jisho.org/static/images/stroke_diagrams/27005_frames.png",
+    "strokeOrderSvgUri": "http://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/0697d.svg",
+    "strokeOrderGifUri": "https://raw.githubusercontent.com/mistval/kotoba/master/bot/resources/images/kanjianimations/0697d_anim.gif",
+    "uri": "http://jisho.org/search/%E6%A5%BD%23kanji"
+  }
+}

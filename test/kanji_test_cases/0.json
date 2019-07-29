@@ -1,0 +1,68 @@
+{
+  "query": "車",
+  "expectedResult": {
+    "query": "車",
+    "found": true,
+    "taughtIn": "grade 1",
+    "jlptLevel": "N5",
+    "newspaperFrequencyRank": "333",
+    "strokeCount": 7,
+    "meaning": "car",
+    "kunyomi": [
+      "くるま"
+    ],
+    "onyomi": [
+      "シャ"
+    ],
+    "onyomiExamples": [
+      {
+        "example": "車",
+        "reading": "シャ",
+        "meaning": "car, vehicle"
+      },
+      {
+        "example": "車検",
+        "reading": "シャケン",
+        "meaning": "vehicle inspection"
+      },
+      {
+        "example": "見切り発車",
+        "reading": "ミキリハッシャ",
+        "meaning": "starting a train (or bus, etc.) before all the passengers are on board, making a snap decision, starting an action without considering objections to it any longer"
+      },
+      {
+        "example": "軽自動車",
+        "reading": "ケイジドウシャ",
+        "meaning": "light motor vehicle (up to 660cc and 64bhp), k-car, kei car"
+      }
+    ],
+    "kunyomiExamples": [
+      {
+        "example": "車",
+        "reading": "くるま",
+        "meaning": "car, automobile, vehicle, wheel"
+      },
+      {
+        "example": "車椅子",
+        "reading": "くるまいす",
+        "meaning": "wheelchair, folding push-chair"
+      },
+      {
+        "example": "火の車",
+        "reading": "ひのくるま",
+        "meaning": "fiery chariot (which carries the souls of sinners into hell), desperate financial situation, dire straits"
+      }
+    ],
+    "radical": {
+      "symbol": "車",
+      "meaning": "cart, car"
+    },
+    "parts": [
+      "車"
+    ],
+    "strokeOrderDiagramUri": "http://classic.jisho.org/static/images/stroke_diagrams/36554_frames.png",
+    "strokeOrderSvgUri": "http://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/08eca.svg",
+    "strokeOrderGifUri": "https://raw.githubusercontent.com/mistval/kotoba/master/bot/resources/images/kanjianimations/08eca_anim.gif",
+    "uri": "http://jisho.org/search/%E8%BB%8A%23kanji"
+  }
+}

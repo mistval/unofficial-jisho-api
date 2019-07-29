@@ -1,7 +1,9 @@
-test.js
 .vscode
 docs
 logo.png
 .eslintignore
 .eslintrc.js
 .jsdoc.json
+test
+.gitignore
+.nyc_output

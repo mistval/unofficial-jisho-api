@@ -1,0 +1,39 @@
+{
+  "query": "日本人",
+  "expectedResult": {
+    "found": true,
+    "tags": [
+      "Common word"
+    ],
+    "meanings": [
+      {
+        "seeAlsoTerms": [],
+        "sentences": [],
+        "definition": "Japanese person; Japanese people",
+        "supplemental": [],
+        "definitionAbstract": "",
+        "tags": [
+          "noun"
+        ]
+      },
+      {
+        "seeAlsoTerms": [],
+        "sentences": [],
+        "definition": "Japanese people",
+        "supplemental": [],
+        "definitionAbstract": "The Japanese people are a nationality originating in the Japanese archipelago and are the predominant ethnic group of Japan. Worldwide, approximately 130 million people are of Japanese descent; of these, approximately 127 million are residents of Japan. People of Japanese ancestry who live in other countries are referred to as nikkeijin . The term ethnic Japanese may also be used in some contexts to refer to a locus of ethnic groups including the Yamato, Ainu and Ryukyuan people.",
+        "tags": [
+          "wikipedia definition"
+        ]
+      }
+    ],
+    "otherForms": [
+      {
+        "kanji": "日本人",
+        "kana": "にっぽんじん"
+      }
+    ],
+    "query": "日本人",
+    "uri": "https://jisho.org/word/%E6%97%A5%E6%9C%AC%E4%BA%BA"
+  }
+}

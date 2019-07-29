@@ -1,0 +1,127 @@
+{
+  "query": "家",
+  "expectedResult": {
+    "query": "家",
+    "found": true,
+    "taughtIn": "grade 2",
+    "jlptLevel": "N4",
+    "newspaperFrequencyRank": "133",
+    "strokeCount": 10,
+    "meaning": "house, home, family, professional, expert, performer",
+    "kunyomi": [
+      "いえ",
+      "や",
+      "うち"
+    ],
+    "onyomi": [
+      "カ",
+      "ケ"
+    ],
+    "onyomiExamples": [
+      {
+        "example": "家",
+        "reading": "カ",
+        "meaning": "-ist, -er"
+      },
+      {
+        "example": "家屋",
+        "reading": "カオク",
+        "meaning": "house, building"
+      },
+      {
+        "example": "研究家",
+        "reading": "ケンキュウカ",
+        "meaning": "researcher, student (of)"
+      },
+      {
+        "example": "活動家",
+        "reading": "カツドウカ",
+        "meaning": "activist"
+      },
+      {
+        "example": "家",
+        "reading": "ケ",
+        "meaning": "house (e.g. of Tokugawa), family"
+      },
+      {
+        "example": "家来",
+        "reading": "ケライ",
+        "meaning": "retainer, retinue, servant"
+      },
+      {
+        "example": "本家",
+        "reading": "ホンケ",
+        "meaning": "head house (family), birthplace, originator"
+      },
+      {
+        "example": "公家",
+        "reading": "クゲ",
+        "meaning": "court noble, nobility, Imperial Court"
+      }
+    ],
+    "kunyomiExamples": [
+      {
+        "example": "家",
+        "reading": "いえ",
+        "meaning": "house, residence, dwelling, family, household, lineage, family name"
+      },
+      {
+        "example": "家主",
+        "reading": "やぬし",
+        "meaning": "landlord, landlady, house owner, home owner, head of the household"
+      },
+      {
+        "example": "本家",
+        "reading": "ほんけ",
+        "meaning": "head house (family), birthplace, originator"
+      },
+      {
+        "example": "小家",
+        "reading": "こいえ",
+        "meaning": "small and simple home"
+      },
+      {
+        "example": "屋",
+        "reading": "や",
+        "meaning": "(something) shop, somebody who sells (something) or works as (something), somebody with a (certain) personality trait, house, roof"
+      },
+      {
+        "example": "家内",
+        "reading": "かない",
+        "meaning": "(my) wife, inside the home, one's family"
+      },
+      {
+        "example": "長屋",
+        "reading": "ながや",
+        "meaning": "tenement house, row house"
+      },
+      {
+        "example": "本家",
+        "reading": "ほんけ",
+        "meaning": "head house (family), birthplace, originator"
+      },
+      {
+        "example": "家",
+        "reading": "うち",
+        "meaning": "house, home (one's own), (one's) family, (one's) household"
+      },
+      {
+        "example": "家中",
+        "reading": "うちじゅう",
+        "meaning": "whole family, all (members of) the family, all over the house, retainer of a daimyo, feudal domain, clan"
+      }
+    ],
+    "radical": {
+      "symbol": "宀",
+      "meaning": "roof"
+    },
+    "parts": [
+      "宀",
+      "豕"
+    ],
+    "strokeOrderDiagramUri": "http://classic.jisho.org/static/images/stroke_diagrams/23478_frames.png",
+    "strokeOrderSvgUri": "http://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/05bb6.svg",
+    "strokeOrderGifUri": "https://raw.githubusercontent.com/mistval/kotoba/master/bot/resources/images/kanjianimations/05bb6_anim.gif",
+    "uri": "http://jisho.org/search/%E5%AE%B6%23kanji"
+  }
+}
