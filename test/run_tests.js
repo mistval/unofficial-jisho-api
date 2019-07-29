@@ -10,7 +10,7 @@ function getFilePaths(dirname) {
   return filenames.map(filename => path.join(__dirname, dirname, filename));
 }
 
-describe('Matches previously retrieved results', function() {
+describe('Matches previously scraped results', function() {
   describe('Kanji test cases', function() {
     const testCaseFiles = getFilePaths('kanji_test_cases');
     testCaseFiles.forEach((filePath) => {
@@ -43,4 +43,11 @@ describe('Matches previously retrieved results', function() {
       }).timeout(10000);
     });
   });
+});
+
+describe('Official Jisho API', function() {
+  it('Does not error, has meta, has data', async function() {
+    const result = await jishoApi.searchForPhrase('車');
+    assert.containsAllKeys(result, ['meta', 'data']);
+  }).timeout(10000);
 });

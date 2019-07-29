@@ -15,7 +15,7 @@ async function createTestCases(outputDir, queries, searchFuncName) {
 }
 
 function createKanjiTestCases() {
-  const queries = ['車', '家', '楽', '極上', '贄', 'ネガティブ', 'wegmwrlgkrgmg'];
+  const queries = ['車', '家', '楽', '極上', '贄', 'ネガティブ', 'wegmwrlgkrgmg', '水'];
   const outputDir = path.join(__dirname, 'kanji_test_cases');
   return createTestCases(outputDir, queries, 'searchForKanji');
 }

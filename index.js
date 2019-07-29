@@ -34,7 +34,7 @@ function getUriForStrokeOrderDiagram(kanji) {
 }
 
 function uriForPhraseSearch(phrase) {
-  return `${JISHO_API}?keyword=${phrase}`;
+  return `${JISHO_API}?keyword=${encodeURIComponent(phrase)}`;
 }
 
 function containsKanjiGlyph(pageHtml, kanji) {
@@ -544,7 +544,7 @@ class API {
    * @async
    */
   searchForPhrase(phrase) {
-    const uri = `${JISHO_API}?keyword=${encodeURIComponent(phrase)}`;
+    const uri = uriForPhraseSearch(phrase);
     return axios.get(uri).then(response => response.data);
   }
 

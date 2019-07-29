@@ -1,0 +1,78 @@
+{
+  "query": "水",
+  "expectedResult": {
+    "query": "水",
+    "found": true,
+    "taughtIn": "grade 1",
+    "jlptLevel": "N5",
+    "newspaperFrequencyRank": "223",
+    "strokeCount": 4,
+    "meaning": "water",
+    "kunyomi": [
+      "みず",
+      "みず-"
+    ],
+    "onyomi": [
+      "スイ"
+    ],
+    "onyomiExamples": [
+      {
+        "example": "水",
+        "reading": "スイ",
+        "meaning": "Wednesday, shaved ice (served with flavored syrup), water (fifth of the five elements)"
+      },
+      {
+        "example": "水位",
+        "reading": "スイイ",
+        "meaning": "water level"
+      },
+      {
+        "example": "用水",
+        "reading": "ヨウスイ",
+        "meaning": "irrigation water, water for fire, city water, cistern water"
+      },
+      {
+        "example": "浄水",
+        "reading": "ジョウスイ",
+        "meaning": "clean water"
+      }
+    ],
+    "kunyomiExamples": [
+      {
+        "example": "水",
+        "reading": "みず",
+        "meaning": "water (esp. cool, fresh water, e.g. drinking water), fluid (esp. in an animal tissue), liquid, flood, floodwaters, water offered to wrestlers just prior to a bout, break granted to wrestlers engaged in a prolonged bout"
+      },
+      {
+        "example": "水揚げ",
+        "reading": "みずあげ",
+        "meaning": "landing, unloading (e.g. a ship), catch (of fish), takings, sales (of a shop), defloration (e.g. of a geisha), preservation (of cut flowers, in ikebana)"
+      },
+      {
+        "example": "飲み水",
+        "reading": "のみみず",
+        "meaning": "drinking water, potable water"
+      },
+      {
+        "example": "呼び水",
+        "reading": "よびみず",
+        "meaning": "pump-priming, rousing, stimulation"
+      }
+    ],
+    "radical": {
+      "symbol": "水",
+      "forms": [
+        "氵",
+        "氺"
+      ],
+      "meaning": "water"
+    },
+    "parts": [
+      "水"
+    ],
+    "strokeOrderDiagramUri": "http://classic.jisho.org/static/images/stroke_diagrams/27700_frames.png",
+    "strokeOrderSvgUri": "http://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/06c34.svg",
+    "strokeOrderGifUri": "https://raw.githubusercontent.com/mistval/kotoba/master/bot/resources/images/kanjianimations/06c34_anim.gif",
+    "uri": "http://jisho.org/search/%E6%B0%B4%23kanji"
+  }
+}
