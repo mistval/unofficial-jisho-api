@@ -5,12 +5,12 @@
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "lint": "./node_modules/eslint/bin/eslint.js .",
-    "lintfix": "./node_modules/eslint/bin/eslint.js . --fix",
+    "lint": "./node_modules/.bin/eslint .",
+    "lintfix": "./node_modules/.bin/eslint . --fix",
     "create_test_cases": "node ./test/create_test_cases.js",
     "test": "./node_modules/.bin/mocha --exit",
     "coverage": "./node_modules/.bin/nyc npm run test",
-    "test_travis": "npm run coverage && ./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov",
+    "test_travis": "npm run lint && npm run coverage && ./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov",
     "document": "./node_modules/.bin/jsdoc --configure .jsdoc.json ./index.js -d ./docs -R README.md"
   },
   "repository": {
