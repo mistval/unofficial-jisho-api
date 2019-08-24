@@ -187,12 +187,9 @@ function getSvgUri(pageHtml) {
 }
 
 function getGifUri(kanji) {
-  const fileCodeStringLength = 5;
   const unicodeString = kanji.codePointAt(0).toString(16);
-  const fillZeroes = fileCodeStringLength - unicodeString.length;
-  const fileCode = new Array(fillZeroes + 1).join('0') + unicodeString;
-  const fileName = `${fileCode}_anim.gif`;
-  const animationUri = `https://raw.githubusercontent.com/mistval/kotoba/master/bot/resources/images/kanjianimations/${fileName}`;
+  const fileName = `${unicodeString}.gif`;
+  const animationUri = `https://raw.githubusercontent.com/mistval/kanji_images/master/gifs/${fileName}`;
 
   return animationUri;
 }
