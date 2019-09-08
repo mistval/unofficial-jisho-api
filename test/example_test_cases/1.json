@@ -286,14 +286,14 @@
       {
         "english": "As you can also tell from these beautiful, far from Japanese, looks, Yuna is not pure-blood Japanese. She's a quarter-blood with a westerner as grandmother.",
         "kanji": "日本人離れしたこの美しい相貌からもわかるように、優奈は実は生粋の日本人じゃない。西洋人をおばあちゃんに持つ、クォーターだったりする。",
-        "kana": "にほんじんばなれしたこのうつくしいそうぼうからもわかるように、優奈はじつはきっすいのにほんじんじゃない。せいようじんをおばあちゃんにもつ、クォーターだったりする。",
+        "kana": "にほんじんはなれしたこのうつくしいそうぼうからもわかるように、優奈はじつはきっすいのにほんじんじゃない。せいようじんをおばあちゃんにもつ、クォーターだったりする。",
         "pieces": [
           {
             "lifted": "にほんじん",
             "unlifted": "日本人"
           },
           {
-            "lifted": "ばな",
+            "lifted": "はな",
             "unlifted": "離れ"
           },
           {
