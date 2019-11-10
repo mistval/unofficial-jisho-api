@@ -140,6 +140,8 @@ This outputs the following:
 ```json
 {
   "found": true,
+  "query": "谷",
+  "uri": "https://jisho.org/word/%E8%B0%B7",
   "tags": [
     "Common word",
     "JLPT N3",
@@ -177,8 +179,7 @@ This outputs the following:
       "kana": "たに"
     }
   ],
-  "query": "谷",
-  "uri": "https://jisho.org/word/%E8%B0%B7"
+  "notes": []
 }
 ```
 
