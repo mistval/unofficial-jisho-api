@@ -2,6 +2,8 @@
   "query": "日本人",
   "expectedResult": {
     "found": true,
+    "query": "日本人",
+    "uri": "https://jisho.org/word/%E6%97%A5%E6%9C%AC%E4%BA%BA",
     "tags": [
       "Common word"
     ],
@@ -33,7 +35,6 @@
         "kana": "にっぽんじん"
       }
     ],
-    "query": "日本人",
-    "uri": "https://jisho.org/word/%E6%97%A5%E6%9C%AC%E4%BA%BA"
+    "notes": []
   }
 }

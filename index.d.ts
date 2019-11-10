@@ -55,10 +55,11 @@ export interface KanjiParseResult extends QueryResult {
   strokeOrderGifUri: string;
 }
 
-export interface ScrapeParseResult extends Result {
+export interface ScrapeParseResult extends QueryResult {
   tags: string[];
   meanings: string[];
   otherForms: string[];
+  notes: string[];
 }
 
 export interface JishoJapaneseWord {

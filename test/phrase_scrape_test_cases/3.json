@@ -2,6 +2,8 @@
   "query": "ネガティブ",
   "expectedResult": {
     "found": true,
+    "query": "ネガティブ",
+    "uri": "https://jisho.org/word/%E3%83%8D%E3%82%AC%E3%83%86%E3%82%A3%E3%83%96",
     "tags": [
       "Common word"
     ],
@@ -62,7 +64,6 @@
         "kanji": "ネガチィブ"
       }
     ],
-    "query": "ネガティブ",
-    "uri": "https://jisho.org/word/%E3%83%8D%E3%82%AC%E3%83%86%E3%82%A3%E3%83%96"
+    "notes": []
   }
 }

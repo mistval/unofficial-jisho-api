@@ -339,8 +339,8 @@ function getTags($) {
   return tags;
 }
 
-function getMeaningsAndOtherForms($) {
-  const returnValues = { otherForms: [] };
+function getMeaningsOtherFormsAndNotes($) {
+  const returnValues = { otherForms: [], notes: [] };
 
   const meaningsWrapper = $('#page_container > div > div > article > div > div.concept_light-meanings.medium-9.columns > div');
   const meaningsChildren = meaningsWrapper.children();
@@ -355,6 +355,8 @@ function getMeaningsAndOtherForms($) {
       returnValues.otherForms = child.text().split('、')
         .map(s => s.replace('【', '').replace('】', '').split(' '))
         .map(a => ({ kanji: a[0], kana: a[1] }));
+    } else if (mostRecentWordTypes[0] === 'notes') {
+      returnValues.notes = child.text().split('\n');
     } else {
       const meaning = child.find('.meaning-meaning').text();
       const meaningAbstract = child.find('.meaning-abstract')
@@ -417,15 +419,16 @@ function uriForPhraseScrape(searchTerm) {
 
 function parsePhrasePageData(pageHtml, query) {
   const $ = cheerio.load(pageHtml);
-  const { meanings, otherForms } = getMeaningsAndOtherForms($);
+  const { meanings, otherForms, notes } = getMeaningsOtherFormsAndNotes($);
 
   const result = {
     found: true,
+    query,
+    uri: uriForPhraseScrape(query),
     tags: getTags($),
     meanings,
     otherForms,
-    query,
-    uri: uriForPhraseScrape(query),
+    notes,
   };
 
   return result;
@@ -462,6 +465,7 @@ function parsePhrasePageData(pageHtml, query) {
  * @property {Array.<PhraseScrapeMeaning>} [meanings] Information about the meanings associated
  *   with result.
  * @property {Array.<string>} [tags] Tags associated with this search result.
+ * @property {Array.<string>} [notes] Notes associated with the search result.
  */
 
 /**

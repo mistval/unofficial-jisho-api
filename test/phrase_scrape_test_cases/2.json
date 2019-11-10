@@ -2,6 +2,8 @@
   "query": "皆",
   "expectedResult": {
     "found": true,
+    "query": "皆",
+    "uri": "https://jisho.org/word/%E7%9A%86",
     "tags": [
       "Common word",
       "JLPT N5"
@@ -114,16 +116,6 @@
           "adverb",
           "noun"
         ]
-      },
-      {
-        "seeAlsoTerms": [],
-        "sentences": [],
-        "definition": "",
-        "supplemental": [],
-        "definitionAbstract": "",
-        "tags": [
-          "notes"
-        ]
       }
     ],
     "otherForms": [
@@ -136,7 +128,8 @@
         "kana": "みな"
       }
     ],
-    "query": "皆",
-    "uri": "https://jisho.org/word/%E7%9A%86"
+    "notes": [
+      "皆んな: Irregular okurigana usage."
+    ]
   }
 }
