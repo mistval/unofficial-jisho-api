@@ -2,32 +2,30 @@
 // Project: The Unofficial Jisho API
 // Definitions by: Damien McMahon https://macoto.co.uk 
 
-import { Options } from 'request';
-
-interface Radical {
+export interface Radical {
   symbol: string;
   meaning: string;
 }
 
-interface YomiExample {
+export interface YomiExample {
   example: string;
   reading: string;
   meaning: string;
 }
 
-interface Piece {
+export interface Piece {
   lifted: string;
   unlifted: string;
 }
 
-interface Result {
+export interface Result {
   english: string;
   kanji: string;
   kana: string;
   pieces: Piece[];
 }
 
-interface QueryResult {
+export interface QueryResult {
   query: string;
   found: boolean;
   uri: string;
@@ -55,9 +53,24 @@ export interface KanjiParseResult extends QueryResult {
   strokeOrderGifUri: string;
 }
 
+export interface PhraseScrapeSentence {
+  english: string;
+  japanese: string;
+  pieces: Piece[];
+}
+
+export interface PhaseScrapeMeaning {
+  seeAlsoTerms: string[];
+  definition: string;
+  supplemental: string[];
+  definitionAbstract: string;
+  tags: string[];
+  sentences: PhraseScrapeSentence[];
+}
+
 export interface ScrapeParseResult extends QueryResult {
   tags: string[];
-  meanings: string[];
+  meanings: PhaseScrapeMeaning[];
   otherForms: string[];
   notes: string[];
 }
@@ -108,7 +121,7 @@ export interface JishoAPIResult {
   data: JishoResult[];
 }
 
-declare class jishoAPI {
+declare class JishoAPI {
 
   constructor ();
 
@@ -127,4 +140,4 @@ declare class jishoAPI {
   searchForPhrase(phrase: string): Promise<JishoAPIResult>
 }
 
-export default jishoAPI;
+export default JishoAPI;

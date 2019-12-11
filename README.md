@@ -21,8 +21,8 @@ Below are some basic examples. There's more detailed documentation [here](https:
 This returns the same results as the official [Jisho.org](https://jisho.org/) API. See the discussion of that [here](http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api).
 
 ```js
-const jishoApi = require('unofficial-jisho-api');
-const jisho = new jishoApi();
+const JishoApi = require('unofficial-jisho-api');
+const jisho = new JishoApi();
 
 jisho.searchForPhrase('日').then(result => {
   ...
@@ -34,8 +34,8 @@ jisho.searchForPhrase('日').then(result => {
 ### Kanji search
 
 ```js
-const jishoApi = require('unofficial-jisho-api');
-const jisho = new jishoApi();
+const JishoApi = require('unofficial-jisho-api');
+const jisho = new JishoApi();
 
 jisho.searchForKanji('語').then(result => {
   console.log('Found: ' + result.found);
@@ -81,8 +81,8 @@ Jisho Uri: http://jisho.org/search/%E8%AA%9E%23kanji
 ### Example search
 
 ```js
-const jishoApi = require('unofficial-jisho-api');
-const jisho = new jishoApi();
+const JishoApi = require('unofficial-jisho-api');
+const jisho = new JishoApi();
 
 jisho.searchForExamples('日').then(result => {
   console.log('Jisho Uri: ' + result.uri);
@@ -127,8 +127,8 @@ ed":"きょうと","unlifted":"京都"},{"lifted":"","unlifted":"だ"}]
 This scrapes the word/phrase page on Jisho.org. This can get you some data that the official API doesn't have, such as JLPT level and part-of-speech. The official API (`searchForPhrase`) should be preferred if it has the data you need.
 
 ```js
-const jishoApi = require('unofficial-jisho-api');
-const jisho = new jishoApi();
+const JishoApi = require('unofficial-jisho-api');
+const jisho = new JishoApi();
 
 jisho.scrapeForPhrase('谷').then((data) => {
   console.log(JSON.stringify(data, null, 2));
@@ -191,8 +191,8 @@ You can provide the HTML responses from Jisho yourself. This can be useful if yo
 
 ```js
 const request = require('request');
-const jishoApi = require('unofficial-jisho-api');
-const jisho = new jishoApi();
+const JishoApi = require('unofficial-jisho-api');
+const jisho = new JishoApi();
 
 const SEARCH_KANJI = '車';
 const SEARCH_URI = jisho.getUriForKanjiSearch(SEARCH_KANJI);
@@ -209,8 +209,8 @@ request(SEARCH_URI, (error, response, body) => {
 
 ```js
 const request = require('request');
-const jishoApi = require('unofficial-jisho-api');
-const jisho = new jishoApi();
+const JishoApi = require('unofficial-jisho-api');
+const jisho = new JishoApi();
 
 const SEARCH_EXAMPLE = '保護者';
 const SEARCH_URI = jisho.getUriForExampleSearch(SEARCH_EXAMPLE);
@@ -227,8 +227,8 @@ request(SEARCH_URI, (error, response, body) => {
 
 ```js
 const request = require('request');
-const jishoApi = require('unofficial-jisho-api');
-const jisho = new jishoApi();
+const JishoApi = require('unofficial-jisho-api');
+const jisho = new JishoApi();
 
 const SEARCH_EXAMPLE = '保護者';
 const SEARCH_URI = jisho.getUriForPhraseScrape(SEARCH_EXAMPLE);
