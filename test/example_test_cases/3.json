@@ -719,7 +719,7 @@
       {
         "english": "\"I've heard about it, Koichi\" \"You don't need to say anything more, I know. It's the summer festival incident at the shrine, right?\"",
         "kanji": "「聞いたよ、光一」「まあ皆までいうなって。分かってる。神社の夏祭りの一件でしょ？」",
-        "kana": "「きいたよ、光一」「まあみなまでいうなって。わかかってる。じんじゃの夏祭りのいっけんでしょ？」",
+        "kana": "「きいたよ、光一」「まあ皆までいうなって。わかかってる。じんじゃの夏祭りのいっけんでしょ？」",
         "pieces": [
           {
             "lifted": "き",
@@ -734,7 +734,7 @@
             "unlifted": "まあ"
           },
           {
-            "lifted": "みな",
+            "lifted": "",
             "unlifted": "皆までいうな"
           },
           {
