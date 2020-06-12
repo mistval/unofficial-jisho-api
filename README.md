@@ -245,6 +245,6 @@ request(SEARCH_URI, (error, response, body) => {
 
 ## About
 
-Permission to scrape granted by Jisho's admin Kimtaro: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
+Permission to scrape granted by Jisho's admin Kimtaro: https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
 
 For bugs or requested additional data, feel free to open an issue on the Github repo.
