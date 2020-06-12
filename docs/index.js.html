@@ -45,7 +45,7 @@
  * This module encapsulates the official Jisho.org API
  * and also provides kanji and example search features that scrape Jisho.org.
  * Permission to scrape granted by Jisho's admin Kimtaro:
- *     http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
+ *     https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
  */
 
 const axios = require('axios').create({ timeout: 10000 });
@@ -53,9 +53,9 @@ const cheerio = require('cheerio');
 const escapeStringRegexp = require('escape-string-regexp');
 const { XmlEntities } = require('html-entities');
 
-const JISHO_API = 'http://jisho.org/api/v1/search/words';
-const SCRAPE_BASE_URI = 'http://jisho.org/search/';
-const STROKE_ORDER_DIAGRAM_BASE_URI = 'http://classic.jisho.org/static/images/stroke_diagrams/';
+const JISHO_API = 'https://jisho.org/api/v1/search/words';
+const SCRAPE_BASE_URI = 'https://jisho.org/search/';
+const STROKE_ORDER_DIAGRAM_BASE_URI = 'https://classic.jisho.org/static/images/stroke_diagrams/';
 
 const htmlEntities = new XmlEntities();
 
@@ -226,7 +226,7 @@ function getParts(pageHtml) {
 function getSvgUri(pageHtml) {
   const svgRegex = /\/\/.*?.cloudfront.net\/.*?.svg/;
   const regexResult = svgRegex.exec(pageHtml);
-  return regexResult ? `http:${regexResult[0]}` : undefined;
+  return regexResult ? `https:${regexResult[0]}` : undefined;
 }
 
 function getGifUri(kanji) {

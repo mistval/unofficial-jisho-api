@@ -18,7 +18,7 @@ Below are some basic examples. There's more detailed documentation [here](https:
 
 ### Word/phrase search (provided by official Jisho API)
 
-This returns the same results as the official [Jisho.org](https://jisho.org/) API. See the discussion of that [here](http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api).
+This returns the same results as the official [Jisho.org](https://jisho.org/) API. See the discussion of that [here](https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api).
 
 ```js
 const JishoApi = require('unofficial-jisho-api');
@@ -72,10 +72,10 @@ Onyomi: ["ゴ"]
 Onyomi example: {"example":"語","reading":"ゴ","meaning":"language, word"}
 Radical: {"symbol":"言","forms":["訁"],"meaning":"speech"}
 Parts: ["口","五","言"]
-Stroke order diagram: http://classic.jisho.org/static/images/stroke_diagrams/35486_frames.png
-Stroke order SVG: http://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/08a9e.svg
+Stroke order diagram: https://classic.jisho.org/static/images/stroke_diagrams/35486_frames.png
+Stroke order SVG: https://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/08a9e.svg
 Stroke order GIF: https://raw.githubusercontent.com/mistval/kotoba/master/resources/images/kanjianimations/08a9e_anim.gif
-Jisho Uri: http://jisho.org/search/%E8%AA%9E%23kanji
+Jisho Uri: https://jisho.org/search/%E8%AA%9E%23kanji
 ```
 
 ### Example search
@@ -102,7 +102,7 @@ jisho.searchForExamples('日').then(result => {
 This outputs the following:
 
 ```
-Jisho Uri: http://jisho.org/search/%E6%97%A5%23sentences
+Jisho Uri: https://jisho.org/search/%E6%97%A5%23sentences
 
 日本人ならそんなことはけっしてしないでしょう。
 にほんじんならそんなことはけっしてしないでしょう。
@@ -245,6 +245,6 @@ request(SEARCH_URI, (error, response, body) => {
 
 ## About
 
-Permission to scrape granted by Jisho's admin Kimtaro: http://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
+Permission to scrape granted by Jisho's admin Kimtaro: https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
 
 For bugs or requested additional data, feel free to open an issue on the Github repo.
