@@ -68,10 +68,15 @@ export interface PhaseScrapeMeaning {
   sentences: PhraseScrapeSentence[];
 }
 
+export interface PhraseScrapeJapaneseWord {
+  kanji: string;
+  kana: string;
+}
+
 export interface ScrapeParseResult extends QueryResult {
   tags: string[];
   meanings: PhaseScrapeMeaning[];
-  otherForms: string[];
+  otherForms: PhraseScrapeJapaneseWord[];
   notes: string[];
 }
 

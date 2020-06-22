@@ -456,12 +456,18 @@ function parsePhrasePageData(pageHtml, query) {
  * @property {Array.<string>} tags Tags associated with this meaning.
  */
 
+/** @typedef {Object} PhraseScrapeJapaneseWord
+ * @property {string} kanji The japanese word, written in kanji if available
+ * @property {string} [kana] The corresponding kana spelling of the whole word, if kanji is present
+ */
+
 /**
  * @typedef {Object} PhrasePageScrapeResult
  * @property {boolean} found True if a result was found.
  * @property {string} query The term that you searched for.
  * @property {string} [uri] The URI that these results were scraped from, if a result was found.
- * @property {Array.<string>} [otherForms] Other forms of the search term, if a result was found.
+ * @property {Array.<PhraseScrapeJapaneseWord>} [otherForms] Other forms of the search term, if a
+ *   result was found.
  * @property {Array.<PhraseScrapeMeaning>} [meanings] Information about the meanings associated
  *   with result.
  * @property {Array.<string>} [tags] Tags associated with this search result.
