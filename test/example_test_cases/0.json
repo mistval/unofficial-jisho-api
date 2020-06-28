@@ -657,6 +657,37 @@
         ]
       },
       {
+        "english": "The train started at ten o'clock to the minute.",
+        "kanji": "列車は１０時ちょうどに出発した。",
+        "kana": "れっしゃは１０じちょうどにしゅっぱつした。",
+        "pieces": [
+          {
+            "lifted": "れっしゃ",
+            "unlifted": "列車"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "じ",
+            "unlifted": "時"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ちょうど"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に"
+          },
+          {
+            "lifted": "しゅっぱつ",
+            "unlifted": "出発した"
+          }
+        ]
+      },
+      {
         "english": "He didn't intend to let her drive but she pestered him so much that he finally gave in.",
         "kanji": "彼は彼女に車を運転させるつもりはなかったのだが、彼女があまりにせがむものだから、彼の方がとうとう折れた。",
         "kana": "かれはかのじょにくるまをうんてんさせるつもりはなかったのだが、かのじょがあまりにせがむものだから、かれのほうがとうとうおれた。",
@@ -1006,61 +1037,6 @@
           {
             "lifted": "つ",
             "unlifted": "着きました"
-          }
-        ]
-      },
-      {
-        "english": "Car? Ah, if you mean that limousine, - I chartered it.",
-        "kanji": "車？ああ・・・あのリムジンでしたら、私がチャーターした物ですわ。",
-        "kana": "くるま？ああ・・・あのリムジンでしたら、わたしがチャーターしたものですわ。",
-        "pieces": [
-          {
-            "lifted": "くるま",
-            "unlifted": "車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ああ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "あの"
-          },
-          {
-            "lifted": "",
-            "unlifted": "リムジン"
-          },
-          {
-            "lifted": "",
-            "unlifted": "でしたら"
-          },
-          {
-            "lifted": "わたし",
-            "unlifted": "私"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "",
-            "unlifted": "チャーター"
-          },
-          {
-            "lifted": "",
-            "unlifted": "した"
-          },
-          {
-            "lifted": "もの",
-            "unlifted": "物"
-          },
-          {
-            "lifted": "",
-            "unlifted": "です"
-          },
-          {
-            "lifted": "",
-            "unlifted": "わ"
           }
         ]
       }
