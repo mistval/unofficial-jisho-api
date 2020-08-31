@@ -279,14 +279,21 @@ function getKanjiAndKana(div) {
 }
 
 function getPieces(sentenceElement) {
-  const pieceElements = sentenceElement.find('li.clearfix');
+  const pieceElements = sentenceElement.find('li.clearfix,el');
   const pieces = [];
   for (let pieceIndex = 0; pieceIndex < pieceElements.length; pieceIndex += 1) {
     const pieceElement = pieceElements.eq(pieceIndex);
-    pieces.push({
-      lifted: pieceElement.children('.furigana').text(),
-      unlifted: pieceElement.children('.unlinked').text(),
-    });
+    if (pieceElement.prop('nodeName') === 'LI') {
+      pieces.push({
+        lifted: pieceElement.children('.furigana').text(),
+        unlifted: pieceElement.children('.unlinked').text(),
+      });
+    } else {
+      pieces.push({
+        lifted: '',
+        unlifted: pieceElement.text(),
+      });
+    }
   }
 
   return pieces;
@@ -305,7 +312,8 @@ function parseExampleDiv(div) {
 }
 
 function parseExamplePageData(pageHtml, phrase) {
-  const $ = cheerio.load(pageHtml);
+  const pageHtmlReplaced = pageHtml.replace(/<\/li>\s*([^\s<>]+)\s*<li class="clearfix">/g, (m, g1) => `</li><el>${g1}</el><li class="clearfix">`);
+  const $ = cheerio.load(pageHtmlReplaced);
   const divs = $('.sentence_content');
 
   const results = [];

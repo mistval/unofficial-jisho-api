@@ -179,6 +179,10 @@
             "unlifted": "が"
           },
           {
+            "lifted": "",
+            "unlifted": "、"
+          },
+          {
             "lifted": "にほん",
             "unlifted": "日本"
           },
@@ -226,8 +230,16 @@
             "unlifted": "を"
           },
           {
+            "lifted": "",
+            "unlifted": "「"
+          },
+          {
             "lifted": "かねも",
             "unlifted": "金持ち"
+          },
+          {
+            "lifted": "",
+            "unlifted": "」"
           },
           {
             "lifted": "",
@@ -248,6 +260,10 @@
           {
             "lifted": "つか",
             "unlifted": "使わない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           },
           {
             "lifted": "",
@@ -330,6 +346,10 @@
           },
           {
             "lifted": "",
+            "unlifted": "、優奈"
+          },
+          {
+            "lifted": "",
             "unlifted": "は"
           },
           {
@@ -347,6 +367,10 @@
           {
             "lifted": "",
             "unlifted": "じゃない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           },
           {
             "lifted": "せいようじん",
@@ -367,6 +391,10 @@
           {
             "lifted": "も",
             "unlifted": "持つ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
           },
           {
             "lifted": "",
@@ -404,6 +432,10 @@
             "unlifted": "は"
           },
           {
+            "lifted": "",
+            "unlifted": "「"
+          },
+          {
             "lifted": "きたちょうせん",
             "unlifted": "北朝鮮"
           },
@@ -422,6 +454,10 @@
           {
             "lifted": "もんだい",
             "unlifted": "問題"
+          },
+          {
+            "lifted": "",
+            "unlifted": "」"
           },
           {
             "lifted": "",
@@ -449,6 +485,10 @@
           {
             "lifted": "",
             "unlifted": "していて"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
           },
           {
             "lifted": "にほんじん",
@@ -480,6 +520,10 @@
           {
             "lifted": "まいとし",
             "unlifted": "毎年"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
           },
           {
             "lifted": "おお",
@@ -636,6 +680,10 @@
           {
             "lifted": "",
             "unlifted": "ですか"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
           },
           {
             "lifted": "",
@@ -857,6 +905,10 @@
           {
             "lifted": "",
             "unlifted": "は"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
           },
           {
             "lifted": "にほんご",
