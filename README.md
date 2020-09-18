@@ -247,6 +247,6 @@ request(SEARCH_URI, (error, response, body) => {
 
 Permission to scrape granted by Jisho's admin Kimtaro: https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
 
-**Warning**: Understand that other than the `searchForPhrase` function, all of the functions in this package scrape the HTML of Jisho.org. As such, these functions may break without warning when updates are made to Jisho.org. These functions should not be used for anything missional critical (like your manned Japanese spaceflight program). That being said, they haven't broken yet in ~3 years, but the legends say Jisho.org is getting a big update at some point.
+**Warning**: Understand that other than the `searchForPhrase` function, all of the functions in this package scrape the HTML of Jisho.org. As such, these functions may break without warning when updates are made to Jisho.org. These functions should not be used for anything mission critical (like your manned Japanese spaceflight program). That being said, they haven't broken yet in ~3 years, but the legends say Jisho.org is getting a big update at some point.
 
 For bugs or requested additional data, feel free to open an issue on the Github repo.
