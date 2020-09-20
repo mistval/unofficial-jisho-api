@@ -256,109 +256,6 @@
         ]
       },
       {
-        "english": "With your ability it should be a doddle, but please don't be prideful of that but first apply yourself dilligently with everyone in your class.",
-        "kanji": "君の実力なら楽勝だとは思うが、それに驕らず、まずはクラスのみんなと切磋琢磨していって欲しい。",
-        "kana": "きみのじつりょくなららくしょうだとはおもうが、それにおごらず、まずはクラスのみんなとせっさたくましていってほしい。",
-        "pieces": [
-          {
-            "lifted": "きみ",
-            "unlifted": "君の"
-          },
-          {
-            "lifted": "じつりょく",
-            "unlifted": "実力"
-          },
-          {
-            "lifted": "",
-            "unlifted": "なら"
-          },
-          {
-            "lifted": "らくしょう",
-            "unlifted": "楽勝"
-          },
-          {
-            "lifted": "",
-            "unlifted": "だ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "と"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "おも",
-            "unlifted": "思う"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "",
-            "unlifted": "それ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "おご",
-            "unlifted": "驕らず"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "",
-            "unlifted": "まず"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "",
-            "unlifted": "クラス"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "",
-            "unlifted": "みんな"
-          },
-          {
-            "lifted": "",
-            "unlifted": "と"
-          },
-          {
-            "lifted": "せっさたくま",
-            "unlifted": "切磋琢磨"
-          },
-          {
-            "lifted": "",
-            "unlifted": "して"
-          },
-          {
-            "lifted": "",
-            "unlifted": "いって"
-          },
-          {
-            "lifted": "ほ",
-            "unlifted": "欲しい"
-          }
-        ]
-      },
-      {
         "english": "What programming language does everybody like?",
         "kanji": "皆さんはどんなプログラミング言語が好きですか？",
         "kana": "みなさんはどんなプログラミングげんごがすきですか？",
@@ -1321,6 +1218,65 @@
           {
             "lifted": "",
             "unlifted": "ぞ"
+          }
+        ]
+      },
+      {
+        "english": "Everybody has their own projects on, so after all you are the only suitable candidate.",
+        "kanji": "みなプロジェクトを抱えているので、差し詰め、君しか適任者はいない。",
+        "kana": "みなプロジェクトをかかええているので、さしずめ、きみしかてきにんしゃはいない。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "みな"
+          },
+          {
+            "lifted": "",
+            "unlifted": "プロジェクト"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を"
+          },
+          {
+            "lifted": "かかえ",
+            "unlifted": "抱えている"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ので"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
+          },
+          {
+            "lifted": "さしず",
+            "unlifted": "差し詰め"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
+          },
+          {
+            "lifted": "きみ",
+            "unlifted": "君"
+          },
+          {
+            "lifted": "",
+            "unlifted": "しか"
+          },
+          {
+            "lifted": "てきにんしゃ",
+            "unlifted": "適任者"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "",
+            "unlifted": "いない"
           }
         ]
       }
