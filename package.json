@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/mistval/unofficial-jisho-api#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.2",
     "escape-string-regexp": "^1.0.5",
     "html-entities": "^1.2.1"
