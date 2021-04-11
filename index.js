@@ -425,7 +425,7 @@ function getAudio($) {
   const audio = [];
   $('.concept_light-status')
     .find('audio > source')
-    .each(async (_, element) => audio.push({
+    .each((_, element) => audio.push({
       uri: `https:${element.attribs.src}`,
       mimetype: element.attribs.type,
     }));
