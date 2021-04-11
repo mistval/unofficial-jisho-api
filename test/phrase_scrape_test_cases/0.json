@@ -95,6 +95,16 @@
       }
     ],
     "otherForms": [],
+    "audio": [
+      {
+        "uri": "https://d1vjc5dkcd3yh2.cloudfront.net/audio/7f47c2a8e633ca3a79ac199f55a212dd.mp3",
+        "mimetype": "audio/mpeg"
+      },
+      {
+        "uri": "https://d1vjc5dkcd3yh2.cloudfront.net/audio_ogg/7f47c2a8e633ca3a79ac199f55a212dd.ogg",
+        "mimetype": "audio/ogg"
+      }
+    ],
     "notes": []
   }
 }
