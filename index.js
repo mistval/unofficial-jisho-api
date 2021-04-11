@@ -421,6 +421,17 @@ function getMeaningsOtherFormsAndNotes($) {
   return returnValues;
 }
 
+function getAudio($) {
+  const audio = [];
+  $('.concept_light-status')
+    .find('audio > source')
+    .each((_, element) => audio.push({
+      uri: `https:${element.attribs.src}`,
+      mimetype: element.attribs.type,
+    }));
+  return audio;
+}
+
 function uriForPhraseScrape(searchTerm) {
   return `https://jisho.org/word/${encodeURIComponent(searchTerm)}`;
 }
@@ -428,6 +439,7 @@ function uriForPhraseScrape(searchTerm) {
 function parsePhrasePageData(pageHtml, query) {
   const $ = cheerio.load(pageHtml);
   const { meanings, otherForms, notes } = getMeaningsOtherFormsAndNotes($);
+  const audio = getAudio($);
 
   const result = {
     found: true,
@@ -436,6 +448,7 @@ function parsePhrasePageData(pageHtml, query) {
     tags: getTags($),
     meanings,
     otherForms,
+    audio,
     notes,
   };
 
@@ -469,6 +482,11 @@ function parsePhrasePageData(pageHtml, query) {
  * @property {string} [kana] The corresponding kana spelling of the whole word, if kanji is present
  */
 
+/** @typedef {Object} AudioFile
+ * @property {string} uri The uri pointing to the audio file
+ * @property {string} mimetype The mimetype of the audio file. Usually mp3 or ogg
+ */
+
 /**
  * @typedef {Object} PhrasePageScrapeResult
  * @property {boolean} found True if a result was found.
@@ -479,6 +497,8 @@ function parsePhrasePageData(pageHtml, query) {
  * @property {Array.<PhraseScrapeMeaning>} [meanings] Information about the meanings associated
  *   with result.
  * @property {Array.<string>} [tags] Tags associated with this search result.
+ * @property {Array.<AudioFile>} [audio] Recordings of the word, in different file formats if
+ *   present
  * @property {Array.<string>} [notes] Notes associated with the search result.
  */
 
@@ -538,12 +558,12 @@ function parsePhrasePageData(pageHtml, query) {
  */
 
 /**
-  * @typedef {Object} ExampleResults
-  * @property {string} query The term that you searched for.
-  * @property {boolean} found True if results were found.
-  * @property {string} uri The URI that these results were scraped from.
-  * @property {Array.<ExampleResultData>} results The examples that were found, if any.
-  */
+ * @typedef {Object} ExampleResults
+ * @property {string} query The term that you searched for.
+ * @property {boolean} found True if results were found.
+ * @property {string} uri The URI that these results were scraped from.
+ * @property {Array.<ExampleResultData>} results The examples that were found, if any.
+ */
 
 /**
  * A wrapper around the Jisho search functions.

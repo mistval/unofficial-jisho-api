@@ -73,10 +73,16 @@ export interface PhraseScrapeJapaneseWord {
   kana: string;
 }
 
+export interface AudioFile {
+  uri: string;
+  mimetype: string;
+}
+
 export interface ScrapeParseResult extends QueryResult {
   tags: string[];
   meanings: PhaseScrapeMeaning[];
   otherForms: PhraseScrapeJapaneseWord[];
+  audio: AudioFile[];
   notes: string[];
 }
 
