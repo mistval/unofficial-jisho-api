@@ -179,6 +179,16 @@ This outputs the following:
       "kana": "たに"
     }
   ],
+  "audio": [
+    {
+      "uri": "https://d1vjc5dkcd3yh2.cloudfront.net/audio/b9ff4f25c7a20f0f39131b3e3db0cd19.mp3",
+      "mimetype": "audio/mpeg"
+    },
+    {
+      "uri": "https://d1vjc5dkcd3yh2.cloudfront.net/audio_ogg/b9ff4f25c7a20f0f39131b3e3db0cd19.ogg",
+      "mimetype": "audio/ogg"
+    }
+  ],
   "notes": []
 }
 ```
