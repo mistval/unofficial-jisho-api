@@ -42,7 +42,7 @@
       {
         "example": "楽",
         "reading": "ラク",
-        "meaning": "comfort, ease, relief, (at) peace, relaxation, easy, simple, without trouble, without hardships, (economically) comfortable, raku pottery"
+        "meaning": "comfort, ease, relief, (at) peace, relaxation, easy, simple, without trouble, without hardships, (economically) comfortable, raku pottery, sukha (happiness)"
       },
       {
         "example": "楽園",
@@ -91,7 +91,7 @@
       "木",
       "白"
     ],
-    "strokeOrderDiagramUri": "https://classic.jisho.org/static/images/stroke_diagrams/27005_frames.png",
+    "strokeOrderDiagramUri": "http://classic.jisho.org/static/images/stroke_diagrams/27005_frames.png",
     "strokeOrderSvgUri": "https://d1w6u4xc3l95km.cloudfront.net/kanji-2015-03/0697d.svg",
     "strokeOrderGifUri": "https://raw.githubusercontent.com/mistval/kanji_images/master/gifs/697d.gif",
     "uri": "https://jisho.org/search/%E6%A5%BD%23kanji"

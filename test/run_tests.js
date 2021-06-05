@@ -10,12 +10,30 @@ function getFilePaths(dirname) {
   return filenames.map(filename => path.join(__dirname, dirname, filename));
 }
 
+// Jisho results are now ordered non-deterministically.
+// We retry tests up to 10 times each to work around that.
+async function retry(func) {
+  let error;
+
+  for (let i = 0; i < 10; ++i) {
+    try {
+      return await func();
+    } catch (err) {
+      error = err;
+    }
+  }
+
+  throw error;
+}
+
 function runTestCases(testCaseFiles, apiFunction) {
   testCaseFiles.forEach((filePath) => {
     const testCase = require(filePath);
     it(`Matches expected response for ${testCase.query}.`, async function() {
-      const result = await jishoApi[apiFunction](testCase.query);
-      assert.deepEqual(JSON.parse(JSON.stringify(result, null, 2)), testCase.expectedResult);
+      await retry(async () => {
+        const result = await jishoApi[apiFunction](testCase.query);
+        assert.deepEqual(JSON.parse(JSON.stringify(result, null, 2)), testCase.expectedResult);
+      });
     }).timeout(10000);
   });
 }
