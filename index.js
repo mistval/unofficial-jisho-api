@@ -12,7 +12,10 @@ const { XmlEntities } = require('html-entities');
 
 const JISHO_API = 'https://jisho.org/api/v1/search/words';
 const SCRAPE_BASE_URI = 'https://jisho.org/search/';
-const STROKE_ORDER_DIAGRAM_BASE_URI = 'https://classic.jisho.org/static/images/stroke_diagrams/';
+
+// This link does not use https because as of June 5, 2021 SSL is broken on classic.jisho.org
+// (and even if it's been fixed since then, it will be safer to keep this as-is)
+const STROKE_ORDER_DIAGRAM_BASE_URI = 'http://classic.jisho.org/static/images/stroke_diagrams/';
 
 const htmlEntities = new XmlEntities();
 
