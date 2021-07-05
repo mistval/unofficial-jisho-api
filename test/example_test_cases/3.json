@@ -902,81 +902,6 @@
         ]
       },
       {
-        "english": "Even if that's alright with you nobody else will accept it. I'll get shouted at afterwards so...",
-        "kanji": "恵子さんが良くてもみんなが納得しないんです。後で俺がドヤされるんだから。",
-        "kana": "恵子さんがよくてもみんながなっとくしないんです。あとでおれがドヤされるんだから。",
-        "pieces": [
-          {
-            "lifted": "",
-            "unlifted": "さん"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "よ",
-            "unlifted": "良くて"
-          },
-          {
-            "lifted": "",
-            "unlifted": "も"
-          },
-          {
-            "lifted": "",
-            "unlifted": "みんな"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "なっとく",
-            "unlifted": "納得"
-          },
-          {
-            "lifted": "",
-            "unlifted": "しない"
-          },
-          {
-            "lifted": "",
-            "unlifted": "んです"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          },
-          {
-            "lifted": "あと",
-            "unlifted": "後"
-          },
-          {
-            "lifted": "",
-            "unlifted": "で"
-          },
-          {
-            "lifted": "おれ",
-            "unlifted": "俺"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ドヤされる"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ん"
-          },
-          {
-            "lifted": "",
-            "unlifted": "だから"
-          }
-        ]
-      },
-      {
         "english": "All for one, and one for all. That's team play.",
         "kanji": "一人はみんなの為に、みんなは一人の為に。それがチームプレイだ。",
         "kana": "ひとりはみんなのために、みんなはひとりのために。それがチームプレイだ。",
@@ -1249,6 +1174,77 @@
           {
             "lifted": "",
             "unlifted": "よ"
+          }
+        ]
+      },
+      {
+        "english": "Done! Now I just have to set it to simmer so it doesn't boil before everybody comes.",
+        "kanji": "でーきた！あとはみんなが来るまで、沸騰しないように弱火にしてっと。",
+        "kana": "でーきた！あとはみんながきたるまで、ふっとうしないようによわびにしてっと。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "でーきた"
+          },
+          {
+            "lifted": "",
+            "unlifted": "！"
+          },
+          {
+            "lifted": "",
+            "unlifted": "あと"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "",
+            "unlifted": "みんな"
+          },
+          {
+            "lifted": "",
+            "unlifted": "が"
+          },
+          {
+            "lifted": "きた",
+            "unlifted": "来る"
+          },
+          {
+            "lifted": "",
+            "unlifted": "まで"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
+          },
+          {
+            "lifted": "ふっとう",
+            "unlifted": "沸騰"
+          },
+          {
+            "lifted": "",
+            "unlifted": "しない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ように"
+          },
+          {
+            "lifted": "よわび",
+            "unlifted": "弱火"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に"
+          },
+          {
+            "lifted": "",
+            "unlifted": "して"
+          },
+          {
+            "lifted": "",
+            "unlifted": "っと"
           }
         ]
       }

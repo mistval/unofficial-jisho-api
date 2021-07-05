@@ -451,49 +451,6 @@
         ]
       },
       {
-        "english": "When did the Japanese start eating polished rice?",
-        "kanji": "いつから日本人は精白米を食べるようになったのですか？",
-        "kana": "いつからにほんじんはせいはくまいをたべるようになったのですか？",
-        "pieces": [
-          {
-            "lifted": "",
-            "unlifted": "いつから"
-          },
-          {
-            "lifted": "にほんじん",
-            "unlifted": "日本人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "せいはくまい",
-            "unlifted": "精白米"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "た",
-            "unlifted": "食べる"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ようになった"
-          },
-          {
-            "lifted": "",
-            "unlifted": "のです"
-          },
-          {
-            "lifted": "",
-            "unlifted": "か"
-          }
-        ]
-      },
-      {
         "english": "I think there are probably few Japanese who know this side of the Emperor Meiji, the side that left a song like this.",
         "kanji": "こんな歌を残している明治天皇の一面を知っている日本人は少ないのではないだろうか。",
         "kana": "こんなうたをのこしているめいじてんのうのいちめんをしっているにほんじんはすくないのではないだろうか。",
@@ -703,6 +660,53 @@
           {
             "lifted": "",
             "unlifted": "しました"
+          }
+        ]
+      },
+      {
+        "english": "Few Japanese can use English well.",
+        "kanji": "日本人で英語をうまく使える人はほとんどいません。",
+        "kana": "にほんじんでえいごをうまくつかえるひとはほとんどいません。",
+        "pieces": [
+          {
+            "lifted": "にほんじん",
+            "unlifted": "日本人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で"
+          },
+          {
+            "lifted": "えいご",
+            "unlifted": "英語"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を"
+          },
+          {
+            "lifted": "",
+            "unlifted": "うまく"
+          },
+          {
+            "lifted": "つか",
+            "unlifted": "使える"
+          },
+          {
+            "lifted": "ひと",
+            "unlifted": "人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ほとんど"
+          },
+          {
+            "lifted": "",
+            "unlifted": "いません"
           }
         ]
       },
