@@ -4,7 +4,7 @@
 
 [![npm version](https://badge.fury.io/js/unofficial-jisho-api.svg)](https://badge.fury.io/js/unofficial-jisho-api) [![Build Status](https://travis-ci.com/mistval/unofficial-jisho-api.svg?branch=master)](https://travis-ci.com/mistval/unofficial-jisho-api) [![codecov](https://codecov.io/gh/mistval/unofficial-jisho-api/branch/master/graph/badge.svg)](https://codecov.io/gh/mistval/unofficial-jisho-api) [![install size](https://packagephobia.now.sh/badge?p=unofficial-jisho-api@2.0.3)](https://packagephobia.now.sh/result?p=unofficial-jisho-api@2.0.3)
 
-This module encapsulates the official [Jisho.org](https://jisho.org/) API and also provides kanji and example search features that scrape [Jisho.org](https://jisho.org/).
+This module encapsulates the official [Jisho.org](https://jisho.org/) API and also provides kanji and example search features that scrape [Jisho.org](https://jisho.org/). This module is intended for server-side use cases. It *might* be possible to use this module in a browser application, but you are likely to encounter CORS errors, and would need to use a proxy server to circumvent them.
 
 ## Installation
 
@@ -21,21 +21,21 @@ Below are some basic examples. There's more detailed documentation [here](https:
 This returns the same results as the official [Jisho.org](https://jisho.org/) API. See the discussion of that [here](https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api).
 
 ```js
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 jisho.searchForPhrase('日').then(result => {
-  ...
-  ...
-  ...
+  console.log(result);
 });
 ```
 
 ### Kanji search
 
 ```js
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 jisho.searchForKanji('語').then(result => {
   console.log('Found: ' + result.found);
@@ -81,8 +81,9 @@ Jisho Uri: https://jisho.org/search/%E8%AA%9E%23kanji
 ### Example search
 
 ```js
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 jisho.searchForExamples('日').then(result => {
   console.log('Jisho Uri: ' + result.uri);
@@ -127,8 +128,9 @@ ed":"きょうと","unlifted":"京都"},{"lifted":"","unlifted":"だ"}]
 This scrapes the word/phrase page on Jisho.org. This can get you some data that the official API doesn't have, such as JLPT level and part-of-speech. The official API (`searchForPhrase`) should be preferred if it has the data you need.
 
 ```js
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 jisho.scrapeForPhrase('谷').then((data) => {
   console.log(JSON.stringify(data, null, 2));
@@ -193,6 +195,10 @@ This outputs the following:
 }
 ```
 
+## CommonJS
+
+You can require this module as a CommonJS module. Just `const JishoAPI = require('unofficial-jisho-api');`.
+
 ## Parsing HTML strings
 
 You can provide the HTML responses from Jisho yourself. This can be useful if you need to use a CORS proxy or something. You can do whatever you need to do to get the HTML and then provide it to this module's parsing functions. For example:
@@ -200,58 +206,63 @@ You can provide the HTML responses from Jisho yourself. This can be useful if yo
 ### Parse kanji page HTML
 
 ```js
-const request = require('request');
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+import fetch from 'node-fetch';
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 const SEARCH_KANJI = '車';
 const SEARCH_URI = jisho.getUriForKanjiSearch(SEARCH_KANJI);
 
-request(SEARCH_URI, (error, response, body) => {
-  const json = jisho.parseKanjiPageHtml(body, SEARCH_KANJI);
-  console.log(`JLPT level: ${json.jlptLevel}`);
-  console.log(`Stroke count: ${json.strokeCount}`);
-  console.log(`Meaning: ${json.meaning}`);
-});
+fetch(SEARCH_URI)
+  .then((res) => res.text())
+  .then((text) => {
+    const json = jisho.parseKanjiPageHtml(text, SEARCH_KANJI);
+    console.log(`JLPT level: ${json.jlptLevel}`);
+    console.log(`Stroke count: ${json.strokeCount}`);
+    console.log(`Meaning: ${json.meaning}`);
+  });
 ```
 
 ### Parse example page HTML
 
 ```js
-const request = require('request');
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+import fetch from 'node-fetch';
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 const SEARCH_EXAMPLE = '保護者';
 const SEARCH_URI = jisho.getUriForExampleSearch(SEARCH_EXAMPLE);
 
-request(SEARCH_URI, (error, response, body) => {
-  const json = jisho.parseExamplePageHtml(body, SEARCH_EXAMPLE);
-  console.log(`English: ${json.results[0].english}`);
-  console.log(`Kanji ${json.results[0].kanji}`);
-  console.log(`Kana: ${json.results[0].kana}`);
-});
+fetch(SEARCH_URI)
+  .then((res) => res.text())
+  .then((text) => {
+    const json = jisho.parseExamplePageHtml(text, SEARCH_EXAMPLE);
+    console.log(`English: ${json.results[0].english}`);
+    console.log(`Kanji ${json.results[0].kanji}`);
+    console.log(`Kana: ${json.results[0].kana}`);
+  });
 ```
 
 ### Parse phrase page HTML
 
 ```js
-const request = require('request');
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+import fetch from 'node-fetch';
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 const SEARCH_EXAMPLE = '保護者';
 const SEARCH_URI = jisho.getUriForPhraseScrape(SEARCH_EXAMPLE);
 
-request(SEARCH_URI, (error, response, body) => {
-  const json = jisho.parsePhraseScrapeHtml(body, SEARCH_EXAMPLE);
-  console.log(JSON.stringify(json, null, 2));
-});
+fetch(SEARCH_URI)
+  .then((res) => res.text())
+  .then((text) => {
+    const json = jisho.parsePhraseScrapeHtml(text, SEARCH_EXAMPLE);
+    console.log(JSON.stringify(json, null, 2));
+  });
 ```
-
-## Version history
-
-**v2.0.0** replaces [request](https://www.npmjs.com/package/request) with [axios](https://www.npmjs.com/package/axios), as request is now [in maintenance](https://github.com/request/request/issues/3142) (and was bloated anyway). This significantly reduces install size. The `requestOptions` parameters that most of this APIs functions used to take has been deprecated and removed.
 
 ## About
 

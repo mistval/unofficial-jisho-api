@@ -1,10 +1,17 @@
 {
   "name": "unofficial-jisho-api",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "Encapsulates the official Jisho.org API and also provides kanji, example, and stroke diagram search.",
   "main": "index.js",
   "types": "index.d.ts",
+  "type": "module",
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.cjs"
+  },
   "scripts": {
+    "buildcjs": "rollup index.js --file index.cjs --format cjs",
+    "prepublishOnly": "npm run buildcjs",
     "lint": "./node_modules/.bin/eslint .",
     "lintfix": "./node_modules/.bin/eslint . --fix",
     "create_test_cases": "node ./test/create_test_cases.js",
@@ -48,6 +55,7 @@
     "eslint-plugin-import": "^2.14.0",
     "jsdoc": "^3.6.7",
     "mocha": "^7.1.1",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "rollup": "^2.53.0"
   }
 }

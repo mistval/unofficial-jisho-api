@@ -60,7 +60,7 @@
         <article><p><img src="https://raw.githubusercontent.com/mistval/unofficial-jisho-api/master/logo.png" alt="alt text" title="Logo"></p>
 <h1>unofficial-jisho-api</h1>
 <p><a href="https://badge.fury.io/js/unofficial-jisho-api"><img src="https://badge.fury.io/js/unofficial-jisho-api.svg" alt="npm version"></a> <a href="https://travis-ci.com/mistval/unofficial-jisho-api"><img src="https://travis-ci.com/mistval/unofficial-jisho-api.svg?branch=master" alt="Build Status"></a> <a href="https://codecov.io/gh/mistval/unofficial-jisho-api"><img src="https://codecov.io/gh/mistval/unofficial-jisho-api/branch/master/graph/badge.svg" alt="codecov"></a> <a href="https://packagephobia.now.sh/result?p=unofficial-jisho-api@2.0.3"><img src="https://packagephobia.now.sh/badge?p=unofficial-jisho-api@2.0.3" alt="install size"></a></p>
-<p>This module encapsulates the official <a href="https://jisho.org/">Jisho.org</a> API and also provides kanji and example search features that scrape <a href="https://jisho.org/">Jisho.org</a>.</p>
+<p>This module encapsulates the official <a href="https://jisho.org/">Jisho.org</a> API and also provides kanji and example search features that scrape <a href="https://jisho.org/">Jisho.org</a>. This module is intended for server-side use cases. It <em>might</em> be possible to use this module in a browser application, but you are likely to encounter CORS errors, and would need to use a proxy server to circumvent them.</p>
 <h2>Installation</h2>
 <p>In a Node.js project:</p>
 <p><code>npm install unofficial-jisho-api</code></p>
@@ -68,18 +68,18 @@
 <p>Below are some basic examples. There's more detailed documentation <a href="https://mistval.github.io/unofficial-jisho-api/">here</a>.</p>
 <h3>Word/phrase search (provided by official Jisho API)</h3>
 <p>This returns the same results as the official <a href="https://jisho.org/">Jisho.org</a> API. See the discussion of that <a href="https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api">here</a>.</p>
-<pre class="prettyprint source lang-js"><code>const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+<pre class="prettyprint source lang-js"><code>import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 jisho.searchForPhrase('日').then(result => {
-  ...
-  ...
-  ...
+  console.log(result);
 });
 </code></pre>
 <h3>Kanji search</h3>
-<pre class="prettyprint source lang-js"><code>const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+<pre class="prettyprint source lang-js"><code>import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 jisho.searchForKanji('語').then(result => {
   console.log('Found: ' + result.found);
@@ -119,8 +119,9 @@ Stroke order GIF: https://raw.githubusercontent.com/mistval/kotoba/master/resour
 Jisho Uri: https://jisho.org/search/%E8%AA%9E%23kanji
 </code></pre>
 <h3>Example search</h3>
-<pre class="prettyprint source lang-js"><code>const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+<pre class="prettyprint source lang-js"><code>import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 jisho.searchForExamples('日').then(result => {
   console.log('Jisho Uri: ' + result.uri);
@@ -158,8 +159,9 @@ ed&quot;:&quot;きょうと&quot;,&quot;unlifted&quot;:&quot;京都&quot;},{&quo
 </code></pre>
 <h3>Word/phrase scraping</h3>
 <p>This scrapes the word/phrase page on Jisho.org. This can get you some data that the official API doesn't have, such as JLPT level and part-of-speech. The official API (<code>searchForPhrase</code>) should be preferred if it has the data you need.</p>
-<pre class="prettyprint source lang-js"><code>const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+<pre class="prettyprint source lang-js"><code>import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 jisho.scrapeForPhrase('谷').then((data) => {
   console.log(JSON.stringify(data, null, 2));
@@ -220,53 +222,62 @@ jisho.scrapeForPhrase('谷').then((data) => {
   &quot;notes&quot;: []
 }
 </code></pre>
+<h2>CommonJS</h2>
+<p>You can require this module as a CommonJS module. Just <code>const JishoAPI = require('unofficial-jisho-api');</code>.</p>
 <h2>Parsing HTML strings</h2>
 <p>You can provide the HTML responses from Jisho yourself. This can be useful if you need to use a CORS proxy or something. You can do whatever you need to do to get the HTML and then provide it to this module's parsing functions. For example:</p>
 <h3>Parse kanji page HTML</h3>
-<pre class="prettyprint source lang-js"><code>const request = require('request');
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+<pre class="prettyprint source lang-js"><code>import fetch from 'node-fetch';
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 const SEARCH_KANJI = '車';
 const SEARCH_URI = jisho.getUriForKanjiSearch(SEARCH_KANJI);
 
-request(SEARCH_URI, (error, response, body) => {
-  const json = jisho.parseKanjiPageHtml(body, SEARCH_KANJI);
-  console.log(`JLPT level: ${json.jlptLevel}`);
-  console.log(`Stroke count: ${json.strokeCount}`);
-  console.log(`Meaning: ${json.meaning}`);
-});
+fetch(SEARCH_URI)
+  .then((res) => res.text())
+  .then((text) => {
+    const json = jisho.parseKanjiPageHtml(text, SEARCH_KANJI);
+    console.log(`JLPT level: ${json.jlptLevel}`);
+    console.log(`Stroke count: ${json.strokeCount}`);
+    console.log(`Meaning: ${json.meaning}`);
+  });
 </code></pre>
 <h3>Parse example page HTML</h3>
-<pre class="prettyprint source lang-js"><code>const request = require('request');
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+<pre class="prettyprint source lang-js"><code>import fetch from 'node-fetch';
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 const SEARCH_EXAMPLE = '保護者';
 const SEARCH_URI = jisho.getUriForExampleSearch(SEARCH_EXAMPLE);
 
-request(SEARCH_URI, (error, response, body) => {
-  const json = jisho.parseExamplePageHtml(body, SEARCH_EXAMPLE);
-  console.log(`English: ${json.results[0].english}`);
-  console.log(`Kanji ${json.results[0].kanji}`);
-  console.log(`Kana: ${json.results[0].kana}`);
-});
+fetch(SEARCH_URI)
+  .then((res) => res.text())
+  .then((text) => {
+    const json = jisho.parseExamplePageHtml(text, SEARCH_EXAMPLE);
+    console.log(`English: ${json.results[0].english}`);
+    console.log(`Kanji ${json.results[0].kanji}`);
+    console.log(`Kana: ${json.results[0].kana}`);
+  });
 </code></pre>
 <h3>Parse phrase page HTML</h3>
-<pre class="prettyprint source lang-js"><code>const request = require('request');
-const JishoApi = require('unofficial-jisho-api');
-const jisho = new JishoApi();
+<pre class="prettyprint source lang-js"><code>import fetch from 'node-fetch';
+import JishoAPI from 'unofficial-jisho-api';
+
+const jisho = new JishoAPI();
 
 const SEARCH_EXAMPLE = '保護者';
 const SEARCH_URI = jisho.getUriForPhraseScrape(SEARCH_EXAMPLE);
 
-request(SEARCH_URI, (error, response, body) => {
-  const json = jisho.parsePhraseScrapeHtml(body, SEARCH_EXAMPLE);
-  console.log(JSON.stringify(json, null, 2));
-});
+fetch(SEARCH_URI)
+  .then((res) => res.text())
+  .then((text) => {
+    const json = jisho.parsePhraseScrapeHtml(text, SEARCH_EXAMPLE);
+    console.log(JSON.stringify(json, null, 2));
+  });
 </code></pre>
-<h2>Version history</h2>
-<p><strong>v2.0.0</strong> replaces <a href="https://www.npmjs.com/package/request">request</a> with <a href="https://www.npmjs.com/package/axios">axios</a>, as request is now <a href="https://github.com/request/request/issues/3142">in maintenance</a> (and was bloated anyway). This significantly reduces install size. The <code>requestOptions</code> parameters that most of this APIs functions used to take has been deprecated and removed.</p>
 <h2>About</h2>
 <p>Permission to scrape granted by Jisho's admin Kimtaro: https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api</p>
 <p><strong>Warning</strong>: Understand that other than the <code>searchForPhrase</code> function, all of the functions in this package scrape the HTML of Jisho.org. As such, these functions may break without warning when updates are made to Jisho.org. These functions should not be used for anything mission critical (like your manned Japanese spaceflight program). That being said, they haven't broken yet in ~3 years, but the legends say Jisho.org is getting a big update at some point.</p>
@@ -285,7 +296,7 @@ request(SEARCH_URI, (error, response, body) => {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Mon Jul 05 2021 12:49:42 GMT-0400 (Eastern Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Sat Jul 10 2021 09:29:57 GMT-0400 (Eastern Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

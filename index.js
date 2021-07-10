@@ -5,10 +5,12 @@
  *     https://jisho.org/forum/54fefc1f6e73340b1f160000-is-there-any-kind-of-search-api
  */
 
-const axios = require('axios').create({ timeout: 10000 });
-const cheerio = require('cheerio');
-const escapeStringRegexp = require('escape-string-regexp');
-const { XmlEntities } = require('html-entities');
+import axiosBuilder from 'axios';
+import cheerio from 'cheerio';
+import escapeStringRegexp from 'escape-string-regexp';
+import { XmlEntities } from 'html-entities';
+
+const axios = axiosBuilder.create({ timeout: 10000 });
 
 const JISHO_API = 'https://jisho.org/api/v1/search/words';
 const SCRAPE_BASE_URI = 'https://jisho.org/search/';
@@ -603,7 +605,7 @@ class API {
       const response = await axios.get(uri);
       return parsePhrasePageData(response.data, phrase);
     } catch (err) {
-      if (err.response.status === 404) {
+      if (err.response && err.response.status === 404) {
         return {
           query: phrase,
           found: false,
@@ -645,4 +647,4 @@ API.prototype.parseExamplePageHtml = parseExamplePageData;
 API.prototype.parseKanjiPageHtml = parseKanjiPageData;
 API.prototype.parsePhraseScrapeHtml = parsePhrasePageData;
 
-module.exports = API;
+export default API;

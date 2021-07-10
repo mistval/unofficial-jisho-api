@@ -1,16 +1,16 @@
-const jishoApi = require('./../index.js');
-const path = require('path');
-const fs = require('fs').promises;
+import JishoAPI from './../index.js';
+import path from 'path';
+import fs from 'fs';
 
-const jisho = new jishoApi();
+const jisho = new JishoAPI();
 
 async function createTestCases(outputDir, queries, searchFuncName) {
   for (let i = 0; i < queries.length; i += 1) {
     const query = queries[i];
     const result = await jisho[searchFuncName](query);
     const testCaseStr = JSON.stringify({ query, expectedResult: result }, null, 2);
-    
-    await fs.writeFile(path.join(outputDir, `${i}.json`), testCaseStr);
+
+    await fs.promises.writeFile(path.join(outputDir, `${i}.json`), testCaseStr);
   }
 }
 

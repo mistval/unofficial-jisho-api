@@ -1,9 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const JishoApi = require('../index.js');
-const assert = require('chai').assert;
+import fs from 'fs';
+import path, { dirname } from 'path';
+import JishoAPI from '../index.js';
+import chai from 'chai';
+import { fileURLToPath } from 'url';
 
-const jishoApi = new JishoApi();
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const assert = chai.assert;
+
+const jishoApi = new JishoAPI();
 
 function getFilePaths(dirname) {
   const filenames = fs.readdirSync(path.join(__dirname, dirname));
@@ -28,7 +32,7 @@ async function retry(func) {
 
 function runTestCases(testCaseFiles, apiFunction) {
   testCaseFiles.forEach((filePath) => {
-    const testCase = require(filePath);
+    const testCase = JSON.parse(fs.readFileSync(filePath));
     it(`Matches expected response for ${testCase.query}.`, async function() {
       await retry(async () => {
         const result = await jishoApi[apiFunction](testCase.query);
