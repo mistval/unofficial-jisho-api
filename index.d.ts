@@ -108,7 +108,7 @@ export interface JishoWordSense {
   tags: string[];
   see_also: string[];
   antonyms: string[];
-  source: string[];
+  source: JishoWordSource[];
   info: string[];
   restrictions: string[];
 }
