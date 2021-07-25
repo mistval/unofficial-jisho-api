@@ -96,6 +96,11 @@ export interface JishoSenseLink {
   url: string;
 }
 
+export interface JishoWordSource {
+  language: string;
+  word: string;
+}
+
 export interface JishoWordSense {
   english_definitions: string[];
   parts_of_speech: string[];
@@ -103,9 +108,9 @@ export interface JishoWordSense {
   tags: string[];
   see_also: string[];
   antonyms: string[];
-  source: any[];
+  source: JishoWordSource[];
   info: string[];
-  restrictions: any[];
+  restrictions: string[];
 }
 
 export interface JishoAttribution {
