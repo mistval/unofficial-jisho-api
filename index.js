@@ -234,7 +234,7 @@ function parseKanjiPageData(pageHtml, kanji) {
 
 /* EXAMPLE SEARCH FUNCTIONS START */
 
-const kanjiRegex = /[\u4e00-\u9faf\u3400-\u4dbf]/g;
+const kanjiRegex = /[\u4e00-\u9faf\u3400-\u4dbf々]/g;
 
 function uriForExampleSearch(phrase) {
   return `${SCRAPE_BASE_URI}${encodeURIComponent(phrase)}%23sentences`;
