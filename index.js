@@ -283,22 +283,26 @@ function getKanjiAndKana(div) {
   return { kanji, kana };
 }
 
+function normalizeSentenceElement(sentenceElement) {
+  const sentenceHtml = sentenceElement.html()
+  const normalizedSentenceHtml = sentenceHtml.replace(
+    /(?<=<\/li>)\s*([^\s<>]+)\s*(?=<li)/g,
+    (m, g1) => `<li class="clearfix"><span class="unlinked">${g1}</span></li>`
+  );
+  const result = cheerio.load(normalizedSentenceHtml)
+  return result
+}
+
 function getPieces(sentenceElement) {
-  const pieceElements = sentenceElement.find('li.clearfix,el');
+  const pieceElements = normalizeSentenceElement(sentenceElement)('li.clearfix');
   const pieces = [];
   for (let pieceIndex = 0; pieceIndex < pieceElements.length; pieceIndex += 1) {
     const pieceElement = pieceElements.eq(pieceIndex);
-    if (pieceElement.prop('nodeName') === 'LI') {
-      pieces.push({
-        lifted: pieceElement.children('.furigana').text(),
-        unlifted: pieceElement.children('.unlinked').text(),
-      });
-    } else {
-      pieces.push({
-        lifted: '',
-        unlifted: pieceElement.text(),
-      });
-    }
+
+    pieces.push({
+      lifted: pieceElement.children('.furigana').text(),
+      unlifted: pieceElement.children('.unlinked').text(),
+    });
   }
 
   return pieces;
@@ -317,8 +321,7 @@ function parseExampleDiv(div) {
 }
 
 function parseExamplePageData(pageHtml, phrase) {
-  const pageHtmlReplaced = pageHtml.replace(/<\/li>\s*([^\s<>]+)\s*<li class="clearfix">/g, (m, g1) => `</li><el>${g1}</el><li class="clearfix">`);
-  const $ = cheerio.load(pageHtmlReplaced);
+  const $ = cheerio.load(pageHtml);
   const divs = $('.sentence_content');
 
   const results = [];
