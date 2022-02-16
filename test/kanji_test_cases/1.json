@@ -24,19 +24,19 @@
         "meaning": "-ist, -er"
       },
       {
-        "example": "家屋",
-        "reading": "カオク",
-        "meaning": "house, building"
+        "example": "家族",
+        "reading": "カゾク",
+        "meaning": "family"
       },
       {
-        "example": "研究家",
-        "reading": "ケンキュウカ",
-        "meaning": "researcher, student (of)"
+        "example": "画家",
+        "reading": "ガカ",
+        "meaning": "painter, artist"
       },
       {
-        "example": "活動家",
-        "reading": "カツドウカ",
-        "meaning": "activist"
+        "example": "実業家",
+        "reading": "ジツギョウカ",
+        "meaning": "businessman, entrepreneur, captain of industry"
       },
       {
         "example": "家",
@@ -49,14 +49,14 @@
         "meaning": "retainer, retinue, servant"
       },
       {
+        "example": "分家",
+        "reading": "ブンケ",
+        "meaning": "branch family, cadet family, establishing a branch family"
+      },
+      {
         "example": "本家",
         "reading": "ホンケ",
         "meaning": "head house (family), birthplace, originator"
-      },
-      {
-        "example": "公家",
-        "reading": "クゲ",
-        "meaning": "court noble, nobility, Imperial Court"
       }
     ],
     "kunyomiExamples": [
@@ -83,7 +83,7 @@
       {
         "example": "屋",
         "reading": "や",
-        "meaning": "shop, store, restaurant, somebody who sells (something) or works as (something), somebody with a (certain) personality trait, house, roof"
+        "meaning": "shop, store, restaurant, someone who sells (something) or works as (something), someone with a (certain) personality trait, house, roof"
       },
       {
         "example": "家内",
@@ -91,14 +91,14 @@
         "meaning": "(my) wife, inside the home, one's family"
       },
       {
+        "example": "隠れ家",
+        "reading": "かくれが",
+        "meaning": "hiding place, hideout, refuge, retreat, hideaway"
+      },
+      {
         "example": "長屋",
         "reading": "ながや",
         "meaning": "tenement house, row house"
-      },
-      {
-        "example": "本家",
-        "reading": "ほんけ",
-        "meaning": "head house (family), birthplace, originator"
       },
       {
         "example": "家",

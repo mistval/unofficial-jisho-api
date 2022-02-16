@@ -21,26 +21,26 @@
         "meaning": "car, vehicle"
       },
       {
-        "example": "車検",
-        "reading": "シャケン",
-        "meaning": "vehicle inspection"
+        "example": "車庫",
+        "reading": "シャコ",
+        "meaning": "garage, carport, depot (trains, buses, etc.)"
       },
       {
-        "example": "見切り発車",
-        "reading": "ミキリハッシャ",
-        "meaning": "starting a train (or bus, etc.) before all the passengers are on board, making a snap decision, starting an action without considering objections to it any longer"
+        "example": "駐車",
+        "reading": "チュウシャ",
+        "meaning": "parking (e.g. car)"
       },
       {
-        "example": "軽自動車",
-        "reading": "ケイジドウシャ",
-        "meaning": "light motor vehicle (up to 660cc and 64bhp), k-car, kei car"
+        "example": "発車",
+        "reading": "ハッシャ",
+        "meaning": "departure (of a train, car, etc.), starting, leaving"
       }
     ],
     "kunyomiExamples": [
       {
         "example": "車",
         "reading": "くるま",
-        "meaning": "car, automobile, vehicle, wheel"
+        "meaning": "car, automobile, vehicle, wheel, castor, caster"
       },
       {
         "example": "車椅子",

@@ -86,7 +86,7 @@
       {
         "seeAlsoTerms": [],
         "sentences": [],
-        "definition": "wheel",
+        "definition": "wheel; castor; caster",
         "supplemental": [],
         "definitionAbstract": "",
         "tags": [
@@ -94,7 +94,11 @@
         ]
       }
     ],
-    "otherForms": [],
+    "otherForms": [
+      {
+        "kanji": "クルマ"
+      }
+    ],
     "audio": [
       {
         "uri": "https://d1vjc5dkcd3yh2.cloudfront.net/audio/7f47c2a8e633ca3a79ac199f55a212dd.mp3",
