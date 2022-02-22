@@ -38,9 +38,14 @@ function getUriForStrokeOrderDiagram(kanji) {
   return `${STROKE_ORDER_DIAGRAM_BASE_URI}${kanji.charCodeAt(0).toString()}_frames.png`;
 }
 
-function uriForPhraseSearch(phrase) {
-  return `${JISHO_API}?keyword=${encodeURIComponent(phrase)}`;
+function uriForPhraseSearch(phrase,page) {
+  let uri = `${JISHO_API}?keyword=${encodeURIComponent(phrase)}`;
+  if(page){
+    uri = `${uri}&page=${page}`
+  }
+  return uri;
 }
+
 
 function containsKanjiGlyph(pageHtml, kanji) {
   const kanjiGlyphToken = `<h1 class="character" data-area-name="print" lang="ja">${kanji}</h1>`;
@@ -586,8 +591,8 @@ class API {
    *   complex and is not documented, so put on your trial-and-error hat.
    * @async
    */
-  searchForPhrase(phrase) {
-    const uri = uriForPhraseSearch(phrase);
+  searchForPhrase(phrase,page) {
+    const uri = uriForPhraseSearch(phrase,page);
     return axios.get(uri).then(response => response.data);
   }
 
