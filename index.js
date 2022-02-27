@@ -40,9 +40,10 @@ function getUriForStrokeOrderDiagram(kanji) {
 
 function uriForPhraseSearch(phrase,page) {
   let uri = `${JISHO_API}?keyword=${encodeURIComponent(phrase)}`;
-  if(page){
-    uri = `${uri}&page=${page}`
+  if(page) {
+    uri = `${uri}&page=${page}`;
   }
+
   return uri;
 }
 
@@ -591,8 +592,8 @@ class API {
    *   complex and is not documented, so put on your trial-and-error hat.
    * @async
    */
-  searchForPhrase(phrase,page) {
-    const uri = uriForPhraseSearch(phrase,page);
+  searchForPhrase(phrase, page) {
+    const uri = uriForPhraseSearch(phrase, page);
     return axios.get(uri).then(response => response.data);
   }
 
