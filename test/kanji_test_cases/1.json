@@ -24,24 +24,24 @@
         "meaning": "-ist, -er"
       },
       {
-        "example": "家族",
-        "reading": "カゾク",
-        "meaning": "family"
+        "example": "家屋",
+        "reading": "カオク",
+        "meaning": "house, building"
       },
       {
-        "example": "画家",
-        "reading": "ガカ",
-        "meaning": "painter, artist"
+        "example": "研究家",
+        "reading": "ケンキュウカ",
+        "meaning": "researcher, student (of)"
       },
       {
-        "example": "実業家",
-        "reading": "ジツギョウカ",
-        "meaning": "businessman, entrepreneur, captain of industry"
+        "example": "活動家",
+        "reading": "カツドウカ",
+        "meaning": "activist"
       },
       {
         "example": "家",
         "reading": "ケ",
-        "meaning": "house (e.g. of Tokugawa), family"
+        "meaning": "house, family"
       },
       {
         "example": "家来",
@@ -49,14 +49,14 @@
         "meaning": "retainer, retinue, servant"
       },
       {
-        "example": "分家",
-        "reading": "ブンケ",
-        "meaning": "branch family, cadet family, establishing a branch family"
-      },
-      {
         "example": "本家",
         "reading": "ホンケ",
         "meaning": "head house (family), birthplace, originator"
+      },
+      {
+        "example": "公家",
+        "reading": "クゲ",
+        "meaning": "court noble, nobility, kuge, Imperial Court"
       }
     ],
     "kunyomiExamples": [
@@ -91,14 +91,14 @@
         "meaning": "(my) wife, inside the home, one's family"
       },
       {
-        "example": "隠れ家",
-        "reading": "かくれが",
-        "meaning": "hiding place, hideout, refuge, retreat, hideaway"
-      },
-      {
         "example": "長屋",
         "reading": "ながや",
         "meaning": "tenement house, row house"
+      },
+      {
+        "example": "本家",
+        "reading": "ほんけ",
+        "meaning": "head house (family), birthplace, originator"
       },
       {
         "example": "家",
@@ -106,9 +106,9 @@
         "meaning": "house, one's house, one's home, one's family, one's household"
       },
       {
-        "example": "家中",
-        "reading": "うちじゅう",
-        "meaning": "whole family, entire family, all (members of) the family, all over the house, throughout the house, retainer of a daimyo, feudal domain, clan"
+        "example": "内",
+        "reading": "うち",
+        "meaning": "inside, within, while (e.g. one is young), during, within (e.g. a day), in the course of, among, amongst, (out) of, between, in (secret, chaos, poverty, etc.), amidst, with (e.g. success), within oneself, one's feelings, inner thoughts, we, our company, our organization, one's home, one's family, my spouse, my husband, my wife, signed on behalf of (husband's name) by his wife, I, me, imperial palace grounds, emperor"
       }
     ],
     "radical": {

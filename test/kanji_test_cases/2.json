@@ -25,9 +25,9 @@
         "meaning": "music, old Japanese court music, gagaku"
       },
       {
-        "example": "楽譜",
-        "reading": "ガクフ",
-        "meaning": "score, sheet music"
+        "example": "楽章",
+        "reading": "ガクショウ",
+        "meaning": "movement"
       },
       {
         "example": "邦楽",
@@ -47,17 +47,17 @@
       {
         "example": "楽園",
         "reading": "ラクエン",
-        "meaning": "paradise, Eden, Elysium"
+        "meaning": "paradise, Eden"
       },
       {
-        "example": "極楽",
-        "reading": "ゴクラク",
-        "meaning": "Sukhavati (Amitabha's Pure Land), paradise, heaven on earth"
+        "example": "千秋楽",
+        "reading": "センシュウラク",
+        "meaning": "concluding festivities, concluding program, concluding programme, final day of a tournament"
       },
       {
-        "example": "享楽",
-        "reading": "キョウラク",
-        "meaning": "enjoyment, pleasure"
+        "example": "行楽",
+        "reading": "コウラク",
+        "meaning": "outing, excursion, pleasure trip, going on a picnic"
       },
       {
         "example": "猿楽",
@@ -79,7 +79,7 @@
       {
         "example": "楽しむ",
         "reading": "たのしむ",
-        "meaning": "to enjoy (oneself)"
+        "meaning": "to enjoy, to take pleasure in, to have a good time, to have fun, to look forward to"
       }
     ],
     "radical": {
