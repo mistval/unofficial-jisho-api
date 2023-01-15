@@ -12,8 +12,6 @@
   "scripts": {
     "buildcjs": "rollup index.js --file index.cjs --format cjs",
     "prepublishOnly": "npm run buildcjs",
-    "lint": "./node_modules/.bin/eslint .",
-    "lintfix": "./node_modules/.bin/eslint . --fix",
     "create_test_cases": "node ./test/create_test_cases.js",
     "test": "./node_modules/.bin/mocha ./test/run_tests.js --exit",
     "coverage": "./node_modules/.bin/nyc npm run test",
