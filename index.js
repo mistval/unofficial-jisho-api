@@ -10,7 +10,12 @@ import cheerio from 'cheerio';
 import escapeStringRegexp from 'escape-string-regexp';
 import { XmlEntities } from 'html-entities';
 
-const axios = axiosBuilder.create({ timeout: 10000 });
+const axios = axiosBuilder.create({
+  timeout: 10000,
+  headers: {
+    'User-Agent': 'unofficial-jisho-api (https://www.npmjs.com/package/unofficial-jisho-api)'
+  },
+});
 
 const JISHO_API = 'https://jisho.org/api/v1/search/words';
 const SCRAPE_BASE_URI = 'https://jisho.org/search/';

@@ -8,3 +8,4 @@ test
 .gitignore
 .nyc_output
 .travis.yml
+.github/workflows/ci.yml
