@@ -5,6 +5,262 @@
     "found": true,
     "results": [
       {
+        "english": "It is against the law for a car not to stop when someone is trying to cross at a crosswalk.",
+        "kanji": "横断歩道を渡ろうとする人がいる時、車が止まらないのは法律違反である。",
+        "kana": "横断歩道を渡ろうとするひとがいる時、くるまが止まらないのは法律違反である。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "横断歩道を渡ろうとする"
+          },
+          {
+            "lifted": "ひと",
+            "unlifted": "人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "がいる時、"
+          },
+          {
+            "lifted": "くるま",
+            "unlifted": "車"
+          },
+          {
+            "lifted": "",
+            "unlifted": "が止まらないのは法律違反である。"
+          }
+        ]
+      },
+      {
+        "english": "The bridge under construction is a large bridge, 500 meters long, 20 meters high, and with three lanes on each side.",
+        "kanji": "建設中の橋は、長さ500メートル、高さ20メートル、片側3車線の大きな橋である。",
+        "kana": "けんせつちゅうの橋は、長さごひゃく00メートル、高さにじゅう0メートル、かたがわさんしゃせんの大きな橋である。",
+        "pieces": [
+          {
+            "lifted": "けんせつちゅう",
+            "unlifted": "建設中"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の橋は、長さ"
+          },
+          {
+            "lifted": "ごひゃく",
+            "unlifted": "500メートル"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、高さ"
+          },
+          {
+            "lifted": "にじゅう",
+            "unlifted": "20メートル"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
+          },
+          {
+            "lifted": "かたがわさんしゃせん",
+            "unlifted": "片側3車線"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の大きな橋である。"
+          }
+        ]
+      },
+      {
+        "english": "When I arrived on the platform of the station, I heard an announcement asking for cooperation through boarding in line, but there were no station staff, so I did not know where to line up.",
+        "kanji": "駅のホームに着いたら「整列乗車にご協力をお願いします」というアナウンスが聞こえたが、駅員がいなかったので、どこに整列したらいいのかわからなかった。",
+        "kana": "駅のホームに着いたら「整列乗車にご協力をお願いします」というアナウンスが聞こえたが、駅員がいなかったので、どこに整列したらいいのかわからなかった。",
+        "pieces": []
+      },
+      {
+        "english": "The restaurant run by my father is said to be so popular that it is hard to secure a reservation, and it appears to be doing well at first glance. However, its finances are in fact in a disastrous state. ",
+        "kanji": "父が経営するレストランは予約がとれない人気店と言われ、一見上手くいっているように見えるが、財政状況の内実は火の車だ。",
+        "kana": "父が経営するレストランは予約がとれないにんきてんと言われ、いっけんうまくいっているように見えるが、財政状況のないじつはひのくるまだ。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "父が経営するレストランは予約がとれない"
+          },
+          {
+            "lifted": "にんきてん",
+            "unlifted": "人気店"
+          },
+          {
+            "lifted": "",
+            "unlifted": "と言われ、"
+          },
+          {
+            "lifted": "いっけん",
+            "unlifted": "一見"
+          },
+          {
+            "lifted": "うま",
+            "unlifted": "上手く"
+          },
+          {
+            "lifted": "",
+            "unlifted": "いっているように見えるが、財政状況の"
+          },
+          {
+            "lifted": "ないじつ",
+            "unlifted": "内実"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "ひのくるま",
+            "unlifted": "火の車"
+          },
+          {
+            "lifted": "",
+            "unlifted": "だ。"
+          }
+        ]
+      },
+      {
+        "english": "When people sit on train seats with their legs in the aisle, it causes an obstruction.",
+        "kanji": "電車の座席で、通路側に足を投げ出して座っていると、通行の邪魔になる。",
+        "kana": "電車の座席で、つうろがわに足を投げ出してすわっていると、つうこうのじゃまになる。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "電車の座席で、"
+          },
+          {
+            "lifted": "つうろがわ",
+            "unlifted": "通路側"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に足を投げ出して"
+          },
+          {
+            "lifted": "すわ",
+            "unlifted": "座って"
+          },
+          {
+            "lifted": "",
+            "unlifted": "いると、"
+          },
+          {
+            "lifted": "つうこう",
+            "unlifted": "通行"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "じゃま",
+            "unlifted": "邪魔"
+          },
+          {
+            "lifted": "",
+            "unlifted": "になる。"
+          }
+        ]
+      },
+      {
+        "english": "This morning was a bit of a mess because the train was delayed due to an accident resulting in injury or death. Fortunately, despite the lack of taxis, I was able to get to my important meeting on time.",
+        "kanji": "今朝は人身事故で電車が大幅に遅れたり、タクシーもつかまらなかったりと散々だったが、何はともあれ、大切な会議に間に合ってよかった。",
+        "kana": "けさはじんしんじこで電車がおおはばに遅れたり、タクシーもつかまらなかったりとさんざんだったが、なにはともあれ、たいせつな会議にまにあってよかった。",
+        "pieces": [
+          {
+            "lifted": "けさ",
+            "unlifted": "今朝"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "じんしんじこ",
+            "unlifted": "人身事故"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で電車が"
+          },
+          {
+            "lifted": "おおはば",
+            "unlifted": "大幅"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に遅れたり、タクシーもつかまらなかったりと"
+          },
+          {
+            "lifted": "さんざん",
+            "unlifted": "散々"
+          },
+          {
+            "lifted": "",
+            "unlifted": "だったが、"
+          },
+          {
+            "lifted": "なに",
+            "unlifted": "何はともあれ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
+          },
+          {
+            "lifted": "たいせつ",
+            "unlifted": "大切な"
+          },
+          {
+            "lifted": "",
+            "unlifted": "会議に"
+          },
+          {
+            "lifted": "まにあ",
+            "unlifted": "間に合って"
+          },
+          {
+            "lifted": "",
+            "unlifted": "よかった。"
+          }
+        ]
+      },
+      {
+        "english": "When an adult and a child walk side by side on the sidewalk, the adult should walk on the side of the roadway.",
+        "kanji": "大人と子どもが並んで歩道を歩くときは、大人が車道側を歩くようにしたほうがよい。",
+        "kana": "おとなと子どもが並んで歩道を歩くときは、おとながしゃどうがわを歩くようにしたほうがよい。",
+        "pieces": [
+          {
+            "lifted": "おとな",
+            "unlifted": "大人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "と子どもが並んで歩道を歩くときは、"
+          },
+          {
+            "lifted": "おとな",
+            "unlifted": "大人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "が"
+          },
+          {
+            "lifted": "しゃどうがわ",
+            "unlifted": "車道側"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を歩くようにしたほうがよい。"
+          }
+        ]
+      },
+      {
         "english": "Any car will do, as long as it runs.",
         "kanji": "走りさえすれば、どんな車でもよいのです。",
         "kana": "はしりさえすれば、どんなくるまでもよいのです。",
@@ -40,6 +296,10 @@
           {
             "lifted": "",
             "unlifted": "のです"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -103,6 +363,10 @@
           {
             "lifted": "み",
             "unlifted": "見えた"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -138,6 +402,10 @@
           {
             "lifted": "",
             "unlifted": "だろう"
+          },
+          {
+            "lifted": "",
+            "unlifted": "？"
           }
         ]
       },
@@ -189,6 +457,10 @@
           {
             "lifted": "",
             "unlifted": "だ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -216,6 +488,10 @@
           {
             "lifted": "の",
             "unlifted": "乗った"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -247,6 +523,10 @@
           {
             "lifted": "み",
             "unlifted": "見える"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -286,6 +566,10 @@
           {
             "lifted": "も",
             "unlifted": "持っていた"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -341,6 +625,10 @@
           {
             "lifted": "じかん",
             "unlifted": "時間がかかる"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -396,6 +684,10 @@
           {
             "lifted": "",
             "unlifted": "した"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -447,6 +739,10 @@
           {
             "lifted": "",
             "unlifted": "だろう"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -522,6 +818,10 @@
           {
             "lifted": "",
             "unlifted": "ことはできない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -553,6 +853,10 @@
           {
             "lifted": "きに",
             "unlifted": "気に入っている"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -596,263 +900,10 @@
           {
             "lifted": "",
             "unlifted": "くれた"
-          }
-        ]
-      },
-      {
-        "english": "The train bound for Sendai has just left.",
-        "kanji": "仙台行きの列車は出たばかりです。",
-        "kana": "仙台いきのれっしゃはでたばかりです。",
-        "pieces": [
-          {
-            "lifted": "い",
-            "unlifted": "行き"
           },
           {
             "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "れっしゃ",
-            "unlifted": "列車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "で",
-            "unlifted": "出た"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ばかり"
-          },
-          {
-            "lifted": "",
-            "unlifted": "です"
-          }
-        ]
-      },
-      {
-        "english": "The snow prevented the train from running.",
-        "kanji": "雪のため列車は走れなかった。",
-        "kana": "ゆきのためれっしゃははしれなかった。",
-        "pieces": [
-          {
-            "lifted": "ゆき",
-            "unlifted": "雪"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ため"
-          },
-          {
-            "lifted": "れっしゃ",
-            "unlifted": "列車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "はし",
-            "unlifted": "走れなかった"
-          }
-        ]
-      },
-      {
-        "english": "Owing to the snow, the train was delayed.",
-        "kanji": "雪のため、列車が遅れた。",
-        "kana": "ゆきのため、れっしゃがおくれた。",
-        "pieces": [
-          {
-            "lifted": "ゆき",
-            "unlifted": "雪"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ため"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "れっしゃ",
-            "unlifted": "列車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "おく",
-            "unlifted": "遅れた"
-          }
-        ]
-      },
-      {
-        "english": "The snow caused me to miss the train.",
-        "kanji": "雪のせいで私は電車に乗り遅れた。",
-        "kana": "ゆきのせいでわたしはでんしゃにのりおくれた。",
-        "pieces": [
-          {
-            "lifted": "ゆき",
-            "unlifted": "雪"
-          },
-          {
-            "lifted": "",
-            "unlifted": "のせいで"
-          },
-          {
-            "lifted": "わたし",
-            "unlifted": "私"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "でんしゃ",
-            "unlifted": "電車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "のりおく",
-            "unlifted": "乗り遅れた"
-          }
-        ]
-      },
-      {
-        "english": "You must not travel on the train without a ticket.",
-        "kanji": "切符なしで電車に乗ってはいけません。",
-        "kana": "きっぷなしででんしゃにのってはいけません。",
-        "pieces": [
-          {
-            "lifted": "きっぷ",
-            "unlifted": "切符"
-          },
-          {
-            "lifted": "",
-            "unlifted": "なしで"
-          },
-          {
-            "lifted": "でんしゃ",
-            "unlifted": "電車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "の",
-            "unlifted": "乗って"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "",
-            "unlifted": "いけません"
-          }
-        ]
-      },
-      {
-        "english": "The lorry had to stop because its load had fallen off.",
-        "kanji": "積み荷が落ちたので、トラックは停車しなければならなかった。",
-        "kana": "つみにがおちたので、トラックはていしゃしなければならなかった。",
-        "pieces": [
-          {
-            "lifted": "つみに",
-            "unlifted": "積み荷"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "お",
-            "unlifted": "落ちた"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ので"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "",
-            "unlifted": "トラック"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "ていしゃ",
-            "unlifted": "停車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "し"
-          },
-          {
-            "lifted": "",
-            "unlifted": "なければならなかった"
-          }
-        ]
-      },
-      {
-        "english": "I'll come at noon to pick you up.",
-        "kanji": "正午に車で迎えに行くよ。",
-        "kana": "しょうごにくるまでむかえにいくよ。",
-        "pieces": [
-          {
-            "lifted": "しょうご",
-            "unlifted": "正午"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "くるま",
-            "unlifted": "車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "で"
-          },
-          {
-            "lifted": "むか",
-            "unlifted": "迎え"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "い",
-            "unlifted": "行く"
-          },
-          {
-            "lifted": "",
-            "unlifted": "よ"
+            "unlifted": "。"
           }
         ]
       }

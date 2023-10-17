@@ -5,6 +5,12 @@
     "found": true,
     "results": [
       {
+        "english": "An international student from Europe once asked me whether the Japanese live for the sake of work.",
+        "kanji": "ヨーロッパから来た留学生に、日本人は仕事のために生きているのかと問われたことがある。",
+        "kana": "ヨーロッパから来た留学生に、日本人は仕事のために生きているのかと問われたことがある。",
+        "pieces": []
+      },
+      {
         "english": "After the war, the diligence and the saving of the Japanese gave an impression which is strong in the American.",
         "kanji": "戦後、日本人の勤勉さと節約はアメリカ人に強い印象を与えた。",
         "kana": "せんご、にほんじんのきんべんさとせつやくはアメリカじんにつよいいんしょうをあたえた。",
@@ -56,6 +62,10 @@
           {
             "lifted": "いんしょうをあた",
             "unlifted": "印象を与えた"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -87,6 +97,10 @@
           {
             "lifted": "",
             "unlifted": "だ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -118,6 +132,10 @@
           {
             "lifted": "",
             "unlifted": "だった"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -157,6 +175,10 @@
           {
             "lifted": "",
             "unlifted": "です"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -232,6 +254,10 @@
           {
             "lifted": "",
             "unlifted": "いる"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -275,6 +301,10 @@
           {
             "lifted": "し",
             "unlifted": "知らなかった"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -310,6 +340,10 @@
           {
             "lifted": "",
             "unlifted": "のだ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -357,6 +391,10 @@
           {
             "lifted": "",
             "unlifted": "です"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -408,6 +446,10 @@
           {
             "lifted": "おも",
             "unlifted": "思っていました"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -447,6 +489,10 @@
           {
             "lifted": "",
             "unlifted": "でしょう"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -514,6 +560,10 @@
           {
             "lifted": "",
             "unlifted": "だろうか"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -557,6 +607,10 @@
           {
             "lifted": "す",
             "unlifted": "住んでいません"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -660,6 +714,10 @@
           {
             "lifted": "",
             "unlifted": "しました"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -707,6 +765,10 @@
           {
             "lifted": "",
             "unlifted": "いません"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -818,6 +880,10 @@
           {
             "lifted": "",
             "unlifted": "する"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -873,6 +939,10 @@
           {
             "lifted": "",
             "unlifted": "です"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -920,6 +990,10 @@
           {
             "lifted": "あ",
             "unlifted": "合わない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -967,6 +1041,10 @@
           {
             "lifted": "",
             "unlifted": "する"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
           }
         ]
       },
@@ -994,57 +1072,10 @@
           {
             "lifted": "",
             "unlifted": "だ"
-          }
-        ]
-      },
-      {
-        "english": "They employ foreigners because Japanese workers are in short supply.",
-        "kanji": "彼らは日本人労働者が不足しているから外国人を雇う。",
-        "kana": "かれらはにほんじんろうどうしゃがふそくしているからがいこくじんをやとう。",
-        "pieces": [
-          {
-            "lifted": "かれ",
-            "unlifted": "彼ら"
           },
           {
             "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "にほんじん",
-            "unlifted": "日本人"
-          },
-          {
-            "lifted": "ろうどうしゃ",
-            "unlifted": "労働者"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "ふそく",
-            "unlifted": "不足"
-          },
-          {
-            "lifted": "",
-            "unlifted": "している"
-          },
-          {
-            "lifted": "",
-            "unlifted": "から"
-          },
-          {
-            "lifted": "がいこくじん",
-            "unlifted": "外国人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "やと",
-            "unlifted": "雇う"
+            "unlifted": "。"
           }
         ]
       }
