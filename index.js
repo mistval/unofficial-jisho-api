@@ -298,10 +298,17 @@ function normalizeSentenceElement(sentenceElement) {
   const sentenceHtml = sentenceElement.html()
   const normalizedSentenceHtml = sentenceHtml.replace(
     /(?<=<\/li>)\s*([^\s<>]+)\s*(?=<li)/g,
-    (m, g1) => `<li class="clearfix"><span class="unlinked">${g1}</span></li>`
+    (m, g1) => `<li class="clearfix"><span class="unlinked">${g1.trim()}</span></li>`
+  ).replace(
+    /\<\/li\>\s*([^<\s]+)\s*\<\/ul>/g,
+    (m, g1) => `</li><li class="clearfix"><span class="unlinked">${g1.trim()}</span></li></ul>`
+  ).replace(
+    /<ul class="japanese_sentence japanese japanese_gothic clearfix" lang="ja">\s*([^<\s]+)\s*<li/g,
+    (m, g1) => `<ul class="japanese_sentence japanese japanese_gothic clearfix" lang="ja"><li class="clearfix"><span class="unlinked">${g1.trim()}</span></li><li`
   );
-  const result = cheerio.load(normalizedSentenceHtml)
-  return result
+
+  const result = cheerio.load(normalizedSentenceHtml);
+  return result;
 }
 
 function getPieces(sentenceElement) {
