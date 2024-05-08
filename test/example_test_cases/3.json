@@ -5,37 +5,53 @@
     "found": true,
     "results": [
       {
-        "english": "My boss is a good listener to subordinates and maintains the same attitude regardless of whether she is in a meeting or relaxing over a drink. So, she has the strong trust of everyone.",
-        "kanji": "上司は会議の席でもお酒の席でも態度が変わらず、部下の話をよく聞くので、皆からとても信頼されている。",
-        "kana": "上司は会議のせきでもお酒のせきでも態度が変わらず、ぶかの話をよく聞くので、皆からとても信頼されている。",
+        "english": "The person who happened to sit next to me on the plane was my mother’s best friend from high school. The world is a small place.",
+        "kanji": "飛行機で偶然隣の座席に座った人は、母の高校時代の親友だった。世界は狭い。",
+        "kana": "飛行機でぐうぜんとなりのざせきにすわったひとは、母の高校時代のしんゆうだった。世界は狭い。",
         "pieces": [
           {
             "lifted": "",
-            "unlifted": "上司は会議の"
+            "unlifted": "飛行機で"
           },
           {
-            "lifted": "せき",
-            "unlifted": "席"
+            "lifted": "ぐうぜん",
+            "unlifted": "偶然"
           },
           {
-            "lifted": "",
-            "unlifted": "でもお酒の"
-          },
-          {
-            "lifted": "せき",
-            "unlifted": "席"
+            "lifted": "となり",
+            "unlifted": "隣"
           },
           {
             "lifted": "",
-            "unlifted": "でも態度が変わらず、"
+            "unlifted": "の"
           },
           {
-            "lifted": "ぶか",
-            "unlifted": "部下"
+            "lifted": "ざせき",
+            "unlifted": "座席"
           },
           {
             "lifted": "",
-            "unlifted": "の話をよく聞くので、皆からとても信頼されている。"
+            "unlifted": "に"
+          },
+          {
+            "lifted": "すわ",
+            "unlifted": "座った"
+          },
+          {
+            "lifted": "ひと",
+            "unlifted": "人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は、母の高校時代の"
+          },
+          {
+            "lifted": "しんゆう",
+            "unlifted": "親友"
+          },
+          {
+            "lifted": "",
+            "unlifted": "だった。世界は狭い。"
           }
         ]
       },
@@ -67,761 +83,932 @@
         ]
       },
       {
-        "english": "The total solar eclipse can be observed next year on June 22nd.",
-        "kanji": "来年６月２２日に観測される皆既日食。",
-        "kana": "らいねん６月２２にちにかんそくされるかいきにっしょく。",
-        "pieces": [
-          {
-            "lifted": "らいねん",
-            "unlifted": "来年"
-          },
-          {
-            "lifted": "",
-            "unlifted": "６月"
-          },
-          {
-            "lifted": "",
-            "unlifted": "２２"
-          },
-          {
-            "lifted": "にち",
-            "unlifted": "日"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "かんそく",
-            "unlifted": "観測"
-          },
-          {
-            "lifted": "",
-            "unlifted": "される"
-          },
-          {
-            "lifted": "かいきにっしょく",
-            "unlifted": "皆既日食"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "Do you all place great importance on morals?",
-        "kanji": "皆さんは、モラルを大切にしていますか。",
-        "kana": "みなさんは、モラルをたいせつにしていますか。",
-        "pieces": [
-          {
-            "lifted": "みな",
-            "unlifted": "皆さん"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "",
-            "unlifted": "モラル"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "たいせつ",
-            "unlifted": "大切に"
-          },
-          {
-            "lifted": "",
-            "unlifted": "しています"
-          },
-          {
-            "lifted": "",
-            "unlifted": "か"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "Will everyone please stick with it to the last moment.",
-        "kanji": "どうぞ、皆様も最後の一瞬まで粘り抜いてください。",
-        "kana": "どうぞ、みなさまもさいごのいっしゅんまでねばりぬいてください。",
+        "english": "Everyone is saddened by the fact that a teacher who is so beloved by many students will be transferred to another school.",
+        "kanji": "多くの生徒に慕われている先生が他の学校に異動することになり、皆悲しんでいる。",
+        "kana": "多くの生徒にしたわれている先生がほかの学校に異動することになり、みな悲しんでいる。",
         "pieces": [
           {
             "lifted": "",
-            "unlifted": "どうぞ"
+            "unlifted": "多くの生徒に"
+          },
+          {
+            "lifted": "した",
+            "unlifted": "慕われて"
           },
           {
             "lifted": "",
-            "unlifted": "、"
+            "unlifted": "いる先生が"
           },
           {
-            "lifted": "みなさま",
-            "unlifted": "皆様"
-          },
-          {
-            "lifted": "",
-            "unlifted": "も"
-          },
-          {
-            "lifted": "さいご",
-            "unlifted": "最後"
+            "lifted": "ほか",
+            "unlifted": "他"
           },
           {
             "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "いっしゅん",
-            "unlifted": "一瞬"
-          },
-          {
-            "lifted": "",
-            "unlifted": "まで"
-          },
-          {
-            "lifted": "ねばりぬ",
-            "unlifted": "粘り抜いて"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ください"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "We were all pleased to be so cheaply quit of him.",
-        "kanji": "これだけで厄介払いできたら安いもので、みな大喜びした。",
-        "kana": "これだけでやっかいばらいできたらやすいもので、みなおおよろこびした。",
-        "pieces": [
-          {
-            "lifted": "",
-            "unlifted": "これだけ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "で"
-          },
-          {
-            "lifted": "やっかいばら",
-            "unlifted": "厄介払い"
-          },
-          {
-            "lifted": "",
-            "unlifted": "できたら"
-          },
-          {
-            "lifted": "やす",
-            "unlifted": "安い"
-          },
-          {
-            "lifted": "",
-            "unlifted": "もの"
-          },
-          {
-            "lifted": "",
-            "unlifted": "で"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "",
-            "unlifted": "みな"
-          },
-          {
-            "lifted": "おおよろこ",
-            "unlifted": "大喜び"
-          },
-          {
-            "lifted": "",
-            "unlifted": "した"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "For my part, having you lot with me is more reassuring than the police or anything!",
-        "kanji": "僕には警察よりも何よりもみんながいてくれることの方が心強いのですよ。",
-        "kana": "ぼくにはけいさつよりもなによりもみんながいてくれることのほうがこころづよいのですよ。",
-        "pieces": [
-          {
-            "lifted": "ぼく",
-            "unlifted": "僕"
-          },
-          {
-            "lifted": "",
-            "unlifted": "には"
-          },
-          {
-            "lifted": "けいさつ",
-            "unlifted": "警察"
-          },
-          {
-            "lifted": "",
-            "unlifted": "よりも"
-          },
-          {
-            "lifted": "なに",
-            "unlifted": "何"
-          },
-          {
-            "lifted": "",
-            "unlifted": "よりも"
-          },
-          {
-            "lifted": "",
-            "unlifted": "みんな"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "",
-            "unlifted": "いて"
-          },
-          {
-            "lifted": "",
-            "unlifted": "くれる"
-          },
-          {
-            "lifted": "",
-            "unlifted": "こと"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "ほう",
-            "unlifted": "方"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "こころづよ",
-            "unlifted": "心強い"
-          },
-          {
-            "lifted": "",
-            "unlifted": "のです"
-          },
-          {
-            "lifted": "",
-            "unlifted": "よ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "What programming language does everybody like?",
-        "kanji": "皆さんはどんなプログラミング言語が好きですか？",
-        "kana": "みなさんはどんなプログラミングげんごがすきですか？",
-        "pieces": [
-          {
-            "lifted": "みな",
-            "unlifted": "皆さん"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "",
-            "unlifted": "どんな"
-          },
-          {
-            "lifted": "プログラミングげんご",
-            "unlifted": "プログラミング言語"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "す",
-            "unlifted": "好き"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ですか"
-          },
-          {
-            "lifted": "",
-            "unlifted": "？"
-          }
-        ]
-      },
-      {
-        "english": "I'm teaching basic participial constructions now, but, with regard to those below, what different ways of translating them would everybody use?",
-        "kanji": "今、基本的な分詞構文を教えているのですが、皆さんは以下の分詞構文の訳については、どのように異なる訳し方をされますか？",
-        "kana": "いま、きほんてきなぶんしこうぶんをおしええているのですが、みなさんはいかのぶんしこうぶんのやくについては、どのようにことなるやくしかたをされますか？",
-        "pieces": [
-          {
-            "lifted": "いま",
-            "unlifted": "今"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "きほんてき",
-            "unlifted": "基本的な"
-          },
-          {
-            "lifted": "ぶんしこうぶん",
-            "unlifted": "分詞構文"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "おしえ",
-            "unlifted": "教えている"
-          },
-          {
-            "lifted": "",
-            "unlifted": "のです"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
+            "unlifted": "の学校に異動することになり、"
           },
           {
             "lifted": "みな",
-            "unlifted": "皆さん"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "いか",
-            "unlifted": "以下"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "ぶんしこうぶん",
-            "unlifted": "分詞構文"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "やく",
-            "unlifted": "訳"
-          },
-          {
-            "lifted": "",
-            "unlifted": "について"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "",
-            "unlifted": "どのように"
-          },
-          {
-            "lifted": "こと",
-            "unlifted": "異なる"
-          },
-          {
-            "lifted": "やく",
-            "unlifted": "訳し"
-          },
-          {
-            "lifted": "かた",
-            "unlifted": "方"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "",
-            "unlifted": "されます"
-          },
-          {
-            "lifted": "",
-            "unlifted": "か"
-          },
-          {
-            "lifted": "",
-            "unlifted": "？"
-          }
-        ]
-      },
-      {
-        "english": "What's different from Japan is that the doctors of Singapore generally all know each other.",
-        "kanji": "シンガポールの医師は殆どの場合皆お互いを知っている、というのが日本と異なります。",
-        "kana": "シンガポールのいしはほとんどのばあいみんなおたがいをしっている、というのがにほんとことなります。",
-        "pieces": [
-          {
-            "lifted": "",
-            "unlifted": "シンガポール"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "いし",
-            "unlifted": "医師"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "ほとん",
-            "unlifted": "殆ど"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "ばあい",
-            "unlifted": "場合"
-          },
-          {
-            "lifted": "みんな",
             "unlifted": "皆"
           },
           {
-            "lifted": "おたが",
-            "unlifted": "お互い"
+            "lifted": "",
+            "unlifted": "悲しんでいる。"
+          }
+        ]
+      },
+      {
+        "english": "Formal letters and speeches often end with words of good wishes, such as: “I wish you all good health and happiness.” ",
+        "kanji": "フォーマルな手紙やスピーチは、末尾を「皆さまのご健勝とご多幸を心よりお祈り申し上げます。」という挨拶で結ぶことも多い。",
+        "kana": "フォーマルな手紙やスピーチは、まつびを「皆さまのごけんしょうとごたこうをこころよりおいのりもうしあげます。」というあいさつでむすぶことも多い。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "フォーマルな手紙やスピーチは、"
+          },
+          {
+            "lifted": "まつび",
+            "unlifted": "末尾"
           },
           {
             "lifted": "",
-            "unlifted": "を"
+            "unlifted": "を「皆さまの"
           },
           {
-            "lifted": "し",
-            "unlifted": "知っている"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
+            "lifted": "ごけんしょう",
+            "unlifted": "ご健勝"
           },
           {
             "lifted": "",
             "unlifted": "と"
           },
           {
-            "lifted": "",
-            "unlifted": "いう"
+            "lifted": "ごたこう",
+            "unlifted": "ご多幸"
           },
           {
             "lifted": "",
-            "unlifted": "の"
+            "unlifted": "を"
+          },
+          {
+            "lifted": "こころ",
+            "unlifted": "心"
+          },
+          {
+            "lifted": "",
+            "unlifted": "より"
+          },
+          {
+            "lifted": "おいのりもうしあ",
+            "unlifted": "お祈り申し上げます"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。」という"
+          },
+          {
+            "lifted": "あいさつ",
+            "unlifted": "挨拶"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で"
+          },
+          {
+            "lifted": "むす",
+            "unlifted": "結ぶ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ことも多い。"
+          }
+        ]
+      },
+      {
+        "english": "It is quite difficult for one person to express disagreement with an opinion that everyone else agrees with.",
+        "kanji": "皆が賛成している意見に一人異論を唱えるのはなかなか難しい。",
+        "kana": "みなが賛成している意見にひとりいろんをとなえるのはなかなか難しい。",
+        "pieces": [
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "が賛成している意見に"
+          },
+          {
+            "lifted": "ひとり",
+            "unlifted": "一人"
+          },
+          {
+            "lifted": "いろん",
+            "unlifted": "異論"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を"
+          },
+          {
+            "lifted": "とな",
+            "unlifted": "唱える"
+          },
+          {
+            "lifted": "",
+            "unlifted": "のはなかなか難しい。"
+          }
+        ]
+      },
+      {
+        "english": "The university’s dance club is more advanced and everyone is better than I expected. I had been confident in my dancing, but I have completely lost that confidence.",
+        "kanji": "大学のダンス部は思っていたより本格的で皆うまく、ダンスには自信があった私もすっかり自信を失ってしまった。",
+        "kana": "大学のダンスぶは思っていたよりほんかくてきでみなうまく、ダンスには自信があった私もすっかり自信をうしなってしまった。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "大学の"
+          },
+          {
+            "lifted": "ダンスぶ",
+            "unlifted": "ダンス部"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は思っていたより"
+          },
+          {
+            "lifted": "ほんかくてき",
+            "unlifted": "本格的で"
+          },
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "うまく、ダンスには自信があった私もすっかり自信を"
+          },
+          {
+            "lifted": "うしな",
+            "unlifted": "失って"
+          },
+          {
+            "lifted": "",
+            "unlifted": "しまった。"
+          }
+        ]
+      },
+      {
+        "english": "Since a leading member of the basketball team has been injured and cannot participate in games for a while, all the other team members are working hard to fill that gap.",
+        "kanji": "バスケ部の主力選手が怪我でしばらく試合に出られなくなってしまったため、その穴を埋めようと部員皆でがんばっている。",
+        "kana": "バスケ部のしゅりょくせんしゅがけがでしばらくしあいに出られなくなってしまったため、そのあなをうめようとぶいんみなでがんばっている。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "バスケ部の"
+          },
+          {
+            "lifted": "しゅりょくせんしゅ",
+            "unlifted": "主力選手"
           },
           {
             "lifted": "",
             "unlifted": "が"
           },
           {
-            "lifted": "にほん",
-            "unlifted": "日本"
+            "lifted": "けが",
+            "unlifted": "怪我"
+          },
+          {
+            "lifted": "",
+            "unlifted": "でしばらく"
+          },
+          {
+            "lifted": "しあい",
+            "unlifted": "試合"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に出られなくなってしまったため、その"
+          },
+          {
+            "lifted": "あな",
+            "unlifted": "穴"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を"
+          },
+          {
+            "lifted": "う",
+            "unlifted": "埋めよう"
           },
           {
             "lifted": "",
             "unlifted": "と"
           },
           {
-            "lifted": "こと",
-            "unlifted": "異なります"
+            "lifted": "ぶいん",
+            "unlifted": "部員"
           },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "Everyone, please keep to netiquette.",
-        "kanji": "皆さんネチケットはしっかり。",
-        "kana": "みなさんネチケットはしっかり。",
-        "pieces": [
           {
             "lifted": "みな",
-            "unlifted": "皆さん"
+            "unlifted": "皆"
           },
           {
             "lifted": "",
-            "unlifted": "ネチケット"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "",
-            "unlifted": "しっかり"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
+            "unlifted": "でがんばっている。"
           }
         ]
       },
       {
-        "english": "The example is a past progressive tense sentence. How was everybody taught when they were learning about progressive tense?",
-        "kanji": "例文は過去進行形の文です。皆さんは進行形を学習するとき、どのように教わりましたか？",
-        "kana": "れいぶんはかこしんこうけいのぶんです。みなさんはしんこうけいをがくしゅうするとき、どのようにおそわりましたか？",
+        "english": "The person in charge of the gathering collected the money from everyone and paid the bill, and then told everyone that the gathering would end soon.",
+        "kanji": "会の幹事は、全員分の会計をまとめて済ませると、そろそろお開きであることを皆に告げた。",
+        "kana": "かいの幹事は、ぜんいんぶんの会計をまとめて済ませると、そろそろおひらきであることをみなに告げた。",
         "pieces": [
           {
-            "lifted": "れいぶん",
-            "unlifted": "例文"
+            "lifted": "かい",
+            "unlifted": "会"
           },
           {
             "lifted": "",
-            "unlifted": "は"
+            "unlifted": "の幹事は、"
           },
           {
-            "lifted": "かこしんこうけい",
-            "unlifted": "過去進行形"
+            "lifted": "ぜんいんぶん",
+            "unlifted": "全員分"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の会計をまとめて済ませると、そろそろ"
+          },
+          {
+            "lifted": "おひら",
+            "unlifted": "お開き"
+          },
+          {
+            "lifted": "",
+            "unlifted": "であることを"
+          },
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に告げた。"
+          }
+        ]
+      },
+      {
+        "english": "The audience left the venue with lingering excitement, after fully enjoying three hours of live performances by a major international artist.",
+        "kanji": "海外大物アーティストの3時間にわたるライブを満喫した観客たちは、皆、興奮さめやらぬ思いを胸に会場を後にした。",
+        "kana": "かいがいおおものアーティストのさんじかんにわたるライブをまんきつした観客たちは、みな、興奮さめやらぬ思いを胸に会場をあとにした。",
+        "pieces": [
+          {
+            "lifted": "かいがいおおもの",
+            "unlifted": "海外大物アーティスト"
           },
           {
             "lifted": "",
             "unlifted": "の"
           },
           {
-            "lifted": "ぶん",
-            "unlifted": "文"
+            "lifted": "さんじかん",
+            "unlifted": "3時間"
           },
           {
             "lifted": "",
-            "unlifted": "です"
+            "unlifted": "にわたるライブを"
+          },
+          {
+            "lifted": "まんきつ",
+            "unlifted": "満喫した"
           },
           {
             "lifted": "",
-            "unlifted": "。"
+            "unlifted": "観客たちは、"
           },
           {
             "lifted": "みな",
-            "unlifted": "皆さん"
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、興奮さめやらぬ思いを胸に会場を"
+          },
+          {
+            "lifted": "あと",
+            "unlifted": "後"
+          },
+          {
+            "lifted": "",
+            "unlifted": "にした。"
+          }
+        ]
+      },
+      {
+        "english": "The neighborhood elementary school is designated as an educational model school in the community, and students from the school have a reputation for being polite and disciplined.",
+        "kanji": "近所の小学校は地域の教育モデル校に指定されており、生徒たちが皆礼儀正しく、規律を守ると評判だ。",
+        "kana": "きんじょの小学校は地域の教育モデル校に指定されており、生徒たちがみなれいぎただしく、規律を守ると評判だ。",
+        "pieces": [
+          {
+            "lifted": "きんじょ",
+            "unlifted": "近所"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の小学校は地域の教育モデル校に指定されており、生徒たちが"
+          },
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "れいぎただ",
+            "unlifted": "礼儀正しく"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、規律を守ると評判だ。"
+          }
+        ]
+      },
+      {
+        "english": "At lunch break, the schoolyard is filled with students who have run out of the school building to play dodgeball, soccer, etc. to their heart’s content.",
+        "kanji": "昼休みになると、校庭は校舎から飛び出してきた生徒たちでいっぱいになり、皆思い思いにドッジボールやサッカーなどに興じている。",
+        "kana": "昼休みになると、こうていはこうしゃから飛び出してきた生徒たちでいっぱいになり、みなおもいおもいにドッジボールやサッカーなどにきょうじている。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "昼休みになると、"
+          },
+          {
+            "lifted": "こうてい",
+            "unlifted": "校庭"
           },
           {
             "lifted": "",
             "unlifted": "は"
           },
           {
-            "lifted": "しんこうけい",
-            "unlifted": "進行形"
+            "lifted": "こうしゃ",
+            "unlifted": "校舎"
           },
           {
             "lifted": "",
-            "unlifted": "を"
+            "unlifted": "から飛び出してきた生徒たちでいっぱいになり、"
           },
           {
-            "lifted": "がくしゅう",
-            "unlifted": "学習"
+            "lifted": "みな",
+            "unlifted": "皆"
           },
           {
-            "lifted": "",
-            "unlifted": "する"
-          },
-          {
-            "lifted": "",
-            "unlifted": "とき"
+            "lifted": "おもいおも",
+            "unlifted": "思い思い"
           },
           {
             "lifted": "",
-            "unlifted": "、"
+            "unlifted": "にドッジボールやサッカーなどに"
+          },
+          {
+            "lifted": "きょう",
+            "unlifted": "興じて"
           },
           {
             "lifted": "",
-            "unlifted": "どのように"
-          },
-          {
-            "lifted": "おそ",
-            "unlifted": "教わりました"
-          },
-          {
-            "lifted": "",
-            "unlifted": "か"
-          },
-          {
-            "lifted": "",
-            "unlifted": "？"
+            "unlifted": "いる。"
           }
         ]
       },
       {
-        "english": "Oh, that's a secret, OK? Because slipping out of the dorm in the night is severely punished.",
-        "kanji": "あ、みんなには内緒だよ？寮を夜中に抜け出すのは厳罰だからね？",
-        "kana": "あ、みんなにはないしょだよ？りょうをよなかにぬけだすのはげんばつだからね？",
+        "english": "In the junior year at our university, students are assigned to a seminar group and are required to read specific books. Each week, a nominated student from the seminar group presents a summary of the content of an assigned chapter, and the professor then adds his/her commentary before opening it up to general discussion.",
+        "kanji": "私たちの大学では卒業年の前年からプレゼミに所属し、専門書の講読を行うことになっている。授業は毎週担当の学生が担当章の内容をまとめて発表し、教授が解説を加え、皆で議論を行う形で進められる。",
+        "kana": "私たちの大学ではそつぎょうねんのぜんねんからプレゼミに所属し、専門書の講読をおこなうことになっている。授業は毎週担当の学生がたんとうしょうの内容をまとめて発表し、教授が解説をくわえ、みなで議論をおこなうかたちで進められる。",
         "pieces": [
           {
             "lifted": "",
-            "unlifted": "あ"
+            "unlifted": "私たちの大学では"
           },
           {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "",
-            "unlifted": "みんな"
-          },
-          {
-            "lifted": "",
-            "unlifted": "には"
-          },
-          {
-            "lifted": "ないしょ",
-            "unlifted": "内緒"
-          },
-          {
-            "lifted": "",
-            "unlifted": "だ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "よ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "？"
-          },
-          {
-            "lifted": "りょう",
-            "unlifted": "寮"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "よなか",
-            "unlifted": "夜中"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "ぬけだ",
-            "unlifted": "抜け出す"
+            "lifted": "そつぎょうねん",
+            "unlifted": "卒業年"
           },
           {
             "lifted": "",
             "unlifted": "の"
           },
           {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "げんばつ",
-            "unlifted": "厳罰"
+            "lifted": "ぜんねん",
+            "unlifted": "前年"
           },
           {
             "lifted": "",
-            "unlifted": "だ"
+            "unlifted": "からプレゼミに所属し、専門書の講読を"
+          },
+          {
+            "lifted": "おこな",
+            "unlifted": "行う"
           },
           {
             "lifted": "",
-            "unlifted": "から"
+            "unlifted": "ことになっている。授業は毎週担当の学生が"
+          },
+          {
+            "lifted": "たんとうしょう",
+            "unlifted": "担当章"
           },
           {
             "lifted": "",
-            "unlifted": "ね"
+            "unlifted": "の内容をまとめて発表し、教授が解説を"
+          },
+          {
+            "lifted": "くわ",
+            "unlifted": "加え"
           },
           {
             "lifted": "",
-            "unlifted": "？"
+            "unlifted": "、"
+          },
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で議論を"
+          },
+          {
+            "lifted": "おこな",
+            "unlifted": "行う"
+          },
+          {
+            "lifted": "かたち",
+            "unlifted": "形"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で進められる。"
           }
         ]
       },
       {
-        "english": "He's left out of everything.",
-        "kanji": "彼はみんなにつまはじきされている。",
-        "kana": "かれはみんなにつまはじきされている。",
+        "english": "“Chorus,” also known as “choir,” is a popular circle for citizens who want to casually get involved in music. Singing in harmony with everyone is one of its attractions.",
+        "kanji": "「コーラス」は「合唱」とも言い、手軽に音楽を始めたい市民にとって人気のサークルである。皆と声を合わせて歌うことが魅力の一つだ。",
+        "kana": "「コーラス」は「がっしょう」とも言い、てがるに音楽を始めたいしみんにとってにんきのサークルである。みなとこえを合わせて歌うことが魅力のひとつだ。",
         "pieces": [
           {
-            "lifted": "かれ",
-            "unlifted": "彼"
+            "lifted": "",
+            "unlifted": "「コーラス」は「"
+          },
+          {
+            "lifted": "がっしょう",
+            "unlifted": "合唱"
           },
           {
             "lifted": "",
-            "unlifted": "は"
+            "unlifted": "」とも言い、"
+          },
+          {
+            "lifted": "てがる",
+            "unlifted": "手軽"
           },
           {
             "lifted": "",
-            "unlifted": "みんな"
+            "unlifted": "に音楽を始めたい"
           },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "",
-            "unlifted": "つまはじき"
-          },
-          {
-            "lifted": "",
-            "unlifted": "されている"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "We plan to elicit opinions from the public.",
-        "kanji": "市民の皆様の御意見をちょうだいする予定です。",
-        "kana": "しみんのみなさまのごいけんをちょうだいするよていです。",
-        "pieces": [
           {
             "lifted": "しみん",
             "unlifted": "市民"
           },
           {
             "lifted": "",
+            "unlifted": "にとって"
+          },
+          {
+            "lifted": "にんき",
+            "unlifted": "人気"
+          },
+          {
+            "lifted": "",
+            "unlifted": "のサークルである。"
+          },
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "と"
+          },
+          {
+            "lifted": "こえ",
+            "unlifted": "声"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を合わせて歌うことが魅力の"
+          },
+          {
+            "lifted": "ひと",
+            "unlifted": "一つ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "だ。"
+          }
+        ]
+      },
+      {
+        "english": "The new political party’s policies were disastrous, and so, all of the people who voted for them in anticipation of their success were, unfortunately, shown to be lacking in judgment.",
+        "kanji": "新政党の政治の舵取りは惨憺たるものだった。期待して投票した国民は残念ながら皆、先見の明がなかったということだ。",
+        "kana": "しんせいとうの政治のかじとりはさんたんたるものだった。期待して投票した国民は残念ながらみな、せんけんのめいがなかったということだ。",
+        "pieces": [
+          {
+            "lifted": "しんせいとう",
+            "unlifted": "新政党"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の政治の"
+          },
+          {
+            "lifted": "かじと",
+            "unlifted": "舵取り"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "さんたん",
+            "unlifted": "惨憺たる"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ものだった。期待して投票した国民は残念ながら"
+          },
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
+          },
+          {
+            "lifted": "せんけん",
+            "unlifted": "先見"
+          },
+          {
+            "lifted": "",
             "unlifted": "の"
+          },
+          {
+            "lifted": "めい",
+            "unlifted": "明"
+          },
+          {
+            "lifted": "",
+            "unlifted": "がなかったということだ。"
+          }
+        ]
+      },
+      {
+        "english": "My colleague is good at his job, leads a glamorous private life, and everyone looks at him with awe. That being the case, he is too perfect for my taste, so I keep my distance.",
+        "kanji": "同僚は仕事はできるしプライベートも華やかで皆は驚きと羨望のまなざしで見つめているが、完璧すぎて私にはちょっと近寄りがたい。",
+        "kana": "どうりょうは仕事はできるしプライベートもはなやかでみなは驚きとせんぼうのまなざしで見つめているが、かんぺきすぎて私にはちょっとちかよりがたい。",
+        "pieces": [
+          {
+            "lifted": "どうりょう",
+            "unlifted": "同僚"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は仕事はできるしプライベートも"
+          },
+          {
+            "lifted": "はな",
+            "unlifted": "華やか"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で"
+          },
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は驚きと"
+          },
+          {
+            "lifted": "せんぼう",
+            "unlifted": "羨望"
+          },
+          {
+            "lifted": "",
+            "unlifted": "のまなざしで見つめているが、"
+          },
+          {
+            "lifted": "かんぺき",
+            "unlifted": "完璧"
+          },
+          {
+            "lifted": "",
+            "unlifted": "すぎて私にはちょっと"
+          },
+          {
+            "lifted": "ちかよ",
+            "unlifted": "近寄りがたい"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "The funeral was very well attended, which suggested that the deceased was well loved.",
+        "kanji": "お葬式の参列者がとても多く、皆に慕われた故人のお人柄がしのばれた。",
+        "kana": "おそうしきのさんれつしゃがとても多く、皆にしたわれたこじんのおひとがらがしのばれた。",
+        "pieces": [
+          {
+            "lifted": "おそうしき",
+            "unlifted": "お葬式"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "さんれつしゃ",
+            "unlifted": "参列者"
+          },
+          {
+            "lifted": "",
+            "unlifted": "がとても多く、皆に"
+          },
+          {
+            "lifted": "した",
+            "unlifted": "慕われた"
+          },
+          {
+            "lifted": "こじん",
+            "unlifted": "故人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "おひとがら",
+            "unlifted": "お人柄"
+          },
+          {
+            "lifted": "",
+            "unlifted": "がしのばれた。"
+          }
+        ]
+      },
+      {
+        "english": "Towards the end of the party, the party organizer of our company stood up and said, “I think it is time to end the year-end party, but I would like to ask the general manager to say a few words.” He then invited the general manager to step forward, prompting everyone to applaud.",
+        "kanji": "会も終わりに近づき、幹事の社員は立ち上がると「そろそろ忘年会もお開きにしたいと思いますが、最後に部長から一言ご挨拶をお願いいたします。」と言い、皆の拍手を促した。",
+        "kana": "かいも終わりに近づき、かんじの社員は立ち上がると「そろそろぼうねんかいもおひらきにしたいと思いますが、最後にぶちょうからひとことごあいさつをお願いいたします。」と言い、みなのはくしゅをうながした。",
+        "pieces": [
+          {
+            "lifted": "かい",
+            "unlifted": "会"
+          },
+          {
+            "lifted": "",
+            "unlifted": "も終わりに近づき、"
+          },
+          {
+            "lifted": "かんじ",
+            "unlifted": "幹事"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の社員は立ち上がると「そろそろ"
+          },
+          {
+            "lifted": "ぼうねんかい",
+            "unlifted": "忘年会"
+          },
+          {
+            "lifted": "",
+            "unlifted": "も"
+          },
+          {
+            "lifted": "おひら",
+            "unlifted": "お開き"
+          },
+          {
+            "lifted": "",
+            "unlifted": "にしたいと思いますが、最後に"
+          },
+          {
+            "lifted": "ぶちょう",
+            "unlifted": "部長"
+          },
+          {
+            "lifted": "",
+            "unlifted": "から"
+          },
+          {
+            "lifted": "ひとこと",
+            "unlifted": "一言"
+          },
+          {
+            "lifted": "ごあいさつ",
+            "unlifted": "ご挨拶"
+          },
+          {
+            "lifted": "",
+            "unlifted": "をお願いいたします。」と言い、"
+          },
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "はくしゅ",
+            "unlifted": "拍手"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を"
+          },
+          {
+            "lifted": "うなが",
+            "unlifted": "促した"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "Since there is already a strong, well-known candidate with a solid background for support in this district, there is no chance that any other candidate would be able to win in the single-seat constituency system.",
+        "kanji": "この選挙区には知名度もあり地盤も固い有力候補がいるため、小選挙区制では他の候補者が当選する可能性は皆無に等しい。",
+        "kana": "このせんきょくにはちめいどもありじばんも固いゆうりょくこうほがいるため、しょうせんきょくせいではたのこうほしゃがとうせんする可能性はかいむにひとしい。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "この"
+          },
+          {
+            "lifted": "せんきょく",
+            "unlifted": "選挙区"
+          },
+          {
+            "lifted": "",
+            "unlifted": "には"
+          },
+          {
+            "lifted": "ちめいど",
+            "unlifted": "知名度"
+          },
+          {
+            "lifted": "",
+            "unlifted": "もあり"
+          },
+          {
+            "lifted": "じばん",
+            "unlifted": "地盤"
+          },
+          {
+            "lifted": "",
+            "unlifted": "も固い"
+          },
+          {
+            "lifted": "ゆうりょくこうほ",
+            "unlifted": "有力候補"
+          },
+          {
+            "lifted": "",
+            "unlifted": "がいるため、"
+          },
+          {
+            "lifted": "しょうせんきょくせい",
+            "unlifted": "小選挙区制"
+          },
+          {
+            "lifted": "",
+            "unlifted": "では"
+          },
+          {
+            "lifted": "た",
+            "unlifted": "他"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "こうほしゃ",
+            "unlifted": "候補者"
+          },
+          {
+            "lifted": "",
+            "unlifted": "が"
+          },
+          {
+            "lifted": "とうせん",
+            "unlifted": "当選する"
+          },
+          {
+            "lifted": "",
+            "unlifted": "可能性は"
+          },
+          {
+            "lifted": "かいむ",
+            "unlifted": "皆無"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に"
+          },
+          {
+            "lifted": "ひと",
+            "unlifted": "等しい"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "I was a naughty child in elementary school and did not listen to teachers’ warnings, so all the teachers had a difficult time with me.",
+        "kanji": "私は小学生の頃いたずらっ子で、注意を全く聞かなかったので、先生たちは皆ほとほと手を焼いていたようだ。",
+        "kana": "私は小学生の頃いたずらっこで、注意をまったく聞かなかったので、先生たちはみなほとほとてを焼いていたようだ。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "私は小学生の頃"
+          },
+          {
+            "lifted": "いたずらっこ",
+            "unlifted": "いたずらっ子"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で、注意を"
+          },
+          {
+            "lifted": "まった",
+            "unlifted": "全く"
+          },
+          {
+            "lifted": "",
+            "unlifted": "聞かなかったので、先生たちは"
+          },
+          {
+            "lifted": "みな",
+            "unlifted": "皆"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ほとほと"
+          },
+          {
+            "lifted": "て",
+            "unlifted": "手"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を焼いていたようだ。"
+          }
+        ]
+      },
+      {
+        "english": "The marathon runner who won the championship after setting a record expressed appreciation to his fans in an interview by saying, “Thank you so much to everyone who supported me.”",
+        "kanji": "マラソン大会で優勝した選手は、記録達成後のインタビューで「応援してくださった皆様、本当にありがとうございました。」とファンにお礼を述べた。",
+        "kana": "マラソンたいかいで優勝した選手は、きろくたっせいごのインタビューで「応援してくださったみなさま、本当にありがとうございました。」とファンにおれいを述べた。",
+        "pieces": [
+          {
+            "lifted": "マラソンたいかい",
+            "unlifted": "マラソン大会"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で優勝した選手は、"
+          },
+          {
+            "lifted": "きろくたっせいご",
+            "unlifted": "記録達成後"
+          },
+          {
+            "lifted": "",
+            "unlifted": "のインタビューで「応援してくださった"
           },
           {
             "lifted": "みなさま",
@@ -829,326 +1016,15 @@
           },
           {
             "lifted": "",
-            "unlifted": "の"
+            "unlifted": "、本当にありがとうございました。」とファンに"
           },
           {
-            "lifted": "ご",
-            "unlifted": "御"
-          },
-          {
-            "lifted": "いけん",
-            "unlifted": "意見"
+            "lifted": "おれい",
+            "unlifted": "お礼"
           },
           {
             "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ちょうだい"
-          },
-          {
-            "lifted": "",
-            "unlifted": "する"
-          },
-          {
-            "lifted": "よてい",
-            "unlifted": "予定"
-          },
-          {
-            "lifted": "",
-            "unlifted": "です"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "Everyone's saying it.",
-        "kanji": "皆がそう言ってるよ。",
-        "kana": "皆がそう言ってるよ。",
-        "pieces": [
-          {
-            "lifted": "",
-            "unlifted": "皆"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "",
-            "unlifted": "そう言ってるよ。"
-          }
-        ]
-      },
-      {
-        "english": "Having scattered the enemy before me and triumphantly returned, this is how they would herald me.",
-        "kanji": "敵を蹴散らし、凱旋した俺はみなにこう呼ばれるんだ！",
-        "kana": "てきをけちらし、がいせんしたおれはみなにこうよばれるんだ！",
-        "pieces": [
-          {
-            "lifted": "てき",
-            "unlifted": "敵"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "けち",
-            "unlifted": "蹴散らし"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "がいせん",
-            "unlifted": "凱旋"
-          },
-          {
-            "lifted": "",
-            "unlifted": "した"
-          },
-          {
-            "lifted": "おれ",
-            "unlifted": "俺"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "",
-            "unlifted": "みな"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "",
-            "unlifted": "こう"
-          },
-          {
-            "lifted": "よ",
-            "unlifted": "呼ばれる"
-          },
-          {
-            "lifted": "",
-            "unlifted": "んだ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "！"
-          }
-        ]
-      },
-      {
-        "english": "Quiet! Everybody stay where they are, there will now be a possessions check.",
-        "kanji": "静かに！みんなその場を動かないで。これから持ち物検査をはじめます。",
-        "kana": "しずかに！みんなそのばをうごかないで。これからもちものけんさをはじめます。",
-        "pieces": [
-          {
-            "lifted": "しず",
-            "unlifted": "静かに"
-          },
-          {
-            "lifted": "",
-            "unlifted": "！"
-          },
-          {
-            "lifted": "",
-            "unlifted": "みんな"
-          },
-          {
-            "lifted": "そのば",
-            "unlifted": "その場"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "うご",
-            "unlifted": "動かないで"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          },
-          {
-            "lifted": "",
-            "unlifted": "これ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "から"
-          },
-          {
-            "lifted": "もちものけんさ",
-            "unlifted": "持ち物検査"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "",
-            "unlifted": "はじめます"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "All for one, and one for all. That's team play.",
-        "kanji": "一人はみんなの為に、みんなは一人の為に。それがチームプレイだ。",
-        "kana": "ひとりはみんなのために、みんなはひとりのために。それがチームプレイだ。",
-        "pieces": [
-          {
-            "lifted": "ひとり",
-            "unlifted": "一人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "",
-            "unlifted": "みんな"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "ため",
-            "unlifted": "為に"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "",
-            "unlifted": "みんな"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "ひとり",
-            "unlifted": "一人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "ため",
-            "unlifted": "為に"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          },
-          {
-            "lifted": "",
-            "unlifted": "それ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "",
-            "unlifted": "チームプレイ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "だ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "Guys, I'll do my utmost to back you up. We'll make this event a success no matter what!",
-        "kanji": "みんな、俺も全力でフォローする。このイベントかならず成功させるぞ。",
-        "kana": "みんな、おれもぜんりょくでフォローする。このイベントかならずせいこうさせるぞ。",
-        "pieces": [
-          {
-            "lifted": "",
-            "unlifted": "みんな"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "おれ",
-            "unlifted": "俺"
-          },
-          {
-            "lifted": "",
-            "unlifted": "も"
-          },
-          {
-            "lifted": "ぜんりょく",
-            "unlifted": "全力"
-          },
-          {
-            "lifted": "",
-            "unlifted": "で"
-          },
-          {
-            "lifted": "",
-            "unlifted": "フォロー"
-          },
-          {
-            "lifted": "",
-            "unlifted": "する"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          },
-          {
-            "lifted": "",
-            "unlifted": "この"
-          },
-          {
-            "lifted": "",
-            "unlifted": "イベント"
-          },
-          {
-            "lifted": "",
-            "unlifted": "かならず"
-          },
-          {
-            "lifted": "せいこう",
-            "unlifted": "成功"
-          },
-          {
-            "lifted": "",
-            "unlifted": "させる"
-          },
-          {
-            "lifted": "",
-            "unlifted": "ぞ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
+            "unlifted": "を述べた。"
           }
         ]
       }
