@@ -14,7 +14,7 @@
     "prepublishOnly": "npm run buildcjs",
     "create_test_cases": "node ./test/create_test_cases.js",
     "test": "./node_modules/.bin/mocha ./test/run_tests.js --exit",
-    "coverage": "./node_modules/.bin/nyc npm run test",
+    "coverage": "./node_modules/.bin/nyc --reporter=lcov --reporter=text npm run test",
     "test_travis": "npm run lint && npm run coverage && ./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov && ./node_modules/.bin/codecov",
     "document": "./node_modules/.bin/jsdoc --configure .jsdoc.json ./index.js -d ./docs -R README.md"
   },
@@ -50,7 +50,7 @@
     "docdash": "^2.0.1",
     "jsdoc": "^4.0.0",
     "mocha": "^10.2.0",
-    "nyc": "^14.1.1",
+    "nyc": "^15.1.0",
     "rollup": "^2.53.0"
   }
 }
