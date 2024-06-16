@@ -608,225 +608,21 @@
         ]
       },
       {
-        "english": "After the war, the diligence and the saving of the Japanese gave an impression which is strong in the American.",
-        "kanji": "戦後、日本人の勤勉さと節約はアメリカ人に強い印象を与えた。",
-        "kana": "せんご、にほんじんのきんべんさとせつやくはアメリカじんにつよいいんしょうをあたえた。",
+        "english": "A Japanese person would never do such a thing.",
+        "kanji": "日本人ならそんなことはけっしてしないでしょう。",
+        "kana": "にほんじんならそんなことはけっしてしないでしょう。",
         "pieces": [
-          {
-            "lifted": "せんご",
-            "unlifted": "戦後"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
           {
             "lifted": "にほんじん",
             "unlifted": "日本人"
           },
           {
             "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "きんべん",
-            "unlifted": "勤勉さ"
+            "unlifted": "なら"
           },
           {
             "lifted": "",
-            "unlifted": "と"
-          },
-          {
-            "lifted": "せつやく",
-            "unlifted": "節約"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "アメリカじん",
-            "unlifted": "アメリカ人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に"
-          },
-          {
-            "lifted": "つよ",
-            "unlifted": "強い"
-          },
-          {
-            "lifted": "いんしょうをあた",
-            "unlifted": "印象を与えた"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "Cleanliness is proper to the Japanese.",
-        "kanji": "清潔は日本人の習性だ。",
-        "kana": "せいけつはにほんじんのしゅうせいだ。",
-        "pieces": [
-          {
-            "lifted": "せいけつ",
-            "unlifted": "清潔"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "にほんじん",
-            "unlifted": "日本人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "しゅうせい",
-            "unlifted": "習性"
-          },
-          {
-            "lifted": "",
-            "unlifted": "だ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "The passengers on board were mostly Japanese.",
-        "kanji": "乗船客は主に日本人だった。",
-        "kana": "じょうせんきゃくはおもににほんじんだった。",
-        "pieces": [
-          {
-            "lifted": "じょうせん",
-            "unlifted": "乗船"
-          },
-          {
-            "lifted": "きゃく",
-            "unlifted": "客"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "おも",
-            "unlifted": "主に"
-          },
-          {
-            "lifted": "にほんじん",
-            "unlifted": "日本人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "だった"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "Those who are present are all Japanese.",
-        "kanji": "出席をしている人々は全部日本人です。",
-        "kana": "しゅっせきをしているひとびとはぜんぶにほんじんです。",
-        "pieces": [
-          {
-            "lifted": "しゅっせき",
-            "unlifted": "出席"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を"
-          },
-          {
-            "lifted": "",
-            "unlifted": "している"
-          },
-          {
-            "lifted": "ひとびと",
-            "unlifted": "人々"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "ぜんぶ",
-            "unlifted": "全部"
-          },
-          {
-            "lifted": "にほんじん",
-            "unlifted": "日本人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "です"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "Some young Japanese people prefer being single to being married.",
-        "kanji": "若い日本人の中には、結婚するより独身でいることを好む者もいる。",
-        "kana": "わかいにほんじんのなかには、けっこんするよりどくしんでいることをこのむものもいる。",
-        "pieces": [
-          {
-            "lifted": "わか",
-            "unlifted": "若い"
-          },
-          {
-            "lifted": "にほんじん",
-            "unlifted": "日本人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "なか",
-            "unlifted": "中"
-          },
-          {
-            "lifted": "",
-            "unlifted": "には"
-          },
-          {
-            "lifted": "",
-            "unlifted": "、"
-          },
-          {
-            "lifted": "けっこん",
-            "unlifted": "結婚する"
-          },
-          {
-            "lifted": "",
-            "unlifted": "より"
-          },
-          {
-            "lifted": "どくしん",
-            "unlifted": "独身"
-          },
-          {
-            "lifted": "",
-            "unlifted": "で"
-          },
-          {
-            "lifted": "",
-            "unlifted": "いる"
+            "unlifted": "そんな"
           },
           {
             "lifted": "",
@@ -834,109 +630,90 @@
           },
           {
             "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "",
+            "unlifted": "けっして"
+          },
+          {
+            "lifted": "",
+            "unlifted": "しない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "でしょう"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "I think there are probably few Japanese who know this side of the Emperor Meiji, the side that left a song like this.",
+        "kanji": "こんな歌を残している明治天皇の一面を知っている日本人は少ないのではないだろうか。",
+        "kana": "こんなうたをのこしているめいじてんのうのいちめんをしっているにほんじんはすくないのではないだろうか。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "こんな"
+          },
+          {
+            "lifted": "うた",
+            "unlifted": "歌"
+          },
+          {
+            "lifted": "",
             "unlifted": "を"
           },
           {
-            "lifted": "この",
-            "unlifted": "好む"
+            "lifted": "のこ",
+            "unlifted": "残している"
           },
           {
-            "lifted": "もの",
-            "unlifted": "者"
-          },
-          {
-            "lifted": "",
-            "unlifted": "も"
+            "lifted": "めいじてんのう",
+            "unlifted": "明治天皇"
           },
           {
             "lifted": "",
-            "unlifted": "いる"
+            "unlifted": "の"
+          },
+          {
+            "lifted": "いちめん",
+            "unlifted": "一面"
           },
           {
             "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "I didn't know that he was Japanese.",
-        "kanji": "私は彼が日本人だとは知らなかった。",
-        "kana": "わたしはかれがにほんじんだとはしらなかった。",
-        "pieces": [
-          {
-            "lifted": "わたし",
-            "unlifted": "私"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "かれ",
-            "unlifted": "彼"
-          },
-          {
-            "lifted": "",
-            "unlifted": "が"
-          },
-          {
-            "lifted": "にほんじん",
-            "unlifted": "日本人"
-          },
-          {
-            "lifted": "",
-            "unlifted": "だ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "と"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
+            "unlifted": "を"
           },
           {
             "lifted": "し",
-            "unlifted": "知らなかった"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
-          }
-        ]
-      },
-      {
-        "english": "I speak of the Japanese in general.",
-        "kanji": "私は日本人一般について言っているのだ。",
-        "kana": "わたしはにほんじんいっぱんについていっているのだ。",
-        "pieces": [
-          {
-            "lifted": "わたし",
-            "unlifted": "私"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
+            "unlifted": "知っている"
           },
           {
             "lifted": "にほんじん",
             "unlifted": "日本人"
           },
           {
-            "lifted": "いっぱん",
-            "unlifted": "一般"
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "すく",
+            "unlifted": "少ない"
           },
           {
             "lifted": "",
-            "unlifted": "について"
-          },
-          {
-            "lifted": "い",
-            "unlifted": "言っている"
+            "unlifted": "の"
           },
           {
             "lifted": "",
-            "unlifted": "のだ"
+            "unlifted": "ではない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "だろうか"
           },
           {
             "lifted": "",
@@ -945,9 +722,9 @@
         ]
       },
       {
-        "english": "I am Japanese, but you are an American.",
-        "kanji": "私は日本人ですが、あなたはアメリカ人です。",
-        "kana": "わたしはにほんじんですが、あなたはアメリカじんです。",
+        "english": "I'm Japanese, but I don't live in Japan.",
+        "kanji": "私は日本人ですが、日本に住んでいません。",
+        "kana": "わたしはにほんじんですが、にほんにすんでいません。",
         "pieces": [
           {
             "lifted": "わたし",
@@ -974,20 +751,399 @@
             "unlifted": "、"
           },
           {
+            "lifted": "にほん",
+            "unlifted": "日本"
+          },
+          {
             "lifted": "",
-            "unlifted": "あなた"
+            "unlifted": "に"
+          },
+          {
+            "lifted": "す",
+            "unlifted": "住んでいません"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "Few Japanese can use English well.",
+        "kanji": "日本人で英語をうまく使える人はほとんどいません。",
+        "kana": "にほんじんでえいごをうまくつかえるひとはほとんどいません。",
+        "pieces": [
+          {
+            "lifted": "にほんじん",
+            "unlifted": "日本人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で"
+          },
+          {
+            "lifted": "えいご",
+            "unlifted": "英語"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を"
+          },
+          {
+            "lifted": "",
+            "unlifted": "うまく"
+          },
+          {
+            "lifted": "つか",
+            "unlifted": "使える"
+          },
+          {
+            "lifted": "ひと",
+            "unlifted": "人"
           },
           {
             "lifted": "",
             "unlifted": "は"
           },
           {
-            "lifted": "アメリカじん",
-            "unlifted": "アメリカ人"
+            "lifted": "",
+            "unlifted": "ほとんど"
+          },
+          {
+            "lifted": "",
+            "unlifted": "いません"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "They don't use 'celeb' to mean 'rich man' over there. By which I determine that you are Japanese.",
+        "kanji": "向こうではセレブという言葉を「金持ち」の意味では使わない。という事で日本人と判明しました。",
+        "kana": "むこうではセレブということばを「かねもち」のいみではつかわない。ということでにほんじんとはんめいしました。",
+        "pieces": [
+          {
+            "lifted": "む",
+            "unlifted": "向こう"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "",
+            "unlifted": "セレブ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "という"
+          },
+          {
+            "lifted": "ことば",
+            "unlifted": "言葉"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を"
+          },
+          {
+            "lifted": "",
+            "unlifted": "「"
+          },
+          {
+            "lifted": "かねも",
+            "unlifted": "金持ち"
+          },
+          {
+            "lifted": "",
+            "unlifted": "」"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "いみ",
+            "unlifted": "意味"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "つか",
+            "unlifted": "使わない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          },
+          {
+            "lifted": "",
+            "unlifted": "と"
+          },
+          {
+            "lifted": "",
+            "unlifted": "いう"
+          },
+          {
+            "lifted": "こと",
+            "unlifted": "事"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で"
+          },
+          {
+            "lifted": "にほんじん",
+            "unlifted": "日本人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "と"
+          },
+          {
+            "lifted": "はんめい",
+            "unlifted": "判明"
+          },
+          {
+            "lifted": "",
+            "unlifted": "しました"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "As you can also tell from these beautiful, far from Japanese, looks, Yuna is not pure-blood Japanese. She's a quarter-blood with a westerner as grandmother.",
+        "kanji": "日本人離れしたこの美しい相貌からもわかるように、優奈は実は生粋の日本人じゃない。西洋人をおばあちゃんに持つ、クォーターだったりする。",
+        "kana": "にほんじんばなれしたこのうつくしいそうぼうからもわかるように、優奈はじつはきっすいのにほんじんじゃない。せいようじんをおばあちゃんにもつ、クォーターだったりする。",
+        "pieces": [
+          {
+            "lifted": "にほんじん",
+            "unlifted": "日本人"
+          },
+          {
+            "lifted": "ばな",
+            "unlifted": "離れ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "した"
+          },
+          {
+            "lifted": "",
+            "unlifted": "この"
+          },
+          {
+            "lifted": "うつく",
+            "unlifted": "美しい"
+          },
+          {
+            "lifted": "そうぼう",
+            "unlifted": "相貌"
+          },
+          {
+            "lifted": "",
+            "unlifted": "から"
+          },
+          {
+            "lifted": "",
+            "unlifted": "も"
+          },
+          {
+            "lifted": "",
+            "unlifted": "わかる"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ように"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、優奈"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "じつ",
+            "unlifted": "実は"
+          },
+          {
+            "lifted": "きっすい",
+            "unlifted": "生粋の"
+          },
+          {
+            "lifted": "にほんじん",
+            "unlifted": "日本人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "じゃない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          },
+          {
+            "lifted": "せいようじん",
+            "unlifted": "西洋人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を"
+          },
+          {
+            "lifted": "",
+            "unlifted": "おばあちゃん"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に"
+          },
+          {
+            "lifted": "も",
+            "unlifted": "持つ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
+          },
+          {
+            "lifted": "",
+            "unlifted": "クォーター"
+          },
+          {
+            "lifted": "",
+            "unlifted": "だったり"
+          },
+          {
+            "lifted": "",
+            "unlifted": "する"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "Today's topic is \"the problem of Japanese people abducted by North Korea\".",
+        "kanji": "今日のトピックは「北朝鮮による日本人拉致問題」です。",
+        "kana": "きょうのトピックは「きたちょうせんによるにほんじんらちもんだい」です。",
+        "pieces": [
+          {
+            "lifted": "きょう",
+            "unlifted": "今日"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "",
+            "unlifted": "トピック"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "",
+            "unlifted": "「"
+          },
+          {
+            "lifted": "きたちょうせん",
+            "unlifted": "北朝鮮"
+          },
+          {
+            "lifted": "",
+            "unlifted": "による"
+          },
+          {
+            "lifted": "にほんじん",
+            "unlifted": "日本人"
+          },
+          {
+            "lifted": "らち",
+            "unlifted": "拉致"
+          },
+          {
+            "lifted": "もんだい",
+            "unlifted": "問題"
+          },
+          {
+            "lifted": "",
+            "unlifted": "」"
           },
           {
             "lifted": "",
             "unlifted": "です"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "Foreign rice is hard and tasteless, and doesn't appeal to the Japanese palate.",
+        "kanji": "外米はぼそぼそしていて、日本人の口には合わない。",
+        "kana": "がいまいはぼそぼそしていて、にほんじんのくちにはあわない。",
+        "pieces": [
+          {
+            "lifted": "がいまい",
+            "unlifted": "外米"
+          },
+          {
+            "lifted": "",
+            "unlifted": "は"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ぼそぼそ"
+          },
+          {
+            "lifted": "",
+            "unlifted": "していて"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、"
+          },
+          {
+            "lifted": "にほんじん",
+            "unlifted": "日本人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "くち",
+            "unlifted": "口"
+          },
+          {
+            "lifted": "",
+            "unlifted": "には"
+          },
+          {
+            "lifted": "あ",
+            "unlifted": "合わない"
           },
           {
             "lifted": "",
