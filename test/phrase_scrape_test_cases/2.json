@@ -45,7 +45,8 @@
         ],
         "definition": "everyone; everybody; all",
         "supplemental": [
-          "Usually written using kana alone"
+          "Usually written using kana alone",
+          "みんな is less formal and more emphatic"
         ],
         "definitionAbstract": "",
         "tags": [
@@ -101,17 +102,11 @@
     ],
     "otherForms": [
       {
-        "kanji": "皆んな",
-        "kana": "みんな"
-      },
-      {
         "kanji": "皆",
-        "kana": "みな"
+        "kana": "みんな"
       }
     ],
     "audio": [],
-    "notes": [
-      "皆んな: Irregular okurigana usage."
-    ]
+    "notes": []
   }
 }

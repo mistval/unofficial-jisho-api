@@ -2,8 +2,173 @@
   "query": "ネガティブ",
   "expectedResult": {
     "query": "ネガティブ",
-    "found": false,
-    "results": [],
+    "found": true,
+    "results": [
+      {
+        "english": "I know it’s pointless to keep fretting over trivial things, but I’ve faced so much unfairness that I can’t seem to break free from my negative mindset.",
+        "kanji": "取るに足りないこといつまでもクヨクヨ考えていても仕方がないことは分かっているが、あまりにも理不尽な目に遭ってばかりいるので、ネガティブな気持ちから這い上がれない。",
+        "kana": "取るに足りないこといつまでもクヨクヨ考えていてもしかたがないことは分かっているが、あまりにもりふじんなめにあってばかりいるので、ネガティブな気持ちからはいあがれない。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "取るに足りないこといつまでもクヨクヨ考えていても"
+          },
+          {
+            "lifted": "しかた",
+            "unlifted": "仕方"
+          },
+          {
+            "lifted": "",
+            "unlifted": "がないことは分かっているが、あまりにも"
+          },
+          {
+            "lifted": "りふじん",
+            "unlifted": "理不尽"
+          },
+          {
+            "lifted": "",
+            "unlifted": "な"
+          },
+          {
+            "lifted": "め",
+            "unlifted": "目"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に"
+          },
+          {
+            "lifted": "あ",
+            "unlifted": "遭って"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ばかりいるので、ネガティブな気持ちから"
+          },
+          {
+            "lifted": "はいあ",
+            "unlifted": "這い上がれない"
+          },
+          {
+            "lifted": "",
+            "unlifted": "。"
+          }
+        ]
+      },
+      {
+        "english": "When you are feeling down and everything seems to be going wrong and have a negative mindset, being with cheerful and positive people can lift your spirits a bit.",
+        "kanji": "落ち込んで、何もかも後ろ向きなネガティブな気持ちになっているとき、明るくポジティブな人と一緒にいると、少し気持ちを持ち直すことができる。",
+        "kana": "おちこんで、何もかもうしろむきなネガティブな気持ちになっているとき、明るくポジティブな人と一緒にいると、少し気持ちをもちなおすことができる。",
+        "pieces": [
+          {
+            "lifted": "おちこ",
+            "unlifted": "落ち込んで"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、何もかも"
+          },
+          {
+            "lifted": "うし",
+            "unlifted": "後ろ"
+          },
+          {
+            "lifted": "む",
+            "unlifted": "向き"
+          },
+          {
+            "lifted": "",
+            "unlifted": "なネガティブな気持ちになっているとき、明るくポジティブな人と一緒にいると、少し気持ちを"
+          },
+          {
+            "lifted": "もちなお",
+            "unlifted": "持ち直す"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ことができる。"
+          }
+        ]
+      },
+      {
+        "english": "I try not to say negative words so as not to lower the morale of my subordinates.",
+        "kanji": "部下の士気を下げないよう、ネガティブな言葉は言わないようにしている。",
+        "kana": "ぶかのしきを下げないよう、ネガティブな言葉は言わないようにしている。",
+        "pieces": [
+          {
+            "lifted": "ぶか",
+            "unlifted": "部下"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "しき",
+            "unlifted": "士気"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を下げないよう、ネガティブな言葉は言わないようにしている。"
+          }
+        ]
+      },
+      {
+        "english": "The meaning of the word bocchi (“alone”) is shifting. Traditionally, as in hitori-bocchi (“all alone”), it carried a negative connotation, describing someone who is alone and lonely. However, it is increasingly taking on a more positive nuance, as seen in expressions like “Bocchi mesi (“solo dining”) is the best!” or “Bocchi sanka (“flying solo”) again today!”, where being alone is framed as something enjoyable rather than sad.",
+        "kanji": "「ぼっち」という言葉の意味は、従来の「ひとりぼっち」のように一人で寂しい様子を表すネガティブなものから、「ぼっちメシ最高！」「今日もぼっち参加！」のように一人を楽しむというポジティブなニュアンスを含むものに変質しつつある。",
+        "kana": "「ぼっち」という言葉の意味は、じゅうらいの「ひとりぼっち」のようにひとりでさびしいようすをあらわすネガティブなものから、「ぼっちメシ最高！」「今日もぼっち参加！」のように一人を楽しむというポジティブなニュアンスを含むものにへんしつしつつある。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "「ぼっち」という言葉の意味は、"
+          },
+          {
+            "lifted": "じゅうらい",
+            "unlifted": "従来"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の「ひとりぼっち」のように"
+          },
+          {
+            "lifted": "ひとり",
+            "unlifted": "一人"
+          },
+          {
+            "lifted": "",
+            "unlifted": "で"
+          },
+          {
+            "lifted": "さび",
+            "unlifted": "寂しい"
+          },
+          {
+            "lifted": "ようす",
+            "unlifted": "様子"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を"
+          },
+          {
+            "lifted": "あらわ",
+            "unlifted": "表す"
+          },
+          {
+            "lifted": "",
+            "unlifted": "ネガティブなものから、「ぼっちメシ最高！」「今日もぼっち参加！」のように一人を楽しむというポジティブなニュアンスを含むものに"
+          },
+          {
+            "lifted": "へんしつ",
+            "unlifted": "変質"
+          },
+          {
+            "lifted": "",
+            "unlifted": "しつつある。"
+          }
+        ]
+      }
+    ],
     "uri": "https://jisho.org/search/%E3%83%8D%E3%82%AC%E3%83%86%E3%82%A3%E3%83%96%23sentences",
     "phrase": "ネガティブ"
   }

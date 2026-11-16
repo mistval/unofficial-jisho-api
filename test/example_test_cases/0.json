@@ -145,53 +145,6 @@
         ]
       },
       {
-        "english": "The restaurant run by my father is said to be so popular that it is hard to secure a reservation, and it appears to be doing well at first glance. However, its finances are in fact in a disastrous state. ",
-        "kanji": "父が経営するレストランは予約がとれない人気店と言われ、一見上手くいっているように見えるが、財政状況の内実は火の車だ。",
-        "kana": "父が経営するレストランは予約がとれないにんきてんと言われ、いっけんうまくいっているように見えるが、財政状況のないじつはひのくるまだ。",
-        "pieces": [
-          {
-            "lifted": "",
-            "unlifted": "父が経営するレストランは予約がとれない"
-          },
-          {
-            "lifted": "にんきてん",
-            "unlifted": "人気店"
-          },
-          {
-            "lifted": "",
-            "unlifted": "と言われ、"
-          },
-          {
-            "lifted": "いっけん",
-            "unlifted": "一見"
-          },
-          {
-            "lifted": "うま",
-            "unlifted": "上手く"
-          },
-          {
-            "lifted": "",
-            "unlifted": "いっているように見えるが、財政状況の"
-          },
-          {
-            "lifted": "ないじつ",
-            "unlifted": "内実"
-          },
-          {
-            "lifted": "",
-            "unlifted": "は"
-          },
-          {
-            "lifted": "ひのくるま",
-            "unlifted": "火の車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "だ。"
-          }
-        ]
-      },
-      {
         "english": "When people sit on train seats with their legs in the aisle, it causes an obstruction.",
         "kanji": "電車の座席で、通路側に足を投げ出して座っていると、通行の邪魔になる。",
         "kana": "電車の座席で、つうろがわに足を投げ出してすわっていると、つうこうのじゃまになる。",
@@ -236,8 +189,8 @@
       },
       {
         "english": "This morning was a bit of a mess because the train was delayed due to an accident resulting in injury or death. Fortunately, despite the lack of taxis, I was able to get to my important meeting on time.",
-        "kanji": "今朝は人身事故で電車が大幅に遅れたり、タクシーもつかまらなかったりと散々だったが、何はともあれ、大切な会議に間に合ってよかった。",
-        "kana": "けさはじんしんじこで電車がおおはばに遅れたり、タクシーもつかまらなかったりとさんざんだったが、なにはともあれ、たいせつな会議にまにあってよかった。",
+        "kanji": "今朝は人身事故で電車が大幅に遅れ、タクシーもつかまらなかったりと散々だったが、何はともあれ、大切な会議に間に合ってよかった。",
+        "kana": "けさはじんしんじこで電車がおおはばに遅れ、タクシーもつかまらなかったりとさんざんだったが、なにはともあれ、たいせつ な会議にまにあってよかった。",
         "pieces": [
           {
             "lifted": "けさ",
@@ -261,7 +214,7 @@
           },
           {
             "lifted": "",
-            "unlifted": "に遅れたり、タクシーもつかまらなかったりと"
+            "unlifted": "に遅れ、タクシーもつかまらなかったりと"
           },
           {
             "lifted": "さんざん",
@@ -273,19 +226,19 @@
           },
           {
             "lifted": "なに",
-            "unlifted": "何はともあれ"
+            "unlifted": "何"
           },
           {
             "lifted": "",
-            "unlifted": "、"
+            "unlifted": "はともあれ、"
           },
           {
-            "lifted": "たいせつ",
-            "unlifted": "大切な"
+            "lifted": "たいせつ ",
+            "unlifted": "大切"
           },
           {
             "lifted": "",
-            "unlifted": "会議に"
+            "unlifted": "な会議に"
           },
           {
             "lifted": "まにあ",
@@ -490,9 +443,60 @@
         ]
       },
       {
+        "english": "My bicycle, which was in the bicycle parking area of my condominium, was stolen and I filed a report with the police.",
+        "kanji": "マンションの駐輪場に停めてあった自転車が盗難に遭って、警察に被害届を出した。",
+        "kana": "マンションのちゅうりんじょうにとめてあった自転車がとうなんにあって、警察にひがいとどけを出した。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "マンションの"
+          },
+          {
+            "lifted": "ちゅうりんじょう",
+            "unlifted": "駐輪場"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に"
+          },
+          {
+            "lifted": "と",
+            "unlifted": "停めて"
+          },
+          {
+            "lifted": "",
+            "unlifted": "あった自転車が"
+          },
+          {
+            "lifted": "とうなん",
+            "unlifted": "盗難"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に"
+          },
+          {
+            "lifted": "あ",
+            "unlifted": "遭って"
+          },
+          {
+            "lifted": "",
+            "unlifted": "、警察に"
+          },
+          {
+            "lifted": "ひがいとどけ",
+            "unlifted": "被害届"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を出した。"
+          }
+        ]
+      },
+      {
         "english": "Every time I think about winning 100 million yen in the lottery, I fantasize about buying a car and house, and taking an around the world trip on a cruise ship. ",
         "kanji": "宝くじで1億円当選した暁には、車を買い、家を買い、クルーズ船で世界一周旅行をして…と毎度のように妄想している。",
-        "kana": "宝くじでいちおくえん当選したあかつきには、車を買い、家を買い、クルーズせんでせかいいっしゅうりょこうをして…とまいどのように妄想している。",
+        "kana": "宝くじでいちおくえん当選したあかつきには、車を買い、家を買い、クルーズせんでせかいいっしゅうりょこうをして…とまいどのようにもそうしている。",
         "pieces": [
           {
             "lifted": "",
@@ -536,7 +540,15 @@
           },
           {
             "lifted": "",
-            "unlifted": "のように妄想している。"
+            "unlifted": "のように"
+          },
+          {
+            "lifted": "もそう",
+            "unlifted": "妄想"
+          },
+          {
+            "lifted": "",
+            "unlifted": "している。"
           }
         ]
       },
@@ -623,76 +635,9 @@
         ]
       },
       {
-        "english": "Some modern cars are equipped with systems that prevent drowsy driving. For example, a car equipped with such a system automatically pulls the driver back to the original lane if they are about to stray out of their lane without using the turn signal.",
-        "kanji": "最近の車の中には、居眠り運転を防止するシステムを備えているものもある。ウィンカーを出さずに車線をはみ出しそうになると、自動的に元の車線に戻そうとするらしい。",
-        "kana": "最近のくるまのなかには、いねむりうんてんを防止するシステムをそなえているものもある。ウィンカーを出さずにしゃせんをはみ出しそうになると、自動的にもとのしゃせんに戻そうとするらしい。",
-        "pieces": [
-          {
-            "lifted": "",
-            "unlifted": "最近の"
-          },
-          {
-            "lifted": "くるま",
-            "unlifted": "車"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "なか",
-            "unlifted": "中"
-          },
-          {
-            "lifted": "",
-            "unlifted": "には、"
-          },
-          {
-            "lifted": "いねむりうんてん",
-            "unlifted": "居眠り運転"
-          },
-          {
-            "lifted": "",
-            "unlifted": "を防止するシステムを"
-          },
-          {
-            "lifted": "そな",
-            "unlifted": "備えて"
-          },
-          {
-            "lifted": "",
-            "unlifted": "いるものもある。ウィンカーを出さずに"
-          },
-          {
-            "lifted": "しゃせん",
-            "unlifted": "車線"
-          },
-          {
-            "lifted": "",
-            "unlifted": "をはみ出しそうになると、自動的に"
-          },
-          {
-            "lifted": "もと",
-            "unlifted": "元"
-          },
-          {
-            "lifted": "",
-            "unlifted": "の"
-          },
-          {
-            "lifted": "しゃせん",
-            "unlifted": "車線"
-          },
-          {
-            "lifted": "",
-            "unlifted": "に戻そうとするらしい。"
-          }
-        ]
-      },
-      {
         "english": "If an ambulance is unnecessarily called when there is no need, it may delay the arrival of the ambulance to a genuine emergency where it is really needed. This could result in death, when otherwise lives could have been saved.",
-        "kanji": "必要性がない場合に安易に救急車を呼ぶと、本当に緊急搬送の必要があるところへ救急車の到着が遅れ、救える命を救うことができなくなるかもしれない。",
-        "kana": "必要性がない場合にあんいに救急車を呼ぶと、本当に緊急搬送の必要があるところへ救急車の到着が遅れ、救えるいのちを救うことができなくなるかもしれない。",
+        "kanji": "必要性がない場合に安易に救急車を呼ぶと、本当に緊急搬送の必要があるところに救急車の到着が遅れ、救える命も救えなくなるかもしれない。",
+        "kana": "必要性がない場合にあんいに救急車を呼ぶと、本当に緊急搬送の必要があるところに救急車の到着が遅れ、救えるいのちも救えなくなるかもしれない。",
         "pieces": [
           {
             "lifted": "",
@@ -700,11 +645,11 @@
           },
           {
             "lifted": "あんい",
-            "unlifted": "安易に"
+            "unlifted": "安易"
           },
           {
             "lifted": "",
-            "unlifted": "救急車を呼ぶと、本当に緊急搬送の必要があるところへ救急車の到着が遅れ、救える"
+            "unlifted": "に救急車を呼ぶと、本当に緊急搬送の必要があるところに救急車の到着が遅れ、救える"
           },
           {
             "lifted": "いのち",
@@ -712,42 +657,7 @@
           },
           {
             "lifted": "",
-            "unlifted": "を救うことができなくなるかもしれない。"
-          }
-        ]
-      },
-      {
-        "english": "It is annoying when the road is blocked by illegal parking and only one of the two lanes can be used.",
-        "kanji": "違法駐車が多いと道路がふさがれてしまい、2車線のうち1車線しか使えないことがあり迷惑だ。",
-        "kana": "違法駐車が多いと道路がふさがれてしまい、にしゃせんのうちいっしゃせんしか使えないことがありめいわくだ。",
-        "pieces": [
-          {
-            "lifted": "",
-            "unlifted": "違法駐車が多いと道路がふさがれてしまい、"
-          },
-          {
-            "lifted": "にしゃせん",
-            "unlifted": "2車線"
-          },
-          {
-            "lifted": "",
-            "unlifted": "のうち"
-          },
-          {
-            "lifted": "いっしゃせん",
-            "unlifted": "1車線"
-          },
-          {
-            "lifted": "",
-            "unlifted": "しか使えないことがあり"
-          },
-          {
-            "lifted": "めいわく",
-            "unlifted": "迷惑だ"
-          },
-          {
-            "lifted": "",
-            "unlifted": "。"
+            "unlifted": "も救えなくなるかもしれない。"
           }
         ]
       },
@@ -821,6 +731,84 @@
           {
             "lifted": "",
             "unlifted": "を購入した。"
+          }
+        ]
+      },
+      {
+        "english": "Children move unpredictably, so when driving a car you must be careful and watch out for any child that may suddenly rush out into the street.",
+        "kanji": "子どもというのは予想できない動きをするものなので、車を運転している時は、子どもの急な飛び出しなどに十分に気をつけなければならない。",
+        "kana": "子どもというのは予想できないうごきをするものなので、くるまを運転している時は、子どもの急な飛び出しなどにじゅうぶんに気をつけなければならない。",
+        "pieces": [
+          {
+            "lifted": "",
+            "unlifted": "子どもというのは予想できない"
+          },
+          {
+            "lifted": "うご",
+            "unlifted": "動き"
+          },
+          {
+            "lifted": "",
+            "unlifted": "をするものなので、"
+          },
+          {
+            "lifted": "くるま",
+            "unlifted": "車"
+          },
+          {
+            "lifted": "",
+            "unlifted": "を運転している時は、子どもの急な飛び出しなどに"
+          },
+          {
+            "lifted": "じゅうぶん",
+            "unlifted": "十分に"
+          },
+          {
+            "lifted": "",
+            "unlifted": "気をつけなければならない。"
+          }
+        ]
+      },
+      {
+        "english": "Stock prices moved sharply upon the announcement of the merger between two major car companies.",
+        "kanji": "大手自動車会社の合併の発表と同時に株価が大きく動いた。",
+        "kana": "おおてじどうしゃがいしゃのがっぺいの発表とどうじにかぶかが大きく動いた。",
+        "pieces": [
+          {
+            "lifted": "おおて",
+            "unlifted": "大手"
+          },
+          {
+            "lifted": "じどうしゃがいしゃ",
+            "unlifted": "自動車会社"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の"
+          },
+          {
+            "lifted": "がっぺい",
+            "unlifted": "合併"
+          },
+          {
+            "lifted": "",
+            "unlifted": "の発表と"
+          },
+          {
+            "lifted": "どうじ",
+            "unlifted": "同時"
+          },
+          {
+            "lifted": "",
+            "unlifted": "に"
+          },
+          {
+            "lifted": "かぶか",
+            "unlifted": "株価"
+          },
+          {
+            "lifted": "",
+            "unlifted": "が大きく動いた。"
           }
         ]
       }

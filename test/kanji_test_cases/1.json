@@ -46,12 +46,12 @@
       {
         "example": "家来",
         "reading": "ケライ",
-        "meaning": "retainer, retinue, servant"
+        "meaning": "retainer, vassal, follower"
       },
       {
         "example": "本家",
         "reading": "ホンケ",
-        "meaning": "head house (family), birthplace, originator"
+        "meaning": "head house, main family, founder (of a certain school, style, etc.), originator, birthplace"
       },
       {
         "example": "公家",
@@ -71,14 +71,14 @@
         "meaning": "landlord, landlady, house owner, home owner, head of the household"
       },
       {
-        "example": "本家",
-        "reading": "ほんけ",
-        "meaning": "head house (family), birthplace, originator"
-      },
-      {
         "example": "小家",
         "reading": "こいえ",
         "meaning": "small and simple home"
+      },
+      {
+        "example": "建ち家",
+        "reading": "たちいえ",
+        "meaning": "house, building"
       },
       {
         "example": "屋",
@@ -96,9 +96,9 @@
         "meaning": "tenement house, row house"
       },
       {
-        "example": "本家",
-        "reading": "ほんけ",
-        "meaning": "head house (family), birthplace, originator"
+        "example": "町家",
+        "reading": "まちや",
+        "meaning": "machiya, traditional wooden townhouse, tradesman's house (esp. a home with a shop in front), merchant's house, merchant's family"
       },
       {
         "example": "家",
