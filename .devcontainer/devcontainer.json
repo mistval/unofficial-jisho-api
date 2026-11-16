@@ -1,0 +1,19 @@
+{
+  "name": "Antigravity Sandbox",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:26",
+  "customizations": {
+    "vscode": {
+      "extensions": ["Google.google-antigravity"],
+      "settings": {
+        "google.antigravity.enableTerminalSandbox": false,
+        "google.antigravity.toolPermission": "proceed",
+        "google.antigravity.allowNonWorkspaceAccess": false
+      }
+    }
+  },
+  "mounts": [
+    "source=antigravity-session-cache,target=/home/node/.gemini,type=volume",
+    "source=${localWorkspaceFolderBasename}-root-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
+  "postCreateCommand": "sudo apt update && sudo apt install ripgrep && sudo chown -R node:node /home/node/.gemini && sudo chown -R node:node ${containerWorkspaceFolder}/node_modules && npm i"
+}
